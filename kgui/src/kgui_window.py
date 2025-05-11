@@ -302,19 +302,20 @@ class KguiWindow(QMainWindow):
         output_dir = self.output_dir_edit.text()
         file_name = self.output_file_edit.text()
         if output_dir and file_name:
-            full_path = os.path.join(output_dir, file_name)
-            print(f"Constructing file at: {full_path}")
-
+            print(f"Constructing blueprint...")
             builder = KnowledgeGraphBlueprintBuilder()
             builder.set_name(file_name)
             builder.set_output_dir(output_dir)
 
             for item in self.model.get_selected_items():
                 if item.checkState() == Qt.CheckState.Checked and os.path.isfile(item.data_source.path):
-                    builder.add_source_path(item.data_source)
+                    builder.add_source_path(item.data_source.path)
 
             for item in self.translation_editor.get_translation_targets():
                 builder.add_translation_target(item)
+            print("Blueprint constructed successfully.")
+
+            builder.build().construct()
         else:
             print("Output directory or file name is missing.")
 
