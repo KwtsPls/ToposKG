@@ -18,16 +18,16 @@ class KguiMapCanvas(FigureCanvas):
         super().__init__(self.fig)
 
         # Load the shapefile
-        self._map_data = gpd.read_file(get_relative_path('./resources/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp'))
+        self._map_data = gpd.read_file(get_relative_path(
+            '../resources/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp'))
         self._highlight_countries = []
 
-        for name in self._map_data['NAME']:
-            print(name)
-
+        # for name in self._map_data['NAME']:
+        #     print(name)
         # print(self._map_data['NAME'])
 
     def set_countries(self, countries):
-        print(countries)
+        # print(countries)
         self._highlight_countries = countries
         self.generate_map()
 

@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QSplitter, QVBoxLayout, QLabel, QGroupBox, QHBoxLayout, QPushButton, QStackedWidget,
-    QLineEdit, QFileDialog
+    QLineEdit, QFileDialog, QMessageBox
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPalette
@@ -13,7 +13,7 @@ from kgui_sources_model import KguiSourcesModel
 from kgui_sources_view import KguiSourcesView
 from kgui_statistics_view import KguiStatisticsView
 from kgui_translations_editor import KguiTranslationsEditor
-from toposkg.toposkg_lib_core import KnowledgeGraphSourcesManager
+from toposkg.toposkg_lib_core import KnowledgeGraphSourcesManager, KnowledgeGraphBlueprintBuilder
 
 
 class KguiWindow(QMainWindow):
@@ -24,9 +24,25 @@ class KguiWindow(QMainWindow):
         self.setWindowTitle("K-GUI")
         self.setGeometry(100, 100, 800, 600)
 
+        def select_directory():
+            """Open a dialog to select a directory and return its path."""
+            directory = QFileDialog.getExistingDirectory(self, "Select KG Sources Directory", "")
+            return directory if directory else None
+
+        # Open directory dialog to select the KG sources directory
+        kg_sources_directory = select_directory()
+
+        # Check if the user canceled the directory selection
+        if kg_sources_directory is None:
+            QMessageBox.warning(self, "Warning", "No directory selected, exiting application.")
+            self.close()
+            return
+
         # Model
-        sources_manager = KnowledgeGraphSourcesManager(['/home/sergios/kg_sources'])
+        sources_manager = KnowledgeGraphSourcesManager([kg_sources_directory])
         self.model = KguiSourcesModel(sources_manager)
+
+        self.translation_editor = None
 
         # UI Creation
         self.output_dir_edit = None
@@ -202,7 +218,7 @@ class KguiWindow(QMainWindow):
 
     def create_translation_page(self):
         # Translation widget
-        translation_editor = KguiTranslationsEditor(self.model)
+        self.translation_editor = KguiTranslationsEditor(self.model)
 
         # Wrap splitter in a QWidget with layout (good practice)
         container = QWidget()
@@ -218,7 +234,7 @@ class KguiWindow(QMainWindow):
 
         # layout.addWidget(progress_bar)
         layout.addLayout(steps_layout)
-        layout.addWidget(translation_editor, stretch=1)
+        layout.addWidget(self.translation_editor, stretch=1)
         layout.addLayout(button_layout)
 
         return container
@@ -288,7 +304,17 @@ class KguiWindow(QMainWindow):
         if output_dir and file_name:
             full_path = os.path.join(output_dir, file_name)
             print(f"Constructing file at: {full_path}")
-            # Add logic to construct and save the file
+
+            builder = KnowledgeGraphBlueprintBuilder()
+            builder.set_name(file_name)
+            builder.set_output_dir(output_dir)
+
+            for item in self.model.get_selected_items():
+                if item.checkState() == Qt.CheckState.Checked and os.path.isfile(item.data_source.path):
+                    builder.add_source_path(item.data_source)
+
+            for item in self.translation_editor.get_translation_targets():
+                builder.add_translation_target(item)
         else:
             print("Output directory or file name is missing.")
 
