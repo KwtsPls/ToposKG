@@ -16,7 +16,7 @@ class KnowledgeGraphBlueprint:
         self.materialization_pairs = materialization_pairs
         self.translation_targets = translation_targets
 
-    def construct(self):
+    def construct(self, debug=False):
         """
         Constructs the knowledge graph based on the provided blueprint.
         """
@@ -34,6 +34,9 @@ class KnowledgeGraphBlueprint:
         # concatenate all source files
         #
         def load_source_file_as_nt(file_path):
+            if debug:
+                print(f"Loading source file: {file_path}")
+
             fs, _ = fsspec.core.url_to_fs(file_path)
             is_local = fs.protocol in ["file", None] or fs.protocol == ('file', 'local')
             if not is_local:
@@ -41,6 +44,8 @@ class KnowledgeGraphBlueprint:
 
             # Sanitize the file and convert to nt format
             g = Graph()
+            if debug:
+                print(f"Parsing file: {file_path}")
             g.parse(file_path)
             nt_data = g.serialize(format='nt')
             return nt_data
@@ -53,6 +58,8 @@ class KnowledgeGraphBlueprint:
                     output_file.write(line + "\n")
 
         for source_path in self.sources_paths:
+            if debug:
+                print(f"Processing source path: {source_path}")
             if not os.path.exists(source_path):
                 raise ValueError(f"Source path {source_path} does not exist.")
             if os.path.isfile(source_path):
@@ -70,22 +77,26 @@ class KnowledgeGraphBlueprint:
         #
         # translation
         #
+        print("Translating...")
         if len(self.translation_targets) > 0:
             from toposkg_lib_translate import ToposkgLibTranslator
 
             translator = ToposkgLibTranslator()
 
             for source_path, predicates_list in self.translation_targets:
-                nt_data = load_source_file_as_nt(file_path)
+                print("Translating predicates in source path: ", source_path)
+                print("Predicates list: ", predicates_list)
+                nt_data = load_source_file_as_nt(source_path)
                 # Write to output file
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    for line in nt_data.splitlines():
-                        subject, predicate, object, dot = line.split(" ")
-                        if predicate in predicates_list:
-                            # Translate the predicate
-                            translated_predicate = translator.translate(predicate)
-                            output_file.write(f"{subject} {translated_predicate} {object} {dot}\n")
-
+                for line in nt_data.splitlines():
+                    subject, predicate, object, dot = line.split(" ")[0], line.split(" ")[1], " ".join(
+                        line.split(" ")[2:-1]), line.split(" ")[-1]
+                    if predicate in predicates_list:
+                        # Translate the object
+                        translated_object = translator.translate(object)
+                        if debug:
+                            print(f"Translating {object} to {translated_object}")
+                        output_file.write(f"{subject} {predicate} {translated_object} {dot}\n")
 
         output_file.close()
 
