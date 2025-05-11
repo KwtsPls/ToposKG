@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toposkg"
+version = "0.1.0"
+description = "A Python interface to the ToposKG knowledge graph generation pipeline."
+authors = [
+    { name="Sergios-Anestis Kefalidis", email="skefalidis@di.uoa.gr" },
+    { name="Kostas Plas", email="kplas@di.uoa.gr" }
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = ['rdflib', 'fsspec']
+
+[project.optional-dependencies]
+tl = ["unsloth"]
+
+[tool.setuptools]
+packages = ["toposkg"]

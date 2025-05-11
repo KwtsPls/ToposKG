@@ -1,0 +1,4 @@
+.idea/
+toposkg_lib/dist
+toposkg_lib/toposkg.egg-info
+*.pyc
