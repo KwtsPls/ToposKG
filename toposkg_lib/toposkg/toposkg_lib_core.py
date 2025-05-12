@@ -79,7 +79,7 @@ class KnowledgeGraphBlueprint:
         #
         print("Translating...")
         if len(self.translation_targets) > 0:
-            from toposkg_lib_translate import ToposkgLibTranslator
+            from toposkg.toposkg_lib_translate import ToposkgLibTranslator
 
             translator = ToposkgLibTranslator()
 
