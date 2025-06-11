@@ -19,7 +19,7 @@ toposkg-lib is a Python library developed as part of the Topos framework. It pro
 
 ### pip
 
-We recommend using toposkg-lib through `pip`.
+We recommend using toposkg-lib through [pip](https://pypi.org/project/toposkg/).
 
 ```sh
 pip install toposkg
