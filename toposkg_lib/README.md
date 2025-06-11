@@ -34,7 +34,7 @@ pip install toposkg[tl]
 If you want to include the function calling functionality.
 
 ```sh
-toposkg[fc]
+pip install toposkg[fc]
 ```
 
 ### Simple example
