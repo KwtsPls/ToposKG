@@ -315,7 +315,7 @@ class KguiWindow(QMainWindow):
                 builder.add_translation_target(item)
             print("Blueprint constructed successfully.")
 
-            builder.build().construct()
+            builder.build().construct(debug=True)
         else:
             print("Output directory or file name is missing.")
 
