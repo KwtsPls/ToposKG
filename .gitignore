@@ -1,4 +1,5 @@
 .idea/
 toposkg_lib/dist
 toposkg_lib/toposkg.egg-info
+toposkg_lib/build
 *.pyc

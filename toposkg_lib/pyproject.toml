@@ -17,6 +17,7 @@ dependencies = ['rdflib', 'fsspec']
 
 [project.optional-dependencies]
 tl = ["unsloth"]
+fc = ["openai"]
 
 [tool.setuptools]
 packages = ["toposkg"]

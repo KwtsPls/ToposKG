@@ -100,7 +100,10 @@ class KnowledgeGraphBlueprint:
 
         output_file.close()
 
-        print("Knowledge graph constructed successfully at ", output_path)
+        if debug:
+            print("Knowledge graph constructed successfully at " + output_path)
+            
+        return "Knowledge graph constructed successfully at " + output_path
 
 
 class KnowledgeGraphBlueprintBuilder:
@@ -126,6 +129,12 @@ class KnowledgeGraphBlueprintBuilder:
         if 'sources_paths' not in self._data:
             self._data['sources_paths'] = []
         self._data['sources_paths'].append(source_path)
+
+    def remove_source_path(self, source_path):
+        if not isinstance(source_path, str):
+            raise ValueError("source_path must be a string")
+        if 'sources_paths' in self._data:
+            self._data['sources_paths'].remove(source_path)
 
     def set_linking_pairs(self, linking_pairs):
         if not isinstance(linking_pairs, list):
@@ -322,7 +331,7 @@ def generate_metadata_for_file(filepath: str):
     Generates metadata for a given file, including its name, size, and type.
     """
     fs, _ = fsspec.core.url_to_fs(filepath)
-    is_local = fs.protocol in ["file", None]
+    is_local = fs.protocol in ["file", None] or fs.protocol == ('file', 'local')
     if not is_local:
         raise ValueError(f"Unsupported file system protocol: {fs.protocol}")
 
@@ -371,25 +380,18 @@ def get_metadata_path_for_file(path: str):
 
 
 if __name__ == "__main__":
-    # def generate_metadata_recursive(path):
-    #     if os.path.isdir(path):
-    #         try:
-    #             for name in sorted(os.listdir(path)):
-    #                 full_path = os.path.join(path, name)
-    #                 generate_metadata_recursive(full_path)
-    #         except PermissionError:
-    #             pass  # Skip folders we can't access
-    #     elif os.path.isfile(path):
-    #         print("Generating metadata for {}".format(path))
-    #         metadata = generate_metadata_for_file(path)
-    #         with open(get_metadata_path_for_file(path), "w", encoding="utf-8") as meta_file:
-    #             json.dump(metadata, meta_file, indent=4)
-    #
-    # generate_metadata_recursive('/home/sergios/kg_sources/')
+    def generate_metadata_recursive(path):
+        if os.path.isdir(path):
+            try:
+                for name in sorted(os.listdir(path)):
+                    full_path = os.path.join(path, name)
+                    generate_metadata_recursive(full_path)
+            except PermissionError:
+                pass  # Skip folders we can't access
+        elif os.path.isfile(path):
+            print("Generating metadata for {}".format(path))
+            metadata = generate_metadata_for_file(path)
+            with open(get_metadata_path_for_file(path), "w", encoding="utf-8") as meta_file:
+                json.dump(metadata, meta_file, indent=4)
 
-    sources = KnowledgeGraphSourcesManager(['/home/sergios/kg_sources/', 'https://yago2geo.di.uoa.gr/data'])
-    sources.print_available_data_sources()
-    #
-    # for path in data_sources_paths:
-    #     print(path)
-
+    generate_metadata_recursive('PATH_TO_KG_SOURCES')
