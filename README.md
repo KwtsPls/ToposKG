@@ -23,7 +23,7 @@ ToposKG consists of various geospatial datasources including [OSM](https://www.o
 | **Natural Resource** | **Data Source**   | **Number of Entities** | **Disk Footprint** |
 |----------------------|-------------------|-------------------------|---------------------|
 | Mountains            | GMBA              | 5,629                   | 201MB               |
-| Water Bodies         | OSM               | 204,266,94              | 34GB                |
+| Water Bodies         | OSM               | 20,426,694              | 34GB                |
 | Seas                 | MarineRegions     | 101                     | 339MB               |
 | Forests              | OSM               | 15,449,268              | 23G                 |
 | Administrative       | GAUL              | 48,316                  | 4.2GB               |
