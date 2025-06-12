@@ -10,6 +10,28 @@ and its tool chain for integrating both thematic and geospatial data into knowle
 
 ## Contents
 
+  - Topos-parser: The java project used to parse the various input sources and produce .ntriple files
+  - kgui: ToposKG graphical user interface
+  - toposkg_lib: The source code for the Topos [python library](https://pypi.org/project/toposkg/0.1.2/)
+
+Further instructions on how to build and use its separate project is present in each subdirectory.
+
+## The ToposKG knowledge graph
+
+ToposKG consists of various geospatial datasources including [OSM](https://www.openstreetmap.org/#map=7/52.716/-8.268), [GMBA](https://www.earthenv.org/mountains), [GAUL](https://www.fao.org/hih-geospatial-platform/news/detail/now-available--the-global-administrative-unit-layers-(gaul)-dataset---2024-edition/en) and [MarineRegions](https://www.marineregions.org/sources.php). Statistics of ToposKG are presented below:
+
+| **Natural Resource** | **Data Source**   | **Number of Entities** | **Disk Footprint** |
+|----------------------|-------------------|-------------------------|---------------------|
+| Mountains            | GMBA              | 5,629                   | 201MB               |
+| Water Bodies         | OSM               | 204,266,94              | 34GB                |
+| Seas                 | MarineRegions     | 101                     | 339MB               |
+| Forests              | OSM               | 15,449,268              | 23G                 |
+| Administrative       | GAUL              | 48,316                  | 4.2GB               |
+| Administrative       | OSM               | 1,583,535               | 25.3GB              |
+| POIs                 | OSM               | 43,885,054              | 14GB                |
+
+The ToposKG knowledge graph is freely available in the official [site](https://toposkg.di.uoa.gr/)
+
 ## Team & Authors
 
 <img align="right" src="https://github.com/AI-team-UoA/.github/blob/main/AI_LOGO.png?raw=true" alt="ai-team-uoa" width="200"/>
