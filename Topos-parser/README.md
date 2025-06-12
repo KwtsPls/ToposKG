@@ -30,3 +30,5 @@ The available commands are listed below:
   - rank_intersections
   - prepare_for_linking
   - connection
+
+We also provide a number of bash scripts that automate the process of the above command.
