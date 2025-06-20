@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "toposkg"
-version = "0.1.2"
+version = "0.1.3"
 description = "A Python interface to the ToposKG knowledge graph generation pipeline."
 authors = [
     { name="Sergios-Anestis Kefalidis", email="skefalidis@di.uoa.gr" },
@@ -13,11 +13,12 @@ authors = [
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = ['rdflib', 'fsspec']
+dependencies = ['rdflib', 'fsspec', 'pyjedai', 'pandas', 'rich', 'rdflib @ git+https://github.com/SKefalidis/rdflib-speed@main']
 
 [project.optional-dependencies]
 tl = ["unsloth"]
 fc = ["openai"]
+full = ["openai", "unsloth"]
 
 [tool.setuptools]
 packages = ["toposkg"]
