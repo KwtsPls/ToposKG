@@ -70,9 +70,15 @@ blueprint = builder.build()
 blueprint.construct()
 ```
 
-### Advanced examples
+### Advanced Examples
 
-For complete examples, including advanced functionality please see our notebooks on Google Colab:
+Explore advanced functionality with our interactive Google Colab notebooks:
 
-- Quickstart: https://colab.research.google.com/drive/1mv0YYDcd_zWzl1IC7jgxHERwdiHo6I-4?usp=sharing
-- Chatbot: https://colab.research.google.com/drive/1A1F23tJUbGlIsLPEXaNi8lK9Y5zYOS0F?usp=sharing
+- 🚀 **[Quickstart Notebook](https://colab.research.google.com/drive/1mv0YYDcd_zWzl1IC7jgxHERwdiHo6I-4?usp=sharing)**  
+
+A fast introduction to the capabilities of toposkg-lib.
+
+- 🤖 **[Chatbot Notebook](https://colab.research.google.com/drive/1A1F23tJUbGlIsLPEXaNi8lK9Y5zYOS0F?usp=sharing)**
+
+Our LLM-based chatbot that utilizes toposkg-lib, in action.
+
