@@ -15,6 +15,11 @@ toposkg-lib is a Python library developed as part of the Topos framework. It pro
 - **Natural Language Interface.** toposkg-lib can be used with a textual interface, powered by LLM function calling.
 - **Active development.** toposkg-lib will keep getting updates as we work on our projects.
 
+## Repository contents
+- `examples/`: Additional data, used in examples.
+- `notebooks/`: Jupyter Notebooks that showcase the functionality of the library.
+- `toposkg/`: The source code.
+
 ## Getting Started
 
 ### pip
