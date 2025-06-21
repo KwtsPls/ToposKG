@@ -37,11 +37,13 @@ If you want to include the function calling functionality.
 pip install toposkg[fc]
 ```
 
-You must also install this custom version of RDF-lib before using toposkg-lib.
+We recommend that you install this custom version of RDF-lib before using toposkg-lib.
 
 ```sh
 pip install git+https://github.com/SKefalidis/rdflib-speed@main
 ```
+
+Otherwise you can use the original rdflib.
 
 ### Simple example
 
@@ -67,3 +69,10 @@ builder.add_source_path("PATH_TO_KG_SOURCE_2")
 blueprint = builder.build()
 blueprint.construct()
 ```
+
+### Advanced examples
+
+For complete examples, including advanced functionality please see our notebooks on Google Colab:
+
+- Quickstart: https://colab.research.google.com/drive/1mv0YYDcd_zWzl1IC7jgxHERwdiHo6I-4?usp=sharing
+- Chatbot: https://colab.research.google.com/drive/1A1F23tJUbGlIsLPEXaNi8lK9Y5zYOS0F?usp=sharing
