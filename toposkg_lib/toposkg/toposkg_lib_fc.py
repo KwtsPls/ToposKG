@@ -157,7 +157,10 @@ class FunctionCallingController:
             if self.builder is None:
                 return "No builder initialized."
             blueprint = self.builder.build()
-            return blueprint.construct()
+            try:
+                return blueprint.construct(validate=False)
+            except Exception as e:
+                return f"Error constructing Knowledge Graph: {str(e)}. You must set valid output directory and name before building the Knowledge Graph."
         return None
 
     def respond_to_chat(self, user_input, print_output=True):
@@ -198,12 +201,15 @@ class FunctionCallingController:
                 input=self.chat_history,
                 tools=self.tools,
             )
-            self.chat_history += [{"role": "assistant", "content": response.output[0].content[0].text}]
-            if print_output:
-                print("Assistant: " + self.chat_history[-1]['content'])
+            try:
+                self.chat_history += [{"role": "assistant", "content": response.output[0].content[0].text}]
+                if print_output:
+                    print("Assistant: " + self.chat_history[-1]['content'])
+            except Exception as e:
+                pass
 
 if __name__ == "__main__":
-    fc = FunctionCallingController("YOUR_OPENAI_KEY", ['PATH_TO_RESOURCES'])
+    fc = FunctionCallingController("YOUR_OPENAI_API_KEY", 'https://toposkg.di.uoa.gr')
 
     while True:
         user_input = input("User: ")

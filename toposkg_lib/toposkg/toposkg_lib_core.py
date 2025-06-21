@@ -83,6 +83,8 @@ class KnowledgeGraphBlueprint:
                     output_file.write(line + "\n")
 
         global progress, task
+        if progress:
+            progress.stop()
         progress = Progress()
         progress.start()
         
@@ -102,6 +104,7 @@ class KnowledgeGraphBlueprint:
             progress.update(task, advance=1, description=f"[green]Added source file: {source_path}[/green]")
         
         progress.stop()
+        progress = None
         
         # materialization
         progress = Progress()
@@ -128,6 +131,7 @@ class KnowledgeGraphBlueprint:
                 print("Error output:\n", e.stderr)
                 
         progress.stop()
+        progress = None
 
         #
         # translation
@@ -155,8 +159,6 @@ class KnowledgeGraphBlueprint:
                         if debug:
                             print(f"Translating {object} to {translated_object}")
                         output_file.write(f"{subject} {predicate} {translated_object} {dot}\n")
-
-        progress = None  # Reset progress after completion
         
         output_file.close()
 
@@ -405,14 +407,16 @@ class KnowledgeGraphSourcesManager:
 
     @staticmethod
     def _download_data_source(repository: str, download_path: str, output_file: str):
-        print(f"Downloading {download_path}...")
+        if progress:
+            progress.update(task, description=f"[cyan]Downloading {download_path}...[/cyan]")
         url = f"{repository}/download_source?path={download_path}"
         response = requests.get(url)
         if response.ok:
             os.makedirs(os.path.dirname(output_file), exist_ok=True)
             with open(output_file, "wb") as file:
                 file.write(response.content)
-            print(f"File downloaded successfully as '{output_file}'")
+            if progress:
+                progress.update(task, advance=1, description=f"[green]Downloaded {download_path} to {output_file}[/green]")
         else:
             console.print(f"Failed to download file. Status code: {response.status_code}", style="yellow")
 
@@ -552,10 +556,10 @@ if __name__ == "__main__":
     builder.add_source_paths_with_strings(sources_manager.get_source_paths(), ["Greece", "OSM"])
     builder.print_source_paths()
     
-    # builder.clear_source_paths()
-    # builder.add_source_paths_with_regex(sources_manager.get_source_paths(), r"(?i).*Greece_(?!\d).*\.nt")
-    # builder.add_materialization_pair(('/home/sergios/.toposkg/sources_cache/toposkg/OSM/pois/Greece/greece_poi.nt', '/home/sergios/.toposkg/sources_cache/toposkg/OSM/pois/Greece/greece_poi.nt'))
-    # builder.print_source_paths()
+    builder.clear_source_paths()
+    builder.add_source_paths_with_regex(sources_manager.get_source_paths(), r"(?i).*Greece_(?!\d).*\.nt")
+    builder.add_materialization_pair(('/home/sergios/.toposkg/sources_cache/toposkg/OSM/pois/Greece/greece_poi.nt', '/home/sergios/.toposkg/sources_cache/toposkg/OSM/pois/Greece/greece_poi.nt'))
+    builder.print_source_paths()
     
     builder.set_output_dir("/home/sergios/ToposKG/")
     

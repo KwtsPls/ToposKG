@@ -37,6 +37,12 @@ If you want to include the function calling functionality.
 pip install toposkg[fc]
 ```
 
+You must also install this custom version of RDF-lib before using toposkg-lib.
+
+```sh
+pip install git+https://github.com/SKefalidis/rdflib-speed@main
+```
+
 ### Simple example
 
 ```python
