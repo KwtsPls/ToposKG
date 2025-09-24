@@ -98,9 +98,3 @@ class XMLConverter(GenericConverter):
             return "\"" + str(value) + "\"^^<http://www.w3.org/2001/XMLSchema#double>"
         else:
             return "\"" + str(value) + "\"^^<http://www.w3.org/2001/XMLSchema#string>"
-
-
-parser = XMLConverter("/mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG-Test-Sets/XML/generic/test_simple_01.xml",None)
-parser.parse(id_fields=["id"])
-for t in parser.triples:
-    print(t)

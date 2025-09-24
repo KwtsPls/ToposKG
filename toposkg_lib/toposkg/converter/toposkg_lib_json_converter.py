@@ -153,9 +153,3 @@ class JSONConverter(GenericConverter):
             return "\"" + value + "\"^^<http://www.w3.org/2001/XMLSchema#string>"  
         else:
             return "\"" + value + "\""
-
-
-parser = JSONConverter("/mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG-Test-Sets/JSON/generic/test_simple_01.json",None)
-parser.parse(id_fields=["id","The outermost value"])
-for t in parser.triples:
-    print(t)
