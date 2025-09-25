@@ -3,9 +3,10 @@ import hashlib
 import os
 from toposkg_lib_triples_map import TriplesMap
 from toposkg_lib_mapping_builder import RMLBuilder
+from shapely.geometry import shape
 from typing import Any, Dict
 
-class JSONMappingGenerator():
+class GeoJSONMappingGenerator():
     def __init__(self, ontology_uri, resource_uri):
         self.ontology_uri = ontology_uri
         self.resource_uri = resource_uri
@@ -24,7 +25,9 @@ class JSONMappingGenerator():
 
     def add_ids_to_json(self, input_file: str):
         """Adds an incremental ID field to every dict in the JSON file,
-        stores parent ID in each child, and saves a new JSON file with a hashed prefix."""
+        stores parent ID in each child, replaces any GeoJSON geometry dict
+        (found under the 'geometry' key) with its WKT string, 
+        and saves a new JSON file with a hashed prefix."""
 
         # Compute 16-byte hash (blake2b for consistency)
         base_name = os.path.basename(input_file)
@@ -43,14 +46,26 @@ class JSONMappingGenerator():
 
         def walk(node, parent_id=None):
             if isinstance(node, dict):
+                # Assign ID
                 current_id = counter["id"]
                 node["_pyrml_mapper_generated_id"] = current_id
                 if parent_id is not None:
                     node["_pyrml_mapper_parent_id"] = parent_id
                 counter["id"] += 1
+
+                # If node has a "geometry", replace it with WKT string
+                if "geometry" in node and isinstance(node["geometry"], dict):
+                    try:
+                        geom = shape(node["geometry"])
+                        node["geometry"] = geom.wkt
+                    except Exception:
+                        pass  # Leave unchanged if invalid geometry
+
+                # Recurse into children
                 for k, v in node.items():
                     if isinstance(v, (dict, list)):
                         walk(v, parent_id=current_id)
+
             elif isinstance(node, list):
                 for v in node:
                     if isinstance(v, (dict, list)):
@@ -65,30 +80,30 @@ class JSONMappingGenerator():
 
         return output_file
     
-    #Function to generate mapping
-    def generate_default_mapping(self, input_data_source):
-        self.intermediate_file = self.add_ids_to_json(input_data_source)
-        self.data = self._load()
-        self.parse()
-        self.maps.reverse()
-        builder = RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
-        print(builder.export_as_string())
+    def parse(self, id_fields=[], type_as_key=False):
+        features = self.data["features"]
+
+        featuresMap = TriplesMap(self.ontology_uri,self.resource_uri,"FeatureMap")
+        featuresMap.add_logical_source(self.intermediate_file,"ql:JSONPath","$.features[*]")
+        featuresMap.add_subject_map("_pyrml_mapper_generated_id")
+        featuresMap.add_predicate_object_map_with_template("hasGeometry",self.resource_uri+"Geometry{_pyrml_mapper_generated_id}")
+        self.maps += [featuresMap]
+
+        geometriesMap = TriplesMap("http://www.opengis.net/ont/geosparql#",self.resource_uri+"Geometry","GeometryMap")
+        geometriesMap.add_logical_source(self.intermediate_file,"ql:JSONPath","$.features[*]")
+        geometriesMap.add_subject_map("_pyrml_mapper_generated_id")
+        geometriesMap.add_predicate_object_map("asWKT","geometry","wkt","ogc")
+        self.maps += [geometriesMap]
+
+        properties = []
+        for feature_dict in features:
+            properties += [feature_dict.get("properties", None)]
+
+        childMap = self.list_pass(properties,"properties","$.features[*].properties")
+        self.maps += [childMap]
+            
 
 
-
-    def parse(self):
-        '''Naive method for converting JSON files to .ntriple files.
-            Each line is handled as predicates for an id with a given entry'''
-        def _walk(node):
-            triplesMap=None
-            if isinstance(node, dict):
-                triplesMap = self.recursive_dict_pass(node, None, None)
-            elif isinstance(node, list):
-                triplesMap = self.list_pass(node, None, None)
-            return triplesMap
-
-        triplesMap = _walk(self.data)
-        self.maps += [triplesMap]
 
     #Helper methods
     def recursive_dict_pass(self, _dict : dict, key : str, iterator: str):
@@ -105,6 +120,7 @@ class JSONMappingGenerator():
         triplesMap.add_subject_map("_pyrml_mapper_generated_id",key)
 
         for k,v in _dict.items():
+            if k!="geometry":
                 if isinstance(v, dict):
                     childMap = self.recursive_dict_pass(v, k, iterator + "." + k)
                     childMap.add_predicate_object_map_on_join(k,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
@@ -142,17 +158,18 @@ class JSONMappingGenerator():
             cur=set()
             if isinstance(v, dict):
                 for inner_key,inner_value in v.items():
-                    if isinstance(inner_value,list):
-                        childMap = self.list_pass(inner_value, inner_key, iterator + "." + inner_key + "[*]")
-                        if childMap!=None:
+                    if inner_key!="geometry":
+                        if isinstance(inner_value,list):
+                            childMap = self.list_pass(inner_value, inner_key, iterator + "." + inner_key + "[*]")
+                            if childMap!=None:
+                                childMap.add_predicate_object_map_on_join(inner_key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                                self.maps += [childMap]
+                        elif isinstance(inner_value,dict):
+                            childMap = self.recursive_dict_pass(inner_value, inner_key, iterator + "." + inner_key)
                             childMap.add_predicate_object_map_on_join(inner_key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
                             self.maps += [childMap]
-                    elif isinstance(inner_value,dict):
-                        childMap = self.recursive_dict_pass(inner_value, inner_key, iterator + "." + inner_key)
-                        childMap.add_predicate_object_map_on_join(inner_key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
-                        self.maps += [childMap]
-                    else:
-                        cur.add(inner_key)
+                        else:
+                            cur.add(inner_key)
                 if not bool(common):
                     common = cur
                 else:
@@ -171,3 +188,16 @@ class JSONMappingGenerator():
                 triplesMap.add_predicate_object_map(k,k,None)
         
         return triplesMap
+
+
+    #Function to generate mapping
+    def generate_default_mapping(self, input_data_source):
+        self.intermediate_file = self.add_ids_to_json(input_data_source)
+        self.data = self._load()
+        self.parse()
+        self.maps.reverse()
+        builder = RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
+        print(builder.export_as_string())
+
+generator = GeoJSONMappingGenerator(ontology_uri="https://example.org/ontology/", resource_uri="https://example.org/resource/")
+generator.generate_default_mapping("/mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG-Test-Sets/GeoJSON/generic/test_simple_01.geojson")

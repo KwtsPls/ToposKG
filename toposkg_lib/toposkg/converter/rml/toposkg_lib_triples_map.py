@@ -19,16 +19,20 @@ class TriplesMap():
         self.subjectMap = (id_field, subject_class, graph)
 
     #Simple predicateObjectMap for any literal
-    def add_predicate_object_map(self, predicate_name, reference, datatype=None):
-        self.predicateObjectMaps += [(predicate_name, reference, datatype)]
+    def add_predicate_object_map(self, predicate_name, reference, datatype=None, prefix=None):
+        self.predicateObjectMaps += [("simple",predicate_name, reference, datatype, prefix)]
 
     #Add predicateObjectMap for a join between two triples maps
     def add_predicate_object_map_on_join(self, predicate_name, foreign_map, child, parent):
-        self.predicateObjectMaps += [(predicate_name, foreign_map, child, parent)]
+        self.predicateObjectMaps += [("join",predicate_name, foreign_map, child, parent)]
 
     #Add predicateObjectMap with explicit RefObjectMap
     def add_predicate_object_map_on_reference(self, predicate_name, refObjectMap):
-        self.predicateObjectMaps += [(predicate_name, refObjectMap)]
+        self.predicateObjectMaps += [("reference",predicate_name, refObjectMap)]
+
+    #Add predicateObjectMap with template
+    def add_predicate_object_map_with_template(self, predicate_name, template, prefix=None):
+        self.predicateObjectMaps += [("template", predicate_name, template, prefix)]
 
     #Add a RefObjectMap
     def add_ref_object_map(self, name, parentMap, child, parent):
@@ -38,7 +42,7 @@ class TriplesMap():
         if self.logicalSource==None:
             raise Exception("Logical Source is not initiliazed")
         if self.subjectMap==None:
-            raise Exception("No subjectMap in current TriplesMap")
+            raise Exception("No subjectMap in TriplesMap")
         
         triples_map_str = "<#" + self.name + ">  a rr:TriplesMap;\n"
         logical_source_str = self.get_logical_source_string()
@@ -72,7 +76,7 @@ class TriplesMap():
     def get_subject_map_string(self):
         (id_field, subject_class, graph) = self.subjectMap
         subject_map_str = """rr:subjectMap [
-        rr:template \"{}\";\n""".format(self.resource_uri+"{"+id_field+"}")
+    rr:template \"{}\";\n""".format(self.resource_uri+"{"+id_field+"}")
         if subject_class != None:
             subject_map_str += "\trr:class {};\n".format("onto:"+subject_class)
         if graph != None:
@@ -83,12 +87,14 @@ class TriplesMap():
     def get_predicate_object_map_str(self):
         maps_str = ""
         for i,predicateObjectMap in enumerate(self.predicateObjectMaps):
-            if len(predicateObjectMap) == 3 :
+            if predicateObjectMap[0] == "simple" :
                 maps_str += self.simple_predicate_object_map_string(predicateObjectMap)
-            elif len(predicateObjectMap) == 4 :
+            elif predicateObjectMap[0] == "join":
                 maps_str += self.join_predicate_object_map_string(predicateObjectMap)
-            else:
+            elif predicateObjectMap[0] == "reference":
                 maps_str += self.reference_predicate_object_map_string(predicateObjectMap)
+            else:
+                maps_str += self.template_predicate_object_map_string(predicateObjectMap)
 
             if i==len(self.predicateObjectMaps)-1:
                 maps_str += "."
@@ -101,7 +107,7 @@ class TriplesMap():
             return ""
         ref_map_str="\n\n"
         for ref_map in self.refObjectMaps:
-            (name, parentMap, child, parent) = ref_map
+            (_, name, parentMap, child, parent) = ref_map
             ref_map_str += "<#{}> a rr:RefObjectMap ;\n".format(name)
             ref_map_str += "rr:parentTriplesMap <#{}> ;\n".format(parentMap.name)
             ref_map_str += "rr:joinCondition [\n"
@@ -112,7 +118,7 @@ class TriplesMap():
 
 
     def reference_predicate_object_map_string(self, predicateObjectMap):
-        (predicate_name, refObjectMap) = predicateObjectMap
+        (_, predicate_name, refObjectMap) = predicateObjectMap
         predicate_object_map_string = "rr:predicateObjectMap [\n"
         predicate_object_map_string += "\trr:predicate  onto:{} ;\n".format(predicate_name)
         predicate_object_map_string += "\trr:objectMap <#{}>\n".format(refObjectMap)
@@ -120,7 +126,7 @@ class TriplesMap():
         return predicate_object_map_string
 
     def join_predicate_object_map_string(self, predicateObjectMap):
-        (predicate_name, foreign_map, child, parent) = predicateObjectMap
+        (_, predicate_name, foreign_map, child, parent) = predicateObjectMap
         predicate_object_map_string = "rr:predicateObjectMap [\n"
         predicate_object_map_string += "\trr:predicate  onto:{} ;\n".format(predicate_name)
         predicate_object_map_string += "\trr:objectMap [\n"
@@ -132,9 +138,12 @@ class TriplesMap():
         return predicate_object_map_string
 
     def simple_predicate_object_map_string(self, predicateObjectMap):
-        (predicate_name, reference, datatype) = predicateObjectMap
+        (_, predicate_name, reference, datatype, prefix) = predicateObjectMap
         predicate_object_map_string = "rr:predicateObjectMap [\n"
-        predicate_object_map_string += "\trr:predicate  onto:{} ;\n".format(predicate_name)
+        if prefix==None:
+            predicate_object_map_string += "\trr:predicate  onto:{} ;\n".format(predicate_name)
+        else:
+            predicate_object_map_string += "\trr:predicate  {}:{} ;\n".format(prefix,predicate_name)
         predicate_object_map_string += "\trr:objectMap [\n"
         predicate_object_map_string += "\t\trml:reference \"{}\";\n".format(reference)
         if datatype!=None:
@@ -145,9 +154,23 @@ class TriplesMap():
                 datatype_str = "xsd:integer"
             elif datatype ==  "float":
                 datatype_str = "xsd:double"
+            elif datatype == "wkt":
+                datatype_str = "ogc:wktLiteral"
             else:
                 datatype_str = "xsd:string"
             predicate_object_map_string += "\t\trr:datatype {};\n".format(datatype_str)
+        predicate_object_map_string += "\t];\n]"
+        return predicate_object_map_string
+
+    def template_predicate_object_map_string(self,predicateObjectMap):
+        (_, predicate_name, template, prefix) = predicateObjectMap
+        predicate_object_map_string = "rr:predicateObjectMap [\n"
+        if prefix==None:
+            predicate_object_map_string += "\trr:predicate  onto:{} ;\n".format(predicate_name)
+        else:
+            predicate_object_map_string += "\trr:predicate  {}:{} ;\n".format(prefix,predicate_name)
+        predicate_object_map_string += "\trr:objectMap [\n"
+        predicate_object_map_string += "\t\trr:template \"{}\";\n".format(template)
         predicate_object_map_string += "\t];\n]"
         return predicate_object_map_string
 
