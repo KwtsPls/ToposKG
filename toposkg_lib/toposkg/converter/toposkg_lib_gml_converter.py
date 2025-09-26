@@ -1,11 +1,10 @@
-from toposkg_lib_converter import GenericConverter
-from toposkg_lib_geojson_converter import GeoJSONConverter
+from converter.toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_geojson_converter import GeoJSONConverter
 import json
 import os
-import geopandas
+import geopandas as gpd
 import hashlib
 import geojson
-from osgeo import ogr
 from shapely.geometry import shape
 from typing import Any, Dict
 
@@ -21,39 +20,40 @@ class GMLConverter(GenericConverter):
         self.dict_type_as_key = False
 
     def parse(self, id_fields=[], type_as_key=False):
-        # Input KML file
+        # Input GML file
         gml_file = self.input_file
-        # Output GeoJSON file
-        geojson_file = self.fast_hash8(self.input_file)+".geojson"
+        # Temporary GeoJSON file
+        geojson_file = self.fast_hash8(self.input_file) + ".geojson"
 
-        # Open the KML file
-        driver = ogr.GetDriverByName('GML')
-        print(driver)
-        dataset = driver.Open(gml_file)
+        # Read the GML file using geopandas
+        try:
+            gdf = gpd.read_file(gml_file)
+        except Exception as e:
+            raise Exception(f"Could not open GML file: {e}")
 
-        if not dataset:
-            raise Exception("Could not open GML file.")
+        # Save as GeoJSON
+        gdf.to_file(geojson_file, driver="GeoJSON")
 
-        # Create GeoJSON driver
-        geojson_driver = ogr.GetDriverByName("GeoJSON")
-        geojson_driver.DeleteDataSource(geojson_file)
-        out_ds = geojson_driver.CreateDataSource(geojson_file)
-
-
-        # Loop through all layers in the GML
-        for i in range(dataset.GetLayerCount()):
-            layer = dataset.GetLayerByIndex(i)
-            out_ds.CopyLayer(layer, layer.GetName())
-
-        # Close datasets (important!)
-        out_ds = None
-        dataset = None
-
-        converter = GeoJSONConverter(self.fast_hash8(self.input_file)+".geojson", self.out_file, self.ontology_uri, self.resource_uri)
-        converter.parse(id_fields,type_as_key)
+        # Process with GeoJSONConverter
+        converter = GeoJSONConverter(
+            geojson_file, 
+            self.out_file, 
+            self.ontology_uri, 
+            self.resource_uri
+        )
+        converter.parse(id_fields, type_as_key)
         self.triples = converter.triples
-        os.remove(self.fast_hash8(self.input_file)+".geojson")
+
+        # Remove temporary GeoJSON file
+        os.remove(geojson_file)
 
     def fast_hash8(self, s: str) -> bytes:
         h = hashlib.blake2b(s.encode("utf-8"), digest_size=8).hexdigest()
         return h
+    
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))

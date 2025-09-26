@@ -1,8 +1,8 @@
 import json
 import hashlib
 import os
-from toposkg_lib_triples_map import TriplesMap
-from toposkg_lib_mapping_builder import RMLBuilder
+from converter.rml import toposkg_lib_triples_map
+from converter.rml import toposkg_lib_mapping_builder
 from shapely.geometry import shape
 from typing import Any, Dict
 
@@ -83,13 +83,13 @@ class GeoJSONMappingGenerator():
     def parse(self, id_fields=[], type_as_key=False):
         features = self.data["features"]
 
-        featuresMap = TriplesMap(self.ontology_uri,self.resource_uri,"FeatureMap")
+        featuresMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri,self.resource_uri,"FeatureMap")
         featuresMap.add_logical_source(self.intermediate_file,"ql:JSONPath","$.features[*]")
         featuresMap.add_subject_map("_pyrml_mapper_generated_id")
         featuresMap.add_predicate_object_map_with_template("hasGeometry",self.resource_uri+"Geometry{_pyrml_mapper_generated_id}")
         self.maps += [featuresMap]
 
-        geometriesMap = TriplesMap("http://www.opengis.net/ont/geosparql#",self.resource_uri+"Geometry","GeometryMap")
+        geometriesMap = toposkg_lib_triples_map.TriplesMap("http://www.opengis.net/ont/geosparql#",self.resource_uri+"Geometry","GeometryMap")
         geometriesMap.add_logical_source(self.intermediate_file,"ql:JSONPath","$.features[*]")
         geometriesMap.add_subject_map("_pyrml_mapper_generated_id")
         geometriesMap.add_predicate_object_map("asWKT","geometry","wkt","ogc")
@@ -113,7 +113,7 @@ class GeoJSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         if iterator==None:
             iterator="$"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -147,7 +147,7 @@ class GeoJSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         if iterator==None:
             iterator="$[*]"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -196,8 +196,5 @@ class GeoJSONMappingGenerator():
         self.data = self._load()
         self.parse()
         self.maps.reverse()
-        builder = RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
-        print(builder.export_as_string())
-
-generator = GeoJSONMappingGenerator(ontology_uri="https://example.org/ontology/", resource_uri="https://example.org/resource/")
-generator.generate_default_mapping("/mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG-Test-Sets/GeoJSON/generic/test_simple_01.geojson")
+        builder = toposkg_lib_mapping_builder.RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
+        return builder.export_as_string()

@@ -1,10 +1,11 @@
-from toposkg_lib_converter import GenericConverter
-from toposkg_lib_geojson_converter import GeoJSONConverter
+from converter.toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_geojson_converter import GeoJSONConverter
 import json
 import os
-import geopandas
+import geopandas as gpd
+import pandas as pd
+import fiona
 import hashlib
-from osgeo import ogr
 from typing import Any, Dict
 
 class KMLConverter(GenericConverter):
@@ -21,38 +22,52 @@ class KMLConverter(GenericConverter):
     def parse(self, id_fields=[], type_as_key=False):
         # Input KML file
         kml_file = self.input_file
-        # Output GeoJSON file
-        geojson_file = self.fast_hash8(self.input_file)+".geojson"
+        # Temporary GeoJSON file
+        geojson_file = self.fast_hash8(self.input_file) + ".geojson"
 
-        # Open the KML file
-        driver = ogr.GetDriverByName('KML')
-        dataset = driver.Open(kml_file)
+        # List to hold GeoDataFrames for all layers
+        gdfs = []
 
-        if not dataset:
-            raise Exception("Could not open KML file.")
+        # fiona requires a /vsizip/ path for KML zipped files or normal path for KML
+        with fiona.Env():
+            try:
+                # Loop through all layers in the KML
+                layers = fiona.listlayers(kml_file)
+                for layer_name in layers:
+                    gdf_layer = gpd.read_file(kml_file, layer=layer_name)
+                    gdfs.append(gdf_layer)
+            except Exception as e:
+                raise Exception(f"Could not open KML file: {e}")
 
-        # Get the first layer
-        layer = dataset.GetLayer()
+        # Concatenate all layers into a single GeoDataFrame
+        if gdfs:
+            combined_gdf = pd.concat(gdfs, ignore_index=True)
+        else:
+            raise Exception("No layers found in KML file.")
 
-        # Create GeoJSON driver
-        geojson_driver = ogr.GetDriverByName('GeoJSON')
+        # Save combined GeoDataFrame as GeoJSON
+        combined_gdf.to_file(geojson_file, driver="GeoJSON")
 
-        # Remove output file if it already exists
-        geojson_driver.DeleteDataSource(geojson_file)
-
-        # Create output
-        out_ds = geojson_driver.CreateDataSource(geojson_file)
-        out_layer = out_ds.CopyLayer(layer, layer.GetName())
-
-        # Close and flush GDAL datasets
-        out_ds = None
-        dataset = None
-
-        converter = GeoJSONConverter(self.fast_hash8(self.input_file)+".geojson", self.out_file, self.ontology_uri, self.resource_uri)
-        converter.parse(id_fields,type_as_key)
+        # Process with GeoJSONConverter
+        converter = GeoJSONConverter(
+            geojson_file,
+            self.out_file,
+            self.ontology_uri,
+            self.resource_uri
+        )
+        converter.parse(id_fields, type_as_key)
         self.triples = converter.triples
-        os.remove(self.fast_hash8(self.input_file)+".geojson")
+
+        # Remove temporary GeoJSON file
+        os.remove(geojson_file)
 
     def fast_hash8(self, s: str) -> bytes:
         h = hashlib.blake2b(s.encode("utf-8"), digest_size=8).hexdigest()
         return h
+    
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))

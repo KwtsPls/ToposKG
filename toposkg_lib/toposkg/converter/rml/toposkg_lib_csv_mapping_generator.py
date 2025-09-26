@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 import hashlib
-from toposkg_lib_triples_map import TriplesMap
-from toposkg_lib_mapping_builder import RMLBuilder
+from converter.rml import toposkg_lib_triples_map
+from converter.rml import toposkg_lib_mapping_builder
 
 class CSVMappingGenerator():
     def __init__(self, ontology_uri, resource_uri):
@@ -38,14 +38,14 @@ class CSVMappingGenerator():
     
     # CSV METHODS
     def generate_for_csv(self, input_data_source):
-        triples_map = TriplesMap(self.ontology_uri,self.resource_uri)
+        triples_map = toposkg_lib_triples_map.TriplesMap(self.ontology_uri,self.resource_uri)
         triples_map.add_logical_source(input_data_source,"ql:CSV")
         triples_map.add_subject_map("NAME","county")
         column_info = self.get_csv_column_info(input_data_source)
         for k,v in column_info.items():
             triples_map.add_predicate_object_map(k.replace(" ","_"),k,v)
         
-        builder = RMLBuilder(self.ontology_uri,self.resource_uri,[triples_map])
+        builder = toposkg_lib_mapping_builder.RMLBuilder(self.ontology_uri,self.resource_uri,[triples_map])
         print(builder.export_as_string())
 
     def get_csv_column_info(self, filepath):
@@ -78,12 +78,12 @@ class CSVMappingGenerator():
     # JSON METHODS
     def generate_default_mapping(self, input_data_source):
         intermediate_file = self.add_generated_id(input_data_source)
-        triples_map = TriplesMap(self.ontology_uri,self.resource_uri)
+        triples_map = toposkg_lib_triples_map.TriplesMap(self.ontology_uri,self.resource_uri)
         triples_map.add_logical_source(intermediate_file,"ql:CSV")
         triples_map.add_subject_map("_pyrml_mapper_generated_id",None)
         column_info = self.get_csv_column_info(intermediate_file)
         for k,v in column_info.items():
             triples_map.add_predicate_object_map(k.replace(" ","_"),k,v)
         
-        builder = RMLBuilder(self.ontology_uri,self.resource_uri,[triples_map])
-        print(builder.export_as_string())
+        builder = toposkg_lib_mapping_builder.RMLBuilder(self.ontology_uri,self.resource_uri,[triples_map])
+        return builder.export_as_string()

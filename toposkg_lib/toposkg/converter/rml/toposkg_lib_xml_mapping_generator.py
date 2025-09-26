@@ -1,8 +1,8 @@
 import hashlib
 import os
 import xml.etree.ElementTree as ET
-from toposkg_lib_triples_map import TriplesMap
-from toposkg_lib_mapping_builder import RMLBuilder
+from converter.rml import toposkg_lib_triples_map
+from converter.rml import toposkg_lib_mapping_builder
 from typing import Any
 
 class XMLMappingGenerator():
@@ -55,14 +55,6 @@ class XMLMappingGenerator():
         tree.write(output_file, encoding="utf-8", xml_declaration=True)
         return output_file
 
-    def generate_default_mapping(self, input_data_source):
-        self.intermediate_file = self.add_ids_to_xml(input_data_source)
-        self.tree = self._load()
-        self.parse()
-        self.maps.reverse()
-        builder = RMLBuilder(self.ontology_uri, self.resource_uri, self.maps)
-        print(builder.export_as_string())
-
     def parse(self):
         """Naive method for converting XML files to .ntriple files."""
         def _walk(node):
@@ -84,7 +76,7 @@ class XMLMappingGenerator():
         else:
             iterator += "/" + element.tag
 
-        triplesMap = TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         triplesMap.add_logical_source(self.intermediate_file, "ql:XPath", iterator)
         triplesMap.add_subject_map("@_pyrml_mapper_generated_id", element.tag)
 
@@ -100,8 +92,11 @@ class XMLMappingGenerator():
                 triplesMap.add_predicate_object_map(child_key, child_key, child.text)
 
         return triplesMap
-
-
-
-generator = XMLMappingGenerator("https://example.org/ontology/","https://example.org/resource/")
-generator.generate_default_mapping("/mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG-Test-Sets/XML/generic/test_large_01.xml")
+    
+    def generate_default_mapping(self, input_data_source):
+        self.intermediate_file = self.add_ids_to_xml(input_data_source)
+        self.tree = self._load()
+        self.parse()
+        self.maps.reverse()
+        builder = toposkg_lib_mapping_builder.RMLBuilder(self.ontology_uri, self.resource_uri, self.maps)
+        return builder.export_as_string()

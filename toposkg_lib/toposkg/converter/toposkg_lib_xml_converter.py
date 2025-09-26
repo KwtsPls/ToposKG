@@ -1,4 +1,4 @@
-from toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_converter import GenericConverter
 import xml.etree.ElementTree as ET
 import hashlib
 
@@ -69,6 +69,7 @@ class XMLConverter(GenericConverter):
             self.recursive_xml_pass(child, current_entity, id_fields)
 
     def get_id(self, element, id_fields):
+        id=None
         for i in id_fields:
             if i in element.attrib:
                 return element.attrib[i]
@@ -98,3 +99,10 @@ class XMLConverter(GenericConverter):
             return "\"" + str(value) + "\"^^<http://www.w3.org/2001/XMLSchema#double>"
         else:
             return "\"" + str(value) + "\"^^<http://www.w3.org/2001/XMLSchema#string>"
+        
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))

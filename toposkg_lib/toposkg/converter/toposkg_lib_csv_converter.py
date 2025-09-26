@@ -1,4 +1,4 @@
-from toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_converter import GenericConverter
 import csv
 import os
 import hashlib
@@ -22,13 +22,14 @@ class CSVConverter(GenericConverter):
                 id = self.get_id(row,id_columns)
                 for k,v in row.items():
                     if v is not None:
-                        s = self.resource_uri + self.fast_hash8(self.input_file) + "_" + id
+                        s = self.resource_uri + self.fast_hash8(self.input_file) + "_" + str(id)
                         p = self.ontology_uri + k
                         o = self.create_literal_string(v)
                         if o!=None:
                             self.triples += [(s, p, o)]
 
     def get_id(self, _dict, id_columns):
+        id=None
         for i in id_columns:
             id =_dict.get(i, None)
             if id!=None:
@@ -55,3 +56,10 @@ class CSVConverter(GenericConverter):
             return "\"" + value + "\"^^<http://www.w3.org/2001/XMLSchema#string>"  
         else:
             return "\"" + value + "\""
+        
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))

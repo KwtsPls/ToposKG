@@ -1,4 +1,4 @@
-from toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_converter import GenericConverter
 import json
 import os
 import hashlib
@@ -118,6 +118,7 @@ class JSONConverter(GenericConverter):
 
 
     def get_id(self, _dict, id_fields):
+        id=None
         for i in id_fields:
             id =_dict.get(i, None)
             if id!=None:
@@ -153,3 +154,10 @@ class JSONConverter(GenericConverter):
             return "\"" + value + "\"^^<http://www.w3.org/2001/XMLSchema#string>"  
         else:
             return "\"" + value + "\""
+        
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))

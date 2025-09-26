@@ -1,8 +1,8 @@
 import json
 import hashlib
 import os
-from toposkg_lib_triples_map import TriplesMap
-from toposkg_lib_mapping_builder import RMLBuilder
+from converter.rml import toposkg_lib_triples_map
+from converter.rml import toposkg_lib_mapping_builder
 from typing import Any, Dict
 
 class JSONMappingGenerator():
@@ -65,17 +65,6 @@ class JSONMappingGenerator():
 
         return output_file
     
-    #Function to generate mapping
-    def generate_default_mapping(self, input_data_source):
-        self.intermediate_file = self.add_ids_to_json(input_data_source)
-        self.data = self._load()
-        self.parse()
-        self.maps.reverse()
-        builder = RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
-        print(builder.export_as_string())
-
-
-
     def parse(self):
         '''Naive method for converting JSON files to .ntriple files.
             Each line is handled as predicates for an id with a given entry'''
@@ -98,7 +87,7 @@ class JSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         if iterator==None:
             iterator="$"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -131,7 +120,7 @@ class JSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         if iterator==None:
             iterator="$[*]"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -171,3 +160,12 @@ class JSONMappingGenerator():
                 triplesMap.add_predicate_object_map(k,k,None)
         
         return triplesMap
+    
+        #Function to generate mapping
+    def generate_default_mapping(self, input_data_source):
+        self.intermediate_file = self.add_ids_to_json(input_data_source)
+        self.data = self._load()
+        self.parse()
+        self.maps.reverse()
+        builder = toposkg_lib_mapping_builder.RMLBuilder(self.ontology_uri,self.resource_uri,self.maps)
+        return builder.export_as_string()

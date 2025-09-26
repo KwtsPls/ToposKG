@@ -1,8 +1,8 @@
-from toposkg_lib_converter import GenericConverter
-from toposkg_lib_geojson_converter import GeoJSONConverter
+from converter.toposkg_lib_converter import GenericConverter
+from converter.toposkg_lib_geojson_converter import GeoJSONConverter
 import json
 import os
-import geopandas
+import geopandas as gpd
 import hashlib
 import geojson
 from shapely.geometry import shape
@@ -20,13 +20,40 @@ class ShapefileConverter(GenericConverter):
         self.dict_type_as_key = False
 
     def parse(self, id_fields=[], type_as_key=False):
-        myshpfile = geopandas.read_file(self.input_file)
-        myshpfile.to_file(self.fast_hash8(self.input_file)+".geojson", driver='GeoJSON')
-        converter = GeoJSONConverter(self.fast_hash8(self.input_file)+".geojson", self.out_file, self.ontology_uri, self.resource_uri)
-        converter.parse(id_fields,type_as_key)
+        # Input Shapefile
+        shp_file = self.input_file
+        # Temporary GeoJSON file
+        geojson_file = self.fast_hash8(self.input_file) + ".geojson"
+
+        # Read the Shapefile using geopandas
+        try:
+            gdf = gpd.read_file(shp_file)
+        except Exception as e:
+            raise Exception(f"Could not open Shapefile: {e}")
+
+        # Save as GeoJSON
+        gdf.to_file(geojson_file, driver="GeoJSON")
+
+        # Process with GeoJSONConverter
+        converter = GeoJSONConverter(
+            geojson_file,
+            self.out_file,
+            self.ontology_uri,
+            self.resource_uri
+        )
+        converter.parse(id_fields, type_as_key)
         self.triples = converter.triples
-        os.remove(self.fast_hash8(self.input_file)+".geojson")
+
+        # Remove temporary GeoJSON file
+        os.remove(geojson_file)
 
     def fast_hash8(self, s: str) -> bytes:
         h = hashlib.blake2b(s.encode("utf-8"), digest_size=8).hexdigest()
         return h
+
+    def export(self):
+        with open(self.out_file, "w") as f:
+            for (s,p,o) in self.triples:
+                if not o.startswith("\""):
+                    o = "<" + o + ">"
+                f.write("<{}> <{}> {} .\n".format(s,p,o))
