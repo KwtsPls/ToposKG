@@ -1,8 +1,8 @@
 import json
 import hashlib
 import os
-from converter.rml import toposkg_lib_triples_map
-from converter.rml import toposkg_lib_mapping_builder
+from toposkg.converter.rml import toposkg_lib_triples_map
+from toposkg.converter.rml import toposkg_lib_mapping_builder
 from typing import Any, Dict
 
 class JSONMappingGenerator():
@@ -10,6 +10,8 @@ class JSONMappingGenerator():
         self.ontology_uri = ontology_uri
         self.resource_uri = resource_uri
         self.intermediate_file = None
+        self.generated_id = None
+        self.parent_id = None
         self.data = None
         self.map_counter=0
         self.maps = []
@@ -44,9 +46,9 @@ class JSONMappingGenerator():
         def walk(node, parent_id=None):
             if isinstance(node, dict):
                 current_id = counter["id"]
-                node["_pyrml_mapper_generated_id"] = current_id
+                node[self.generated_id] = current_id
                 if parent_id is not None:
-                    node["_pyrml_mapper_parent_id"] = parent_id
+                    node[self.parent_id] = parent_id
                 counter["id"] += 1
                 for k, v in node.items():
                     if isinstance(v, (dict, list)):
@@ -91,17 +93,17 @@ class JSONMappingGenerator():
         if iterator==None:
             iterator="$"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
-        triplesMap.add_subject_map("_pyrml_mapper_generated_id",key)
+        triplesMap.add_subject_map(self.generated_id,key)
 
         for k,v in _dict.items():
                 if isinstance(v, dict):
                     childMap = self.recursive_dict_pass(v, k, iterator + "." + k)
-                    childMap.add_predicate_object_map_on_join(k,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                    triplesMap.add_predicate_object_map_on_join(k,childMap,self.generated_id, self.parent_id)
                     self.maps += [childMap]
                 elif isinstance(v, list):
                     childMap = self.list_pass(v, k, iterator + "." + k + "[*]")
                     if childMap!=None:
-                        childMap.add_predicate_object_map_on_join(k,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                        triplesMap.add_predicate_object_map_on_join(k,childMap,self.generated_id, self.parent_id)
                         self.maps += [childMap]
                 #Literal case
                 else:
@@ -124,7 +126,7 @@ class JSONMappingGenerator():
         if iterator==None:
             iterator="$[*]"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
-        triplesMap.add_subject_map("_pyrml_mapper_generated_id",key)
+        triplesMap.add_subject_map(self.generated_id,key)
             
         common=set()
         for v in l:
@@ -134,11 +136,11 @@ class JSONMappingGenerator():
                     if isinstance(inner_value,list):
                         childMap = self.list_pass(inner_value, inner_key, iterator + "." + inner_key + "[*]")
                         if childMap!=None:
-                            childMap.add_predicate_object_map_on_join(inner_key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                            triplesMap.add_predicate_object_map_on_join(key,childMap,self.generated_id, self.parent_id)
                             self.maps += [childMap]
                     elif isinstance(inner_value,dict):
                         childMap = self.recursive_dict_pass(inner_value, inner_key, iterator + "." + inner_key)
-                        childMap.add_predicate_object_map_on_join(inner_key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                        triplesMap.add_predicate_object_map_on_join(key,childMap,self.generated_id, self.parent_id)
                         self.maps += [childMap]
                     else:
                         cur.add(inner_key)
@@ -148,7 +150,7 @@ class JSONMappingGenerator():
                     common &= cur
             elif isinstance(v, list):
                 childMap = self.list_pass(v, key, iterator + "." + key + "[*]")
-                childMap.add_predicate_object_map_on_join(key,triplesMap,"_pyrml_mapper_parent_id","_pyrml_mapper_generated_id")
+                triplesMap.add_predicate_object_map_on_join(key,childMap,self.generated_id, self.parent_id)
                 self.maps += [childMap]
             else:
                 return None
@@ -163,6 +165,11 @@ class JSONMappingGenerator():
     
         #Function to generate mapping
     def generate_default_mapping(self, input_data_source):
+        base_name = os.path.basename(input_data_source)
+        file_hash = hashlib.blake2b(base_name.encode("utf-8"), digest_size=16).hexdigest()
+        self.generated_id = file_hash + "_pyrml_mapper_generated_id"
+        self.parent_id = file_hash + "_pyrml_mapper_parent_id"
+        
         self.intermediate_file = self.add_ids_to_json(input_data_source)
         self.data = self._load()
         self.parse()

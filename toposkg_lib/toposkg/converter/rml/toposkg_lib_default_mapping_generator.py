@@ -1,13 +1,12 @@
 import os
 import pandas as pd
-import converter.rml
 from rdflib import Graph
-from converter.rml import toposkg_lib_rml_module as m
-from converter.rml import toposkg_lib_mapping_builder as b
-from converter.rml import toposkg_lib_json_mapping_generator as json_generator
-from converter.rml import toposkg_lib_csv_mapping_generator as csv_generator
-from converter.rml import toposkg_lib_xml_mapping_generator as xml_generator
-from converter.rml import toposkg_lib_geojson_mapping_generator as geojson_generator
+from toposkg.converter.rml import toposkg_lib_rml_module as m
+from toposkg.converter.rml import toposkg_lib_mapping_builder as b
+from toposkg.converter.rml import toposkg_lib_json_mapping_generator as json_generator
+from toposkg.converter.rml import toposkg_lib_csv_mapping_generator as csv_generator
+from toposkg.converter.rml import toposkg_lib_xml_mapping_generator as xml_generator
+from toposkg.converter.rml import toposkg_lib_geojson_mapping_generator as geojson_generator
 
 class DefaultMappingGenerator():
     def __init__(self, ontology_uri="https://example.org/ontology/", resource_uri="https://example.org/resource/"):

@@ -1,5 +1,5 @@
-from converter.toposkg_lib_converter import GenericConverter
-from converter.toposkg_lib_geojson_converter import GeoJSONConverter
+from toposkg.converter.toposkg_lib_converter import GenericConverter
+from toposkg.converter.toposkg_lib_geojson_converter import GeoJSONConverter
 import json
 import os
 import geopandas as gpd

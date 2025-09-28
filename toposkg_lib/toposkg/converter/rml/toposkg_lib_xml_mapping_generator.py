@@ -1,8 +1,8 @@
 import hashlib
 import os
 import xml.etree.ElementTree as ET
-from converter.rml import toposkg_lib_triples_map
-from converter.rml import toposkg_lib_mapping_builder
+from toposkg.converter.rml import toposkg_lib_triples_map
+from toposkg.converter.rml import toposkg_lib_mapping_builder
 from typing import Any
 
 class XMLMappingGenerator():
@@ -11,6 +11,8 @@ class XMLMappingGenerator():
         self.resource_uri = resource_uri
         self.intermediate_file = None
         self.tree = None
+        self.generated_id = None
+        self.parent_id = None
         self.map_counter = 0
         self.maps = []
 
@@ -42,9 +44,9 @@ class XMLMappingGenerator():
 
         def walk(element, parent_id=None):
             current_id = counter["id"]
-            element.set("_pyrml_mapper_generated_id", str(current_id))
+            element.set(self.generated_id, str(current_id))
             if parent_id is not None:
-                element.set("_pyrml_mapper_parent_id", str(parent_id))
+                element.set(self.parent_id, str(parent_id))
             counter["id"] += 1
 
             for child in element:
@@ -78,14 +80,14 @@ class XMLMappingGenerator():
 
         triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
         triplesMap.add_logical_source(self.intermediate_file, "ql:XPath", iterator)
-        triplesMap.add_subject_map("@_pyrml_mapper_generated_id", element.tag)
+        triplesMap.add_subject_map("@"+self.generated_id, element.tag)
 
         for child in element:
             child_key = child.tag
             if list(child):  # child has children
                 childMap = self.recursive_element_pass(child, child_key, iterator)
                 childMap.add_predicate_object_map_on_join(
-                    child_key, triplesMap, "@_pyrml_mapper_parent_id", "@_pyrml_mapper_generated_id"
+                    child_key, triplesMap, "@"+self.parent_id, "@"+self.generated_id
                 )
                 self.maps += [childMap]
             else:
@@ -94,6 +96,11 @@ class XMLMappingGenerator():
         return triplesMap
     
     def generate_default_mapping(self, input_data_source):
+        base_name = os.path.basename(input_data_source)
+        file_hash = hashlib.blake2b(base_name.encode("utf-8"), digest_size=16).hexdigest()
+        self.generated_id = "pyrml_mapper_generated_id" + file_hash
+        self.parent_id = "pyrml_mapper_parent_id" + file_hash
+
         self.intermediate_file = self.add_ids_to_xml(input_data_source)
         self.tree = self._load()
         self.parse()

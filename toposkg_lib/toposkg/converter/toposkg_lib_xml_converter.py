@@ -1,4 +1,4 @@
-from converter.toposkg_lib_converter import GenericConverter
+from toposkg.converter.toposkg_lib_converter import GenericConverter
 import xml.etree.ElementTree as ET
 import hashlib
 

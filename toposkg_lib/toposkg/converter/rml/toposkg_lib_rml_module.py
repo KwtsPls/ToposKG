@@ -9,7 +9,7 @@ class RMLModule():
     def generate_triples(self, mapping_file):
         config = """
         [DataSource1]
-        mappings: /mnt/c/Users/Heyo/Desktop/ResearchTeam/ToposKG/toposkg_lib/toposkg/converter/rml/{}
+        mappings: {}
         """.format(mapping_file)
 
         # Generate RDF using RDFLib

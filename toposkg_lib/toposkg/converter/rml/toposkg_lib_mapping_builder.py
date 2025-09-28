@@ -1,5 +1,5 @@
 import os
-from converter.rml import toposkg_lib_triples_map
+from toposkg.converter.rml import toposkg_lib_triples_map
 
 class RMLBuilder():
     def __init__(self, ontology_uri, resource_uri, maps=[]):

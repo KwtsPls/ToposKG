@@ -1,4 +1,4 @@
-from converter.toposkg_lib_converter import GenericConverter
+from toposkg.converter.toposkg_lib_converter import GenericConverter
 import csv
 import os
 import hashlib
