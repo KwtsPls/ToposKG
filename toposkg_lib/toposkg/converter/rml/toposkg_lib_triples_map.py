@@ -1,10 +1,14 @@
 import os
+import hashlib
 
 class TriplesMap():
     def __init__(self, ontology_uri, resource_uri, name=None):
         self.ontology_uri = ontology_uri
         self.resource_uri = resource_uri
         self.name = name
+        self.hash = None
+        if name!=None:
+            self.hash = self.fast_hash16(self.name)
         self.logicalSource = None
         self.subjectMap = None
         self.refObjectMaps = []
@@ -13,6 +17,7 @@ class TriplesMap():
     def add_logical_source(self, input_data_source, reference_formulation, iterator=None):
         if self.name == None:
             self.name = self.clean_filename(input_data_source)
+            self.hash = self.fast_hash16(self.name)
         self.logicalSource = (input_data_source, reference_formulation, iterator)
 
     def add_subject_map(self, id_field, subject_class=None, graph=None):
@@ -63,7 +68,7 @@ class TriplesMap():
             logical_source_str = """rml:logicalSource [
         rml:source \"{}\";
         rml:referenceFormulation \"{}\";
-];\n""".format(input_data_source,reference_formulation)
+];\n""".format(input_data_source, reference_formulation)
         else:
             logical_source_str = """rml:logicalSource [
         rml:source \"{}\";
@@ -74,9 +79,12 @@ class TriplesMap():
         return logical_source_str
 
     def get_subject_map_string(self):
+        if self.name == None:
+            raise Exception("No logical source defined")
+
         (id_field, subject_class, graph) = self.subjectMap
         subject_map_str = """rr:subjectMap [
-    rr:template \"{}\";\n""".format(self.resource_uri+"{"+id_field+"}")
+    rr:template \"{}\";\n""".format(self.resource_uri+self.hash+"_{"+id_field+"}")
         if subject_class != None:
             subject_map_str += "\trr:class {};\n".format("onto:"+subject_class)
         if graph != None:
@@ -173,6 +181,10 @@ class TriplesMap():
         predicate_object_map_string += "\t\trr:template \"{}\";\n".format(template)
         predicate_object_map_string += "\t];\n]"
         return predicate_object_map_string
+
+    def fast_hash16(self, s: str) -> bytes:
+        h = hashlib.blake2b(s.encode("utf-8"), digest_size=16).hexdigest()
+        return h
 
     def clean_filename(self, file_path: str) -> str:
         # Extract just the file name

@@ -35,7 +35,7 @@ class GeoJSONConverter(GenericConverter):
             
             id = self.get_id(properties,id_fields)
         
-            entity = self.resource_uri + self.fast_hash8(self.input_file) + "_" + str(id)
+            entity = self.resource_uri + self.fast_hash16(self.input_file) + "_" + str(id)
 
             #Convert the geometry into WKT and create the ogc:geosparql triples
             self.add_geometry(geom, epsg, entity, id)
@@ -50,7 +50,7 @@ class GeoJSONConverter(GenericConverter):
             if k not in id_fields:
                 if isinstance(v, dict):
                     cur_id = self.get_id(v, id_fields)
-                    current_entity = self.resource_uri + self.fast_hash8(self.input_file) + "_" + str(k) + str(cur_id)
+                    current_entity = self.resource_uri + self.fast_hash16(self.input_file) + "_" + str(k) + str(cur_id)
                     self.triples += [(parent_entity,self.ontology_uri+k,current_entity)]
 
                     if self.dict_type_as_key==True:
@@ -69,7 +69,7 @@ class GeoJSONConverter(GenericConverter):
         for v in l:
             if isinstance(v, dict):
                 id = self.get_id(v, id_fields)
-                current_entity = self.resource_uri + self.fast_hash8(self.input_file) + "_" + str(key) + str(id)
+                current_entity = self.resource_uri + self.fast_hash16(self.input_file) + "_" + str(key) + str(id)
                 self.triples += [(parent_entity, self.ontology_uri+key, current_entity)]
 
                 if self.dict_type_as_key==True:
@@ -90,7 +90,7 @@ class GeoJSONConverter(GenericConverter):
             crs = 4326
         wkt = "\"<http://www.opengis.net/def/crs/EPSG/0/" + str(crs) + "> " + str(geom.wkt) + "\"^^<http://www.opengis.net/ont/geosparql#wktLiteral>"
 
-        geometry = self.resource_uri + "Geometry_" + self.fast_hash8(self.input_file) + "_" + str(id)
+        geometry = self.resource_uri + "Geometry_" + self.fast_hash16(self.input_file) + "_" + str(id)
         geometry_triple = (entity, "http://www.opengis.net/ont/geosparql#hasGeometry", geometry)
         self.triples += [geometry_triple]
         wkt_triple = (geometry, "http://www.opengis.net/ont/geosparql#asWKT", wkt)
@@ -122,8 +122,8 @@ class GeoJSONConverter(GenericConverter):
             self.id_count +=1
         return id
 
-    def fast_hash8(self, s: str) -> bytes:
-        h = hashlib.blake2b(s.encode("utf-8"), digest_size=8).hexdigest()
+    def fast_hash16(self, s: str) -> bytes:
+        h = hashlib.blake2b(s.encode("utf-8"), digest_size=16).hexdigest()
         return h
     
     def parse_literal(self, value, key, id, upper_type=""):

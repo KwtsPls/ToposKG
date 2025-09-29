@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "toposkg"
-version = "0.2.2"
+version = "0.3.2"
 description = "A Python interface to the ToposKG knowledge graph generation pipeline."
 authors = [
     { name="Sergios-Anestis Kefalidis", email="skefalidis@di.uoa.gr" },

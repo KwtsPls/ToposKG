@@ -89,7 +89,7 @@ class JSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name + self.file_hash)
         if iterator==None:
             iterator="$"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -122,7 +122,7 @@ class JSONMappingGenerator():
             name = f"{key}{self.map_counter}"
             self.map_counter += 1
 
-        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name)
+        triplesMap = toposkg_lib_triples_map.TriplesMap(self.ontology_uri, self.resource_uri, name + self.file_hash)
         if iterator==None:
             iterator="$[*]"
         triplesMap.add_logical_source(self.intermediate_file,"ql:JSONPath",iterator)
@@ -167,6 +167,7 @@ class JSONMappingGenerator():
     def generate_default_mapping(self, input_data_source):
         base_name = os.path.basename(input_data_source)
         file_hash = hashlib.blake2b(base_name.encode("utf-8"), digest_size=16).hexdigest()
+        self.file_hash = hashlib.blake2b(base_name.encode("utf-8"), digest_size=8).hexdigest()
         self.generated_id = file_hash + "_pyrml_mapper_generated_id"
         self.parent_id = file_hash + "_pyrml_mapper_parent_id"
         
