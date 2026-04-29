@@ -22,10 +22,6 @@ class KguiMapCanvas(FigureCanvas):
             '../resources/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp'))
         self._highlight_countries = []
 
-        # for name in self._map_data['NAME']:
-        #     print(name)
-        # print(self._map_data['NAME'])
-
     def set_countries(self, countries):
         # print(countries)
         self._highlight_countries = countries
@@ -38,8 +34,12 @@ class KguiMapCanvas(FigureCanvas):
 
         # Plot the world countries
         self._map_data.plot(ax=self.ax, color='lightgrey', edgecolor='black')
+        
+        print(f"Highlighting countries: {self._highlight_countries}")
 
         # Highlight selected countries
+        # FIXME: This is a naive way to match country names, it should be improved to handle different naming conventions and possible mismatches.
+        # e.g. "South" is often abbreviated as "S." in the shapefile.
         if self._highlight_countries:
             self._map_data[self._map_data['NAME'].isin(self._highlight_countries)].plot(ax=self.ax, color='orange')
 
@@ -80,8 +80,10 @@ class KguiMapView(QWidget):
     def on_item_changed(self):
         def traverse_item(item, items):
             if item.checkState() == Qt.CheckState.Checked:
-                if item.metadata is not None and item.metadata.country is not None:
-                    items.add(item.metadata.country)
+                country_name = item.data_source.name.split('.')[0].split('_')[0].strip()
+                items.add(country_name)
+                # if item.metadata is not None and item.metadata.country is not None:
+                #     items.add(item.metadata.country)
 
             # Recursively visit all children
             for row in range(item.rowCount()):
