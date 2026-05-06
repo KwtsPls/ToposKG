@@ -28,7 +28,7 @@ ToposKG consists of various geospatial datasources including [OSM](https://www.o
 | Forests              | OSM               | 15,449,268              | 23G                 |
 | Administrative       | GAUL              | 48,316                  | 4.2GB               |
 | Administrative       | OSM               | 1,583,535               | 25.3GB              |
-| POIs                 | OSM               | 43,885,054              | 14GB                |
+| POIs                 | OSM               | 45,036,295              | 71GB                |
 
 The ToposKG knowledge graph is freely available in the official [site](https://toposkg.di.uoa.gr/)
 
