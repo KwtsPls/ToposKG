@@ -32,6 +32,10 @@ ToposKG consists of various geospatial datasources including [OSM](https://www.o
 
 The ToposKG knowledge graph is freely available in the official [site](https://toposkg.di.uoa.gr/)
 
+## The ToposKG Ontology
+
+The full and simplified version of the ontology can be accessed in our project's [Zenodo repository](https://zenodo.org/records/15704482). Information about the ontology can be found in the Topos Manual(link pending). Additionally, a tree-like presentation of the ontology is available [here](https://kwtspls.github.io/ToposKG/).
+
 ## Team & Authors
 
 <img align="right" src="https://github.com/AI-team-UoA/.github/blob/main/AI_LOGO.png?raw=true" alt="ai-team-uoa" width="200"/>
