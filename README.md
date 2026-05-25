@@ -34,7 +34,7 @@ The ToposKG knowledge graph is freely available in the official [site](https://t
 
 ## The ToposKG Ontology
 
-The full and simplified version of the ontology can be accessed in our project's [Zenodo repository](https://zenodo.org/records/15704482). Information about the ontology can be found in the Topos Manual(link pending). Additionally, a tree-like presentation of the ontology is available [here](https://kwtspls.github.io/ToposKG/).
+The full and simplified version of the ontology can be accessed in our project's [Zenodo repository](https://zenodo.org/records/15704482). Information about the ontology can be found in the [Topos Manual](https://toposkg.di.uoa.gr/static/ToposKG_Manual.pdf). Additionally, a tree-like presentation of the ontology is available [here](https://kwtspls.github.io/ToposKG/).
 
 ## Team & Authors
 
