@@ -19,6 +19,7 @@ public class Osm2GAULConnector {
     HashMap<String,HashSet<String>> osmLevelGroup;
     HashMap<String,HashSet<String>> gaulLevelGroup;
     HashMap<String,String> linkedEntities;
+    HashMap<String,Pair<String,String>> osmAreas;
 
     //Mirror maps (osm->gaul) (gaul->osm)
     HashMap<String,String> osm2gaulMap;
@@ -46,6 +47,7 @@ public class Osm2GAULConnector {
         this.osmLevelGroup = new HashMap<>();
         this.gaulLevelGroup = new HashMap<>();
         this.linkedEntities = new HashMap<>();
+        this.osmAreas = new HashMap<>();
 
         this.type = args[0];
         this.osmFile = args[1];
@@ -213,16 +215,18 @@ public class Osm2GAULConnector {
                     }
 
                     List<Pair<String,String>> triples = osmMap.remove(entity);
+                    boolean linked = false;
                     if(triples==null){
                         triples = osmMap.get(linkedEntities.get(s));
                         entity = linkedEntities.get(s);
+                        linked = true;
                     }
 
                     for(Pair<String,String> pair: triples){
                         String p = pair.getLeft();
                         String o = pair.getRight();
                         if(p.contains("hasUpperAdminUnit")){
-                            o = linkedEntities.get(entity);
+                            o = linkedEntities.get(pair.getRight());
                             if(o==null) o = pair.getRight();
                         }
                         osmWriter.write(entity + " " + p + " " + o + " .\n");
@@ -235,6 +239,12 @@ public class Osm2GAULConnector {
                             osmWriter.write(entity + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <" + Constants.URI + "AdminUnit_Level"+levelEntry.getValue()+"> .\n");
                             allOSMWriter.write(entity + " <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <" + Constants.URI + "AdminUnit_Level"+levelEntry.getValue()+"> .\n");
                         }
+                    }
+
+                    if(linked) {
+                        Pair<String, String> areaPair = osmAreas.get(entity);
+                        osmWriter.write(entity + " <http://toposkg.di.uoa.gr/ontology/hasArea> " + areaPair.getRight() + " .\n");
+                        allOSMWriter.write(entity + " <http://toposkg.di.uoa.gr/ontology/hasArea> " + areaPair.getRight() + " .\n");
                     }
 
                     Pair<String,String> geomPair = geoMap.remove(entity);
@@ -311,8 +321,7 @@ public class Osm2GAULConnector {
                         }
 
 
-                        List<Pair<String, String>> linkedTriples = new ArrayList<>();
-                        linkedTriples.addAll(gaulTriples);
+                        List<Pair<String, String>> linkedTriples = new ArrayList<>(gaulTriples);
 
                         for (Pair<String, String> pair : osmTriples) {
                             String p = pair.getLeft();
@@ -324,7 +333,14 @@ public class Osm2GAULConnector {
                                     o = o + "@en";
                                     linkedTriples.add(new ImmutablePair<>(p, o));
                                 }
-                            } else
+                            }
+                            else if(p.contains("hasArea")){
+                                osmAreas.put(linkedURI,pair);
+                            }
+                            else if (p.contains("hasUpperAdminUnit")){
+                                continue;
+                            }
+                            else
                                 linkedTriples.add(pair);
                         }
 
