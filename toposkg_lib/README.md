@@ -7,7 +7,7 @@
 </div>
 
 ## Overview
-toposkg-lib is a Python library developed as part of the Topos framework. It provides easy access to powerful functionality for customizing and extending ToposKG but is also compatible with arbitrary source files.
+toposkg-lib is a Python library developed as part of the *[Topos](https://toposkg.di.uoa.gr/)* framework. It provides easy access to powerful functionality for customizing and extending *[ToposKG](https://toposkg.di.uoa.gr/)* but is also compatible with arbitrary source files.
 
 ## Highlights
 - **Powerful features.** Customize and expand ToposKG using powerful tools for geospatial interlinking, toponym translation and entity linking.
