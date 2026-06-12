@@ -7,10 +7,10 @@
 </div>
 
 ## Overview
-toposkg-lib is a Python library developed as part of the *[Topos](https://toposkg.di.uoa.gr/)* framework. It provides easy access to powerful functionality for customizing and extending *[ToposKG](https://toposkg.di.uoa.gr/)* but is also compatible with arbitrary source files.
+*toposkg-lib* is a Python library developed as part of the *[Topos](https://toposkg.di.uoa.gr/)* framework. It provides easy access to powerful functionality for customizing and extending *[ToposKG](https://toposkg.di.uoa.gr/)* but is also compatible with arbitrary source files. 
 
 ## Highlights
-- **Powerful features.** Customize and expand ToposKG using powerful tools for geospatial interlinking, toponym translation and entity linking.
+- **Powerful features.** Customize and expand ToposKG using powerful tools for geospatial interlinking, toponym translation and entity linking. This specialy designed toolset leverages the high quality RDF data available with *ToposKG* to help users craft their own high quality geospatial knowledge graphs.
 - **Ease of use.** toposkg-lib is designed around a simple builder pattern, simplifying the process of generating your Knowledge Graph.
 - **Natural Language Interface.** toposkg-lib can be used with a textual interface, powered by LLM function calling.
 - **Active development.** toposkg-lib will keep getting updates as we work on our projects.
@@ -51,6 +51,8 @@ pip install git+https://github.com/SKefalidis/rdflib-speed@main
 Otherwise you can use the original rdflib.
 
 ### Simple example
+
+The following is an abstract, but simple, example on how to leverage the high quality data sources available as RDF data through *ToposKG* to make your own, Geospatial Knowledge Graph. Instead of being forced to download and use the entirety of the graph, users can easily pick-n-choose the parts that are required for their use cases.
 
 ```python
 from toposkg.toposkg_lib_core import KnowledgeGraphBlueprintBuilder, KnowledgeGraphSourcesManager
