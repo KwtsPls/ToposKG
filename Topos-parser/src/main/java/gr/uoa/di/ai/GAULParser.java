@@ -51,6 +51,7 @@ public class GAULParser {
         String iso3Code = (String) properties.get("iso3_code");
         String mapCode = (String) properties.get("map_code");
         String continent = (String) properties.get("continent");
+        String fullName = (String) properties.get("disp_en");
 
 
         String type;
@@ -92,10 +93,12 @@ public class GAULParser {
             builder.append(createTriple(Constants.RESOURCE + id, Constants.URI + "hasUpperAdminUnit", Constants.RESOURCE + adm1_id.toLowerCase()));
         }
 
-
+        builder.append(createTriple(Constants.RESOURCE + id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", Constants.URI + "ToposKGFeature"));
+        builder.append(createTriple(Constants.RESOURCE + id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", Constants.URI + "AdministrativeUnit"));
         builder.append(createStringTriple(Constants.RESOURCE + id, Constants.URI + "hasISO3Code", iso3Code));
         builder.append(createStringTriple(Constants.RESOURCE + id, Constants.URI + "hasMapCode", mapCode));
         builder.append(createStringTriple(Constants.RESOURCE + id, Constants.URI + "inContinent", continent));
+        builder.append(createStringTriple(Constants.RESOURCE + id, Constants.URI + "hasFullName", fullName));
 
         if(jo.get("geometry")!=null){
             String geometry = jo.get("geometry").toString();

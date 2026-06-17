@@ -4,6 +4,8 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 import java.io.*;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class Nt2Csv {
@@ -53,7 +55,11 @@ public class Nt2Csv {
                 if (p.startsWith(GEOSPARQL_PREFIX)) continue;
 
                 // Ignore if object is a URI (not a literal)
-                if (!o.contains("\"")) continue;
+                if (!o.contains("\"") && !p.contains("WikipediaURL")) continue;
+
+                if(p.contains("WikipediaURL")){
+                    o = extractLabel(o);
+                }
 
                 entityData.putIfAbsent(s, new HashMap<>());
                 entityData.get(s).put(p, o.replaceAll("^\"|\"$", "")); // remove quotes around literals
@@ -81,6 +87,8 @@ public class Nt2Csv {
                 }
                 writer.println();
             }
+
+            writer.flush();
         }
     }
 
@@ -158,6 +166,64 @@ public class Nt2Csv {
         }
     }
 
+    public static void prepareGeneral(String inputFile, String outputFile) throws IOException {
+        Map<String, Map<String, String>> entityData = new LinkedHashMap<>();
+        Set<String> allPredicates = new TreeSet<>();
+        // Map raw predicate URIs to cleaned names
+        Map<String, String> predicateNameMap = new HashMap<>();
+
+        // Second pass: collect all predicates for the target entities
+        try (FileInputStream is = new FileInputStream(inputFile)) {
+            NxParser nxp = new NxParser();
+            nxp.parse(is);
+
+            while (nxp.hasNext()) {
+                Node[] nx = nxp.next();
+                String s = nx[0].toString();
+                String p = nx[1].toString();
+                String o = nx[2].toString(); // Literal (quoted) or URI
+
+                // Ignore geosparql predicates
+                if (p.startsWith(GEOSPARQL_PREFIX)) continue;
+
+                // Ignore if object is a URI (not a literal)
+                if (!o.contains("\"") && !p.contains("WikipediaURL")) continue;
+
+                if(p.contains("WikipediaURL")){
+                    o = extractLabel(o);
+                }
+
+                entityData.putIfAbsent(s, new HashMap<>());
+                entityData.get(s).put(p, o.replaceAll("^\"|\"$", "")); // remove quotes around literals
+                allPredicates.add(p);
+                predicateNameMap.putIfAbsent(p, cleanPredicate(p));
+            }
+        }
+
+        // Write to CSV
+        try (PrintWriter writer = new PrintWriter(new FileWriter(outputFile))) {
+            // Header
+            writer.print("entity");
+            for (String rawPred : allPredicates) {
+                writer.print("," + escapeCSV(predicateNameMap.get(rawPred)));
+            }
+            writer.println();
+
+            // Rows
+            for (String entity : entityData.keySet()) {
+                writer.print(escapeCSV(entity));
+                Map<String, String> predicates = entityData.get(entity);
+                for (String rawPred : allPredicates) {
+                    writer.print(",");
+                    writer.print(escapeCSV(predicates.getOrDefault(rawPred, "")));
+                }
+                writer.println();
+            }
+        }
+    }
+
+
+
 
     private static String cleanPredicate(String uri) {
         uri = uri.replace("<", "").replace(">", ""); // Remove angle brackets
@@ -175,6 +241,17 @@ public class Nt2Csv {
             return "\"" + value.replace("\"", "\"\"") + "\"";
         }
         return value;
+    }
+
+    public static String extractLabel(String uri) {
+        uri = uri.replaceAll("^<|>$", ""); // Remove angle brackets
+        int lastSlash = uri.lastIndexOf('/');
+        if (lastSlash >= 0 && lastSlash < uri.length() - 1) {
+            String segment = uri.substring(lastSlash + 1);
+            segment = segment.replace('_', ' ');
+            return URLDecoder.decode(segment, StandardCharsets.UTF_8);
+        }
+        return uri;
     }
 
 }

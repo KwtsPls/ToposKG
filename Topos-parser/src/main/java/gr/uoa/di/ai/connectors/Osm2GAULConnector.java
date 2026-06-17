@@ -164,7 +164,7 @@ public class Osm2GAULConnector {
                             String p = pair.getLeft();
                             String o = pair.getRight();
                             if (p.contains("hasUpperAdminUnit")) {
-                                o = linkedEntities.get(entity);
+                                o = linkedEntities.get(pair.getRight());
                                 if (o == null) o = pair.getRight();
                             }
                             gaulWriter.write(entity + " " + p + " " + o + " .\n");
@@ -533,3 +533,4 @@ public class Osm2GAULConnector {
         return false;
     }
 }
+

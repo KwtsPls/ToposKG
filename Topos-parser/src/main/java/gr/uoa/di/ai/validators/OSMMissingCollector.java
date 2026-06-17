@@ -17,7 +17,10 @@ public class OSMMissingCollector {
 
 
     public OSMMissingCollector(String countryURI, String mode, String mappingsFile, String dataFile, String outputFile){
-        this.countryURI = countryURI;
+        if(countryURI.equals("none"))
+            this.countryURI = null;
+        else
+            this.countryURI = countryURI;
         this.mappingsFile = mappingsFile;
         this.dataFile = dataFile;
         this.mode = mode;
@@ -67,7 +70,7 @@ public class OSMMissingCollector {
                 String p = nx[1].toString();
                 String o = nx[2].toString();
 
-                if(s.equals(countryURI)){
+                if(s.equals(countryURI) || countryURI == null){
                     if(mode.equals("COV")) {
                         if (p.contains("sfCovers"))
                             candidates.add(o);

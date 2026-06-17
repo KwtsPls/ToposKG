@@ -32,7 +32,7 @@ public class LevelValidator {
             String p = nx[1].toString();
             String o = nx[2].toString();
 
-            if(p.contains("http://spatialkg.di.uoa.gr/ontology/hasUpperAdminUnit")){
+            if(p.contains("http://toposkg.di.uoa.gr/ontology/hasUpperAdminUnit")){
                 Integer num = numMap.get(o);
                 if(num==null) num=0;
                 num++;

@@ -40,7 +40,7 @@ public class DirectoryParsing {
         for(File file:country.listFiles()){
             if(file.getName().equals("stats.txt"))
                 args[0] = readStat(file.getAbsolutePath());
-            if(file.getName().equals(country.getName().toLowerCase() + ".nt"))
+            if(file.getName().equals(country.getName().toLowerCase() + "_final.nt"))
                 args[1] = file.getAbsolutePath();
             if(file.getName().equals("linking_admin_0.csv"))
                 args[2] = file.getAbsolutePath();

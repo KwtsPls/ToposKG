@@ -2,15 +2,15 @@ package gr.uoa.di.ai;
 
 import gr.uoa.di.ai.connectors.DirectoryParsing;
 import gr.uoa.di.ai.connectors.Osm2GAULConnector;
+import gr.uoa.di.ai.connectors.SimpleOsmEntityLinker;
 import gr.uoa.di.ai.transformers.GeometryAggregator;
 import gr.uoa.di.ai.transformers.IntersectionConnector;
 import gr.uoa.di.ai.transformers.Nt2Csv;
-import gr.uoa.di.ai.validators.LevelValidator;
-import gr.uoa.di.ai.validators.NeighborsValidator;
-import gr.uoa.di.ai.validators.OSMMissingCollector;
+import gr.uoa.di.ai.validators.*;
 import org.locationtech.jts.io.ParseException;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 public class Manager {
     public static void main(String[] args) {
@@ -70,12 +70,26 @@ public class Manager {
                     e.printStackTrace();
                 }
             }
+            case "validate_triples" -> {
+                try {
+                    TripleValidator.fix_triples(args[1],args[2]);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            case "validate_iris" -> {
+                try {
+                    RdfIriInplaceFixer.fixInPlace(Path.of(args[1]),false,false,false);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
             /*** 1st step in the OSM integration pipeline
-             * args[0] = wikidata uri for country
-             * args[1] = osm input file
-             * args[2] = wikidata hierarchy file
-             * args[3] = .csv file with gaul->osm level mappings
-             * args[4] = output file
+             * args[1] = wikidata uri for country
+             * args[2] = osm input file
+             * args[3] = wikidata hierarchy file
+             * args[4] = .csv file with gaul->osm level mappings
+             * args[5] = output file
             ***/
             case "osm_hierarchy" ->{
                 OSMCollectBoundaries osmCollectBoundaries = new OSMCollectBoundaries(args[1],args[2],args[3],args[4],args[5]);
@@ -85,12 +99,14 @@ public class Manager {
                 OSMMissingCollector osmMissingCollector = new OSMMissingCollector(args[1], args[2], args[3], args[4], args[5]);
                 osmMissingCollector.collect();
             }
+            /*** Part of the OSM pipeline. Discover missing upperAdminUnits relationships based on intersections
+             * args[1] = osm input file
+             * args[2] = materialized mapping file
+             * args[3] = output file
+             ***/
             case "rank_intersections" ->{
-                IntersectionConnector intersectionConnector = new IntersectionConnector(args[2]);
-                if(args.length==4)
-                    intersectionConnector.rankIntersections(args[1],args[3]);
-                else
-                    intersectionConnector.rankIntersections(args[1],null);
+                IntersectionConnector intersectionConnector = new IntersectionConnector(args[1]);
+                intersectionConnector.connectUpperAdminUnits(args[2],args[3]);
             }
             case "prepare_for_linking" ->{
                 if(args[1].equals("OSM")){
@@ -107,10 +123,34 @@ public class Manager {
                         e.printStackTrace();
                     }
                 }
+                else if(args[1].equals("General")){
+                    try {
+                        Nt2Csv.prepareGeneral(args[2],args[3]);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
             case "connection" ->{
                 DirectoryParsing parser = new DirectoryParsing(args[1],args[2]);
                 parser.process();
+            }
+            case "relink" ->{
+                Path countryLinkingDir = Path.of(args[1]);
+                Path newOsmNtFile = Path.of(args[2]);
+                Path outputDir = Path.of(args[3]);
+
+                SimpleOsmEntityLinker linker = new SimpleOsmEntityLinker();
+                try {
+                    SimpleOsmEntityLinker.RelinkReport report =
+                            linker.relink(countryLinkingDir, newOsmNtFile, outputDir);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            case "geoquestions" ->{
+                OSMGeoQ201Parser parser = new OSMGeoQ201Parser();
+                parser.parse(args[1], args[2], args[3]);
             }
         }
     }
