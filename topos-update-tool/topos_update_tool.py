@@ -1183,38 +1183,51 @@ def country_name_variants(country: str) -> list[str]:
     return deduped
 
 
-def expected_final_country_files(country: str) -> set[str]:
+def should_keep_final_country_file(file_name: str, country: str) -> bool:
     """
-    Files to keep in final country directories.
+    Decide whether a file should survive the final cleanup.
 
-    Preferred names are:
-      <Country>_x.nt
+    Keep:
       <Country>_all.nt
+      <Country>_0.nt
+      <Country>_1.nt
+      <Country>_2.nt
+      ...
 
-    Variants are kept too, to avoid deleting valid outputs for country names
-    with spaces or earlier lowercase naming.
+    Also keep lowercase/safe-name variants produced by earlier stages.
     """
-
-    keep = set()
 
     for variant in country_name_variants(country):
-        keep.add(f"{variant}_x.nt")
-        keep.add(f"{variant}_all.nt")
+        if file_name == f"{variant}_all.nt":
+            return True
 
-    return keep
+        prefix = f"{variant}_"
+        suffix = ".nt"
+
+        if file_name.startswith(prefix) and file_name.endswith(suffix):
+            level = file_name[len(prefix):-len(suffix)]
+
+            if level.isdigit():
+                return True
+
+    return False
 
 
-def remove_all_except(country_dir: Path, keep_names: set[str]) -> None:
+def remove_all_except_final_country_files(country_dir: Path, country: str) -> None:
     """
-    Remove every file/directory in country_dir except entries whose names are
-    in keep_names.
+    Remove every file/directory in country_dir except final country NT files:
+
+      <Country>_all.nt
+      <Country>_<admin_level>.nt
+
+    where <admin_level> is numeric, for example 0, 1, 2, 3, ...
     """
 
     if not country_dir.exists():
         return
 
     for path in country_dir.iterdir():
-        if path.name in keep_names:
+        if path.is_file() and should_keep_final_country_file(path.name, country):
             continue
 
         if path.is_dir():
@@ -1349,11 +1362,9 @@ def cleanup_outputs(
                 LOG.warning("GAUL country directory not found for cleanup: %s", country)
                 continue
 
-            keep_names = expected_final_country_files(country)
-
             LOG.info("Cleaning GAUL country directory: %s", country_dir)
-            LOG.info("Keeping only: %s", ", ".join(sorted(keep_names)))
-            remove_all_except(country_dir, keep_names)
+            LOG.info("Keeping only: %s_all.nt and %s_<numeric_admin_level>.nt", country, country)
+            remove_all_except_final_country_files(country_dir, country)
     else:
         LOG.warning("GAUL countries directory not found during cleanup: %s", gaul_countries_root)
 
@@ -1391,11 +1402,9 @@ def cleanup_outputs(
                 target_group_dir_name="forests",
             )
 
-            keep_names = expected_final_country_files(country)
-
             LOG.info("Cleaning OSM country directory: %s", country_dir)
-            LOG.info("Keeping only: %s", ", ".join(sorted(keep_names)))
-            remove_all_except(country_dir, keep_names)
+            LOG.info("Keeping only: %s_all.nt and %s_<numeric_admin_level>.nt", country, country)
+            remove_all_except_final_country_files(country_dir, country)
     else:
         LOG.warning("OSM countries directory not found during cleanup: %s", osm_countries_root)
 
