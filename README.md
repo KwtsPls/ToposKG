@@ -36,6 +36,19 @@ The ToposKG knowledge graph is freely available in the official [site](https://t
 
 The full and simplified version of the ontology can be accessed in our project's [Zenodo repository](https://doi.org/10.5281/zenodo.15704481). Information about the ontology can be found in the [Topos Manual](https://toposkg.di.uoa.gr/static/ToposKG_Manual.pdf). Additionally, a tree-like presentation of the ontology is available [here](https://kwtspls.github.io/ToposKG/).
 
+## Reproducibility Table
+
+As part of our research effort, we have made all data and tooling associated with Topos and ToposKG fully available to ensure reproducibility.
+
+| Resource                 | Available? | Location             | Purpose                |
+| -------------------| ---------- | --------------- | ---------------------- |
+| KG dump                | yes        | Zenodo                    | reproducible data      |
+| ontology                 | yes        | website/GitHub       | schema                 |
+| modular sources   | yes        | website/API              | custom KG construction |
+| code                       | yes        | GitHub                      | parsers/toolchain      |
+| Python package    | yes        | PyPI                           | programmatic use       |
+| SPARQL endpoint  | yes        | hosted endpoint      | exploration            |
+
 ## Team & Authors
 
 <img align="right" src="https://github.com/AI-team-UoA/.github/blob/main/AI_LOGO.png?raw=true" alt="ai-team-uoa" width="200"/>
