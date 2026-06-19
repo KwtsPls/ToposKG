@@ -1,0 +1,6 @@
+feature_class,source,entity_count,country_or_global_file_count,countries_or_global_files_with_data
+forests,OSM,21239112,181,174
+mountains,GMBA,5629,1,1
+pois,OSM,45036291,181,174
+seas,MarineRegions,101,1,1
+waterbodies,OSM,43029412,181,174

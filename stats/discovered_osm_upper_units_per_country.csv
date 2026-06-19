@@ -1,0 +1,616 @@
+country,level,unique_no_uri_count
+Afghanistan,1,0
+Afghanistan,2,9
+Albania,1,2
+Albania,2,0
+Albania,3,51
+Albania,4,55
+Algeria,1,23
+Algeria,2,106
+Algeria,3,0
+Andorra,1,0
+Angola,1,0
+Angola,2,16
+Angola,3,25
+Argentina,1,49
+Argentina,2,26
+Argentina,3,3815
+Argentina,4,4397
+Argentina,5,4154
+Argentina,6,12585
+Armenia,1,0
+Armenia,2,106
+Armenia,3,32
+Armenia,4,14
+Armenia,5,16
+Australia,1,0
+Australia,2,117
+Australia,3,89
+Australia,4,8390
+Austria,1,4
+Austria,2,2
+Austria,3,10
+Austria,4,52
+Austria,5,142
+Azerbaijan,1,4
+Azerbaijan,2,20
+Azerbaijan,3,20
+Bahamas,1,5
+Bangladesh,1,0
+Bangladesh,2,2
+Bangladesh,3,65
+Bangladesh,4,8
+Bangladesh,5,48
+Bangladesh,6,78
+Belarus,1,4
+Belarus,2,2
+Belarus,3,241
+Belarus,4,14
+Belarus,5,37914
+Belgium,1,992
+Belgium,2,30
+Belgium,3,36
+Belgium,4,10
+Belgium,5,2142
+Belgium,6,246
+Belize,1,0
+Benin,1,0
+Benin,2,7
+Benin,3,42
+Benin,4,15
+Bhutan,1,1
+Bhutan,2,0
+Bolivia,1,62
+Bolivia,2,56
+Bolivia,3,2
+Bolivia,4,64
+Bolivia,5,527
+Bolivia,6,92
+Bolivia,7,119
+Bosnia and Herzegovina,1,8
+Bosnia and Herzegovina,2,12
+Bosnia and Herzegovina,3,668
+Bosnia and Herzegovina,4,1436
+Bosnia and Herzegovina,5,388
+Bosnia and Herzegovina,6,7124
+Botswana,1,1
+Botswana,2,4
+Botswana,3,20
+Brazil,1,8
+Brazil,2,483
+Brazil,3,23339
+Brazil,4,42241
+Bulgaria,1,0
+Bulgaria,2,0
+Bulgaria,3,17
+Bulgaria,5,3297
+Bulgaria,6,48
+Bulgaria,7,17
+Burkina Faso,1,1
+Burkina Faso,2,1
+Burkina Faso,3,0
+Burkina Faso,5,48
+Burkina Faso,6,6
+Burundi,1,0
+Burundi,2,0
+Burundi,3,34
+Cabo Verde,2,1
+Cambodia,1,0
+Cambodia,2,35
+Cambodia,3,183
+Cameroon,1,0
+Cameroon,2,0
+Cameroon,3,109
+Cameroon,4,782
+Cameroon,5,302
+Canada,1,151
+Canada,2,282
+Canada,3,2653
+Canada,4,10
+Canada,5,7609
+Canada,6,3421
+Canada,7,4385
+Central African Republic,2,0
+Chad,1,0
+Chad,2,2
+Chad,3,8
+Chad,4,106
+Chile,1,344
+Chile,2,12
+Chile,3,2
+China,1,1046
+China,2,280
+China,3,742
+China,4,812
+China,5,19311
+China,6,971
+China,7,16138
+Colombia,1,2
+Colombia,2,207
+Colombia,3,7311
+Colombia,4,1172
+Congo,1,0
+Congo,2,35
+Congo,3,27
+Congo,4,54
+Cook Islands,1,0
+Costa Rica,1,0
+Costa Rica,2,6
+Costa Rica,3,0
+Cote d'Ivoire,1,0
+Cote d'Ivoire,2,0
+Cote d'Ivoire,3,7
+Cote d'Ivoire,4,72
+Cote d'Ivoire,5,55
+Cote d'Ivoire,6,52
+Croatia,1,0
+Croatia,2,1785
+Croatia,3,13063
+Croatia,4,331
+Croatia,5,198
+Cuba,1,0
+Cuba,2,0
+Cuba,3,311
+Cuba,4,32
+Cyprus,2,451
+Cyprus,3,440
+Cyprus,4,337
+Cyprus,5,1272
+Cyprus,6,191
+Czech Republic,1,0
+Czech Republic,2,834
+Czech Republic,3,186
+Czech Republic,4,160
+Democratic People's Republic of Korea,1,3
+Democratic People's Republic of Korea,2,6
+Democratic People's Republic of Korea,3,2
+Democratic People's Republic of Korea,4,156
+Democratic Republic of the Congo,1,0
+Democratic Republic of the Congo,2,15
+Democratic Republic of the Congo,3,2575
+Denmark,1,0
+Denmark,2,1
+Denmark,3,0
+Djibouti,1,0
+Ecuador,1,14
+Ecuador,2,0
+Ecuador,3,909
+Egypt,1,0
+El Salvador,1,0
+El Salvador,2,0
+El Salvador,3,2
+El Salvador,4,177
+El Salvador,5,18
+El Salvador,6,32
+Equatorial Guinea,1,0
+Equatorial Guinea,2,6
+Eritrea,1,0
+Estonia,1,0
+Estonia,2,20
+Estonia,3,0
+Estonia,4,0
+Estonia,5,0
+Ethiopia,1,2
+Ethiopia,2,8
+Ethiopia,3,4
+Ethiopia,4,9
+Faroe Islands,1,0
+Faroe Islands,2,0
+Fiji,1,0
+Fiji,2,4
+Finland,1,1073
+Finland,2,22
+Finland,3,58
+Finland,4,753
+Finland,5,2531
+France,1,45
+France,2,771
+France,3,1238
+France,4,2036
+France,5,603
+France,6,2418
+French Polynesia,1,14
+Gabon,1,0
+Georgia,1,0
+Georgia,2,6
+Georgia,3,209
+Georgia,4,217
+Germany,1,86
+Germany,2,260
+Germany,3,272
+Germany,4,797
+Germany,5,7318
+Ghana,1,0
+Ghana,2,0
+Ghana,3,0
+Greece,1,0
+Greece,2,3
+Greece,3,0
+Greece,4,294
+Greece,5,1116
+Greece,6,2933
+Greenland,1,0
+Guatemala,1,4
+Guatemala,2,12
+Guatemala,3,65
+Guernsey Jersey,1,28
+Guernsey Jersey,2,110
+Guernsey Jersey,3,14
+Guinea,1,0
+Guinea,2,2
+Guinea,3,181
+Guinea-Bissau,1,0
+Guinea-Bissau,2,12
+Guyana,1,0
+Honduras,1,1
+Honduras,2,2
+Honduras,3,295
+Honduras,4,159
+Hungary,1,1154
+Hungary,2,1727
+Hungary,3,1129
+Hungary,4,28
+Iceland,1,0
+Iceland,2,2
+Iceland,3,17
+Iceland,4,216
+India,1,21
+India,2,587
+India,3,446
+India,4,693
+India,5,753
+India,6,110906
+India,7,11034
+Indonesia,1,1628
+Indonesia,2,3236
+Indonesia,3,4205
+Indonesia,4,32300
+Indonesia,5,5874
+Indonesia,6,28683
+Indonesia,7,14606
+Iran,1,1
+Iran,2,0
+Iran,3,1400
+Iran,4,3127
+Iran,5,4814
+Iran,6,1021
+Iran,7,640
+Iraq,1,3
+Iraq,2,197
+Iraq,3,1897
+Iraq,4,1164
+Iraq,5,2130
+Italy,1,74
+Italy,2,31
+Italy,3,397
+Italy,4,231
+Italy,5,1550
+Jamaica,1,0
+Jamaica,2,10
+Jamaica,3,21
+Japan,1,22
+Japan,2,194
+Japan,3,12
+Japan,4,11050
+Japan,5,32948
+Jordan,1,0
+Jordan,2,28
+Jordan,3,1
+Kazakhstan,1,0
+Kazakhstan,2,34
+Kazakhstan,3,144
+Kenya,1,0
+Kiribati,2,0
+Kosovo,2,219
+Kosovo,3,294
+Kosovo,4,26
+Kyrgyzstan,1,3
+Kyrgyzstan,2,2
+Kyrgyzstan,3,19
+Kyrgyzstan,4,78
+Laos,1,0
+Laos,2,35
+Laos,3,4
+Latvia,1,0
+Latvia,2,0
+Latvia,3,125
+Latvia,4,139
+Latvia,5,2548
+Latvia,6,142
+Lebanon,1,0
+Lebanon,2,0
+Lebanon,4,1898
+Lebanon,5,124
+Lesotho,2,2
+Liberia,1,2
+Liberia,2,28
+Liberia,3,198
+Libya,2,0
+Liechtenstein,1,8
+Lithuania,1,0
+Lithuania,2,2
+Lithuania,3,14
+Lithuania,4,6560
+Lithuania,5,88
+Luxembourg,1,0
+Luxembourg,2,0
+Luxembourg,3,193
+Madagascar,1,1
+Madagascar,2,4
+Madagascar,3,812
+Madagascar,4,1151
+Madagascar,5,60
+Madagascar,6,895
+Malawi,1,0
+Malawi,2,6
+Malawi,6,7
+Maldives,1,0
+Maldives,2,12
+Mali,1,4
+Mali,2,4
+Mali,3,8
+Malta,2,0
+Marshall Islands,1,0
+Marshall Islands,2,0
+Mauritania,1,0
+Mauritius,1,0
+Mauritius,3,367
+Mexico,1,574
+Mexico,2,125
+Mexico,3,2127
+Mexico,4,5549
+Micronesia,1,0
+Micronesia,2,6
+Moldova,1,0
+Moldova,2,0
+Moldova,3,0
+Moldova,4,0
+Moldova,5,0
+Moldova,6,6
+Moldova,7,3045
+Moldova,8,2
+Monaco,1,0
+Monaco,2,0
+Mongolia,1,2
+Mongolia,2,79
+Mongolia,3,16
+Montenegro,1,0
+Montenegro,2,496
+Morocco,1,2
+Morocco,2,2
+Morocco,3,1575
+Morocco,4,1630
+Morocco,5,213
+Mozambique,1,0
+Mozambique,2,6
+Mozambique,3,240
+Mozambique,4,88
+Myanmar,1,0
+Myanmar,2,242
+Myanmar,3,91
+Myanmar,4,229
+Myanmar,5,289
+Myanmar,6,20
+Myanmar,7,61
+Myanmar,8,4040
+Namibia,1,0
+Namibia,2,30
+Nauru,1,1
+Nauru,2,0
+Nepal,1,0
+Nepal,2,0
+Nepal,3,6887
+Nepal,4,14069
+Netherlands,1,3
+Netherlands,2,4
+Netherlands,3,30
+New Caledonia,1,57
+New Zealand,1,2
+New Zealand,2,6
+New Zealand,3,68
+Nicaragua,1,0
+Nicaragua,2,0
+Nicaragua,4,0
+Nicaragua,5,6
+Niger,1,0
+Niger,2,57
+Niger,3,78
+Nigeria,1,1
+Nigeria,2,23
+Nigeria,3,5545
+North Macedonia,2,0
+North Macedonia,3,3371
+North Macedonia,4,31
+Norway,1,22
+Norway,2,8
+Norway,3,28
+Pakistan,1,0
+Pakistan,2,0
+Pakistan,3,250
+Pakistan,4,65
+Pakistan,5,92
+Palau,1,0
+Panama,1,9
+Panama,2,0
+Panama,3,338
+Panama,4,0
+Panama,5,1106
+Papua New Guinea,1,4
+Paraguay,1,8
+Paraguay,2,98
+Peru,1,10
+Peru,2,3
+Peru,3,10
+Peru,4,16
+Philippines,1,48
+Philippines,2,86
+Philippines,3,192
+Philippines,4,1771
+Philippines,5,1008
+Philippines,6,848
+Philippines,7,506
+Philippines,8,17740
+Poland,1,53
+Poland,2,309
+Poland,3,1934
+Poland,4,8261
+Poland,5,2167
+Poland,6,1971
+Poland,7,1712
+Portugal,1,508
+Portugal,2,171
+Portugal,3,0
+Portugal,4,46
+Republic of Korea,1,0
+Republic of Korea,2,435
+Republic of Korea,3,2698
+Romania,1,0
+Romania,2,2271
+Romania,3,113
+Romania,4,8
+Russian Federation,1,11
+Russian Federation,2,25
+Russian Federation,3,2
+Russian Federation,4,568
+Russian Federation,5,1932
+Russian Federation,6,547
+Rwanda,1,0
+Rwanda,2,0
+Rwanda,4,69
+Rwanda,5,49
+Saint Helena - Ascension and Tristan da Cunha,1,0
+Samoa,1,32
+Sao Tome and Principe,1,0
+Sao Tome and Principe,2,0
+Sao Tome and Principe,3,34
+Serbia,1,5
+Serbia,2,22
+Serbia,3,209
+Serbia,4,631
+Seychelles,1,0
+Seychelles,2,0
+Sierra Leone,1,4
+Sierra Leone,2,0
+Sierra Leone,3,16
+Sierra Leone,4,136
+Slovakia,1,0
+Slovakia,2,207
+Slovakia,3,269
+Slovakia,4,6139
+Slovenia,2,66
+Slovenia,3,134
+Solomon Islands,1,0
+Solomon Islands,2,2
+Somalia,1,0
+Somalia,2,0
+Somalia,3,2
+South Africa,1,0
+South Africa,2,48
+South Africa,4,146
+South Sudan,1,0
+Spain,1,22
+Spain,2,15
+Spain,3,92
+Spain,4,411
+Spain,5,1410
+Spain,6,2792
+Sri Lanka,1,0
+Sri Lanka,2,0
+Sri Lanka,3,38
+Sri Lanka,4,15
+Sri Lanka,5,22
+Sri Lanka,6,58
+Sudan,1,0
+Suriname,1,0
+Sweden,1,1120
+Sweden,2,1187
+Sweden,3,531
+Sweden,4,468
+Switzerland,1,16
+Switzerland,2,80
+Switzerland,3,50
+Switzerland,4,184
+Switzerland,5,58
+Syrian Arab Republic,1,0
+Syrian Arab Republic,2,46
+Syrian Arab Republic,3,436
+Syrian Arab Republic,4,22
+Syrian Arab Republic,5,177
+Taiwan,1,215
+Taiwan,2,2
+Taiwan,3,59
+Taiwan,4,4
+Taiwan,5,0
+Tajikistan,1,0
+Tajikistan,2,6
+Tajikistan,3,21
+Tajikistan,4,62
+Tanzania,1,1
+Tanzania,2,31
+Tanzania,4,6
+Tanzania,5,370
+Thailand,1,10
+Togo,1,0
+Togo,2,1
+Tonga,1,0
+Tunisia,1,0
+Tunisia,2,4
+Tunisia,3,4085
+Turkey,1,0
+Turkey,2,79
+Turkey,3,415
+Turkey,4,10093
+Turkey,5,58
+Turkmenistan,1,1
+Turkmenistan,2,4
+Turkmenistan,3,147
+Turkmenistan,4,21
+Turkmenistan,5,74
+Turkmenistan,6,38
+Tuvalu,1,0
+Uganda,1,185
+Uganda,2,76
+Uganda,3,9
+Uganda,4,233
+Uganda,5,321
+Uganda,6,665
+Ukraine,1,4
+Ukraine,2,2
+Ukraine,3,34
+Ukraine,4,1036
+Ukraine,5,6137
+United Kingdom,1,2
+United Kingdom,2,3642
+United Kingdom,3,71
+United Kingdom,4,18463
+United States of America,1,98
+United States of America,2,448
+United States of America,3,6175
+United States of America,4,6929
+Uruguay,1,2
+Uruguay,2,824
+Uruguay,3,242
+Uzbekistan,1,2
+Uzbekistan,2,95
+Uzbekistan,3,92
+Uzbekistan,4,818
+Vanuatu,1,0
+Venezuela,1,30
+Venezuela,2,54
+Venezuela,3,1263
+Venezuela,4,1990
+Venezuela,5,1500
+Venezuela,6,1446
+Viet Nam,1,6
+Viet Nam,2,4821
+Viet Nam,4,1713
+Wallis and Futuna,1,0
+Yemen,1,0
+Yemen,2,8
+Yemen,3,0
+Zambia,1,0
+Zambia,2,0
+Zimbabwe,1,0
+Zimbabwe,2,2
+Zimbabwe,3,31
+Zimbabwe,4,106

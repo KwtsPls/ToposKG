@@ -6,7 +6,7 @@ This page documents the expected core concepts and parameters.
 
 The core functionality of toposkg-lib is to construct custom geospatial knowledge graphs based on the ToposKG knowledge graph.
 
-## `KnowledgeGraphBlueprint` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L27-L167">[source]</a>
+## `KnowledgeGraphBlueprint` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L27-L167">[source]</a>
 
 The most basic "building block" of the Topos framework. It is responsible for collecting, managing and finally building the desired geospatial knowledge graph.
 
@@ -36,7 +36,7 @@ A blueprint describing how a ToposKG knowledge graph should be constructed. It s
 
 ### Methods
 
-#### `construct(validate=True, debug=False)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L36-L167">[source]</a>
+#### `construct(validate=True, debug=False)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L36-L167">[source]</a>
 
 ```python
 construct(validate: bool = True, debug: bool = False) -> str
@@ -81,7 +81,7 @@ blueprint.construct(validate=False)
 
 
 
-## `KnowledgeGraphBlueprintBuilder` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L170-L317">[source]</a>
+## `KnowledgeGraphBlueprintBuilder` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L170-L317">[source]</a>
 
 
 
@@ -95,7 +95,7 @@ This is the main convenience interface for users who want to select source files
 
 ### Methods
 
-#### `set_name(name)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L179-L180">[source]</a>
+#### `set_name(name)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L179-L180">[source]</a>
 
 ```python
 set_name(name) -> None
@@ -111,7 +111,7 @@ Sets the output file name for the generated knowledge graph.
 
 ---
 
-#### `set_output_dir(output_dir)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L182-L185">[source]</a>
+#### `set_output_dir(output_dir)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L182-L185">[source]</a>
 
 ```python
 set_output_dir(output_dir: str) -> None
@@ -133,7 +133,7 @@ Sets the directory where the generated knowledge graph should be written.
 
 ---
 
-#### `build()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L191-L196">[source]</a>
+#### `build()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L191-L196">[source]</a>
 
 ```python
 build() -> KnowledgeGraphBlueprint
@@ -155,7 +155,7 @@ Creates a `KnowledgeGraphBlueprint` from the current builder configuration.
 
 ---
 
-#### `set_sources_path(sources_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L202-L205">[source]</a>
+#### `set_sources_path(sources_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L202-L205">[source]</a>
 
 ```python
 set_sources_path(sources_path: list) -> None
@@ -177,7 +177,7 @@ Replaces the current source path collection with the given list.
 
 ---
 
-#### `add_source_path(source_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L207-L212">[source]</a>
+#### `add_source_path(source_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L207-L212">[source]</a>
 
 ```python
 add_source_path(source_path: str) -> None
@@ -199,7 +199,7 @@ Adds a single source path to the builder.
 
 ---
 
-#### `add_source_paths_with_strings(source_paths, substrings)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L214-L233">[source]</a>
+#### `add_source_paths_with_strings(source_paths, substrings)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L214-L233">[source]</a>
 
 ```python
 add_source_paths_with_strings(
@@ -235,7 +235,7 @@ builder.add_source_paths_with_strings(
 
 ---
 
-#### `add_source_paths_with_regex(source_paths, regex_pattern)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L235-L245">[source]</a>
+#### `add_source_paths_with_regex(source_paths, regex_pattern)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L235-L245">[source]</a>
 
 ```python
 add_source_paths_with_regex(
@@ -271,7 +271,7 @@ builder.add_source_paths_with_regex(
 
 ---
 
-#### `remove_source_path(source_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L247-L251">[source]</a>
+#### `remove_source_path(source_path)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L247-L251">[source]</a>
 
 ```python
 remove_source_path(source_path: str) -> None
@@ -293,7 +293,7 @@ Removes a source path from the builder, if source paths have already been config
 
 ---
 
-#### `clear_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L253-L260">[source]</a>
+#### `clear_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L253-L260">[source]</a>
 
 ```python
 clear_source_paths() -> None
@@ -309,7 +309,7 @@ Clears all configured source paths and resets linking pairs, materialization pai
 
 ---
 
-#### `print_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L262-L268">[source]</a>
+#### `print_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L262-L268">[source]</a>
 
 ```python
 print_source_paths() -> None
@@ -319,7 +319,7 @@ Prints the currently configured source paths.
 
 ---
 
-#### `set_linking_pairs(linking_pairs)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L274-L277">[source]</a>
+#### `set_linking_pairs(linking_pairs)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L274-L277">[source]</a>
 
 ```python
 set_linking_pairs(linking_pairs: list) -> None
@@ -341,7 +341,7 @@ Sets the entity-linking pair configuration.
 
 ---
 
-#### `set_materialization_pairs(materialization_pairs)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L283-L286">[source]</a>
+#### `set_materialization_pairs(materialization_pairs)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L283-L286">[source]</a>
 
 ```python
 set_materialization_pairs(materialization_pairs: list) -> None
@@ -363,7 +363,7 @@ Sets all geospatial materialization pairs.
 
 ---
 
-#### `add_materialization_pair(materialization_pair)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L288-L297">[source]</a>
+#### `add_materialization_pair(materialization_pair)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L288-L297">[source]</a>
 
 ```python
 add_materialization_pair(materialization_pair: tuple) -> None
@@ -393,7 +393,7 @@ builder.add_materialization_pair((source_a, source_b))
 
 ---
 
-#### `set_translation_targets(translation_targets)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L303-L306">[source]</a>
+#### `set_translation_targets(translation_targets)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L303-L306">[source]</a>
 
 ```python
 set_translation_targets(translation_targets: list) -> None
@@ -415,7 +415,7 @@ Sets all translation targets.
 
 ---
 
-#### `add_translation_target(translation_target)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L308-L317">[source]</a>
+#### `add_translation_target(translation_target)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L308-L317">[source]</a>
 
 ```python
 add_translation_target(translation_target: tuple) -> None
@@ -451,7 +451,7 @@ builder.add_translation_target((
 ---
 ---
 
-## `KnowledgeGraphDataSource` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L320-L343">[source]</a>
+## `KnowledgeGraphDataSource` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L320-L343">[source]</a>
 
 ```python
 class KnowledgeGraphDataSource(
@@ -482,7 +482,7 @@ A data source can represent either a file or a directory. Directory-like sources
 
 ### Methods
 
-#### `print(indent=0)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L327-L332">[source]</a>
+#### `print(indent=0)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L327-L332">[source]</a>
 
 ```python
 print(indent: int = 0) -> None
@@ -498,7 +498,7 @@ Prints the data source and its children as an indented tree.
 
 ---
 
-## `KnowledgeGraphSourcesManager` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L346-L532">[source]</a>
+## `KnowledgeGraphSourcesManager` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L346-L532">[source]</a>
 
 ```python
 class KnowledgeGraphSourcesManager(
@@ -520,7 +520,7 @@ The manager can download source files from a configured repository, create place
 
 ### Methods
 
-#### `add_data_sources_from_repository(sources_repository)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L461-L495">[source]</a>
+#### `add_data_sources_from_repository(sources_repository)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L461-L495">[source]</a>
 
 ```python
 add_data_sources_from_repository(
@@ -552,7 +552,7 @@ The method recursively traverses files and directories, skips metadata directori
 
 ---
 
-#### `get_sources_as_tree()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L497-L498">[source]</a>
+#### `get_sources_as_tree()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L497-L498">[source]</a>
 
 ```python
 get_sources_as_tree() -> list
@@ -568,7 +568,7 @@ Returns the available data sources as a tree.
 
 ---
 
-#### `get_sources_as_list(data_sources=None)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L500-L509">[source]</a>
+#### `get_sources_as_list(data_sources=None)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L500-L509">[source]</a>
 
 ```python
 get_sources_as_list(data_sources=None) -> list
@@ -590,7 +590,7 @@ Flattens a source tree into a list.
 
 ---
 
-#### `get_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L511-L513">[source]</a>
+#### `get_source_paths()` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L511-L513">[source]</a>
 
 ```python
 get_source_paths() -> list
@@ -606,7 +606,7 @@ Returns the paths of all available sources.
 
 ---
 
-#### `print_available_data_sources(tree=True, filter=None)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg/toposkg_lib.py#L515-L532">[source]</a>
+#### `print_available_data_sources(tree=True, filter=None)` <a href="https://github.com/KwtsPls/ToposKG/blob/main/toposkg_lib/toposkg/toposkg_lib_core.py#L515-L532">[source]</a>
 
 ```python
 print_available_data_sources(

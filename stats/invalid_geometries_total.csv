@@ -1,0 +1,7 @@
+geometry_type,invalid_geometry_count,parsed_geometry_count,parse_error_count
+LineString,0,45176391,0
+MultiPolygon,118,47823518,0
+Point,0,17015254,0
+Polygon,196,40947,0
+UNKNOWN,0,0,4
+ALL_TYPES,314,110050380,4

@@ -1,0 +1,546 @@
+feature_class,source,country,entity_count
+mountains,GMBA,GLOBAL,5629
+seas,MarineRegions,GLOBAL,101
+forests,OSM,Afghanistan,888
+forests,OSM,Albania,12562
+forests,OSM,Algeria,36206
+forests,OSM,Andorra,1184
+forests,OSM,Angola,11663
+forests,OSM,Argentina,236937
+forests,OSM,Armenia,32031
+forests,OSM,Australia,278290
+forests,OSM,Austria,78111
+forests,OSM,Azerbaijan,10292
+forests,OSM,Bahamas,4252
+forests,OSM,Bangladesh,8148
+forests,OSM,Belarus,280762
+forests,OSM,Belgium,42701
+forests,OSM,Belize,22509
+forests,OSM,Benin,3150
+forests,OSM,Bhutan,7223
+forests,OSM,Bolivia,40040
+forests,OSM,Bosnia and Herzegovina,63115
+forests,OSM,Botswana,439
+forests,OSM,Brazil,1169839
+forests,OSM,Bulgaria,78878
+forests,OSM,Burkina Faso,31829
+forests,OSM,Burundi,6466
+forests,OSM,Cabo Verde,32106
+forests,OSM,Cambodia,2725
+forests,OSM,Cameroon,14505
+forests,OSM,Canada,2086325
+forests,OSM,Central African Republic,38931
+forests,OSM,Chad,4889
+forests,OSM,Chile,73868
+forests,OSM,China,407752
+forests,OSM,Colombia,75975
+forests,OSM,Congo,6679
+forests,OSM,Cook Islands,86
+forests,OSM,Costa Rica,11313
+forests,OSM,Cote d'Ivoire,5248
+forests,OSM,Croatia,28147
+forests,OSM,Cuba,5957
+forests,OSM,Cyprus,9282
+forests,OSM,Czech Republic,86418
+forests,OSM,Democratic People's Republic of Korea,25588
+forests,OSM,Democratic Republic of the Congo,108212
+forests,OSM,Denmark,22083
+forests,OSM,Djibouti,248
+forests,OSM,Ecuador,13294
+forests,OSM,Egypt,531
+forests,OSM,El Salvador,2348
+forests,OSM,Equatorial Guinea,1199
+forests,OSM,Eritrea,44429
+forests,OSM,Estonia,30045
+forests,OSM,Ethiopia,9363
+forests,OSM,Faroe Islands,230
+forests,OSM,Fiji,1945
+forests,OSM,Finland,363737
+forests,OSM,France,664609
+forests,OSM,French Polynesia,3815
+forests,OSM,Gabon,18018
+forests,OSM,Georgia,49215
+forests,OSM,Germany,567585
+forests,OSM,Ghana,4395
+forests,OSM,Greece,76492
+forests,OSM,Greenland,8
+forests,OSM,Guatemala,6965
+forests,OSM,Guernsey Jersey,656
+forests,OSM,Guinea,8300
+forests,OSM,Guinea-Bissau,671
+forests,OSM,Guyana,5877
+forests,OSM,Honduras,2093
+forests,OSM,Hungary,17633
+forests,OSM,Iceland,12946
+forests,OSM,India,129579
+forests,OSM,Indonesia,69276
+forests,OSM,Iran,10550
+forests,OSM,Iraq,4074
+forests,OSM,Ireland,104308
+forests,OSM,Isle of Man,2351
+forests,OSM,Italy,353477
+forests,OSM,Jamaica,3136
+forests,OSM,Japan,493849
+forests,OSM,Jordan,749
+forests,OSM,Kazakhstan,159754
+forests,OSM,Kenya,40714
+forests,OSM,Kiribati,494
+forests,OSM,Kosovo,1115
+forests,OSM,Kyrgyzstan,14998
+forests,OSM,Laos,4030
+forests,OSM,Latvia,50068
+forests,OSM,Lebanon,6020
+forests,OSM,Lesotho,62074
+forests,OSM,Liberia,1098
+forests,OSM,Libya,12413
+forests,OSM,Liechtenstein,497
+forests,OSM,Lithuania,8525
+forests,OSM,Luxembourg,9794
+forests,OSM,Madagascar,18791
+forests,OSM,Malawi,9865
+forests,OSM,Maldives,1903
+forests,OSM,Mali,13712
+forests,OSM,Malta,279
+forests,OSM,Marshall Islands,683
+forests,OSM,Mauritania,2763
+forests,OSM,Mauritius,9791
+forests,OSM,Mexico,29170
+forests,OSM,Micronesia,512
+forests,OSM,Moldova,12096
+forests,OSM,Monaco,22
+forests,OSM,Mongolia,26778
+forests,OSM,Montenegro,4522
+forests,OSM,Morocco,21073
+forests,OSM,Mozambique,4422
+forests,OSM,Myanmar,9074
+forests,OSM,Namibia,1470
+forests,OSM,Nauru,176
+forests,OSM,Nepal,124687
+forests,OSM,Netherlands,39298
+forests,OSM,New Caledonia,2203
+forests,OSM,New Zealand,246810
+forests,OSM,Nicaragua,8758
+forests,OSM,Niger,5964
+forests,OSM,Nigeria,10746
+forests,OSM,Niue,103
+forests,OSM,North Macedonia,16246
+forests,OSM,Norway,413918
+forests,OSM,Pakistan,11755
+forests,OSM,Palau,317
+forests,OSM,Panama,6042
+forests,OSM,Papua New Guinea,9088
+forests,OSM,Paraguay,342469
+forests,OSM,Peru,16109
+forests,OSM,Philippines,35480
+forests,OSM,Pitcairn,0
+forests,OSM,Poland,713088
+forests,OSM,Portugal,143890
+forests,OSM,Republic of Korea,84892
+forests,OSM,Romania,27359
+forests,OSM,Russian Federation,5967107
+forests,OSM,Rwanda,12786
+forests,OSM,Saint Helena - Ascension and Tristan da Cunha,164
+forests,OSM,Samoa,0
+forests,OSM,Sao Tome and Principe,241
+forests,OSM,Serbia,130564
+forests,OSM,Seychelles,292
+forests,OSM,Sierra Leone,2916
+forests,OSM,Slovakia,43962
+forests,OSM,Slovenia,997
+forests,OSM,Solomon Islands,0
+forests,OSM,Somalia,42343
+forests,OSM,South Africa,22580
+forests,OSM,South Sudan,13174
+forests,OSM,Spain,126855
+forests,OSM,Sri Lanka,6218
+forests,OSM,Sudan,10287
+forests,OSM,Suriname,18667
+forests,OSM,Sweden,106822
+forests,OSM,Switzerland,50402
+forests,OSM,Syrian Arab Republic,2679
+forests,OSM,Taiwan,19431
+forests,OSM,Tajikistan,25348
+forests,OSM,Tanzania,13928
+forests,OSM,Thailand,36577
+forests,OSM,Togo,2177
+forests,OSM,Tokelau,0
+forests,OSM,Tonga,0
+forests,OSM,Tunisia,1339
+forests,OSM,Turkey,60140
+forests,OSM,Turkmenistan,4691
+forests,OSM,Tuvalu,0
+forests,OSM,Uganda,57501
+forests,OSM,Ukraine,961077
+forests,OSM,United Kingdom,1341643
+forests,OSM,United States of America,709346
+forests,OSM,Uruguay,9489
+forests,OSM,Uzbekistan,16494
+forests,OSM,Vanuatu,0
+forests,OSM,Venezuela,11400
+forests,OSM,Viet Nam,16566
+forests,OSM,Wallis and Futuna,245
+forests,OSM,Yemen,1108
+forests,OSM,Zambia,11063
+forests,OSM,Zimbabwe,975
+waterbodies,OSM,Afghanistan,6541
+waterbodies,OSM,Albania,4377
+waterbodies,OSM,Algeria,9281
+waterbodies,OSM,Andorra,618
+waterbodies,OSM,Angola,14939
+waterbodies,OSM,Argentina,325507
+waterbodies,OSM,Armenia,5121
+waterbodies,OSM,Australia,591900
+waterbodies,OSM,Austria,124379
+waterbodies,OSM,Azerbaijan,12204
+waterbodies,OSM,Bahamas,6115
+waterbodies,OSM,Bangladesh,813228
+waterbodies,OSM,Belarus,158006
+waterbodies,OSM,Belgium,156673
+waterbodies,OSM,Belize,13517
+waterbodies,OSM,Benin,4889
+waterbodies,OSM,Bhutan,4387
+waterbodies,OSM,Bolivia,140686
+waterbodies,OSM,Bosnia and Herzegovina,8585
+waterbodies,OSM,Botswana,14912
+waterbodies,OSM,Brazil,559524
+waterbodies,OSM,Bulgaria,22429
+waterbodies,OSM,Burkina Faso,11428
+waterbodies,OSM,Burundi,1047
+waterbodies,OSM,Cabo Verde,4215
+waterbodies,OSM,Cambodia,31004
+waterbodies,OSM,Cameroon,6992
+waterbodies,OSM,Canada,21945617
+waterbodies,OSM,Central African Republic,5154
+waterbodies,OSM,Chad,11517
+waterbodies,OSM,Chile,80228
+waterbodies,OSM,China,889478
+waterbodies,OSM,Colombia,79546
+waterbodies,OSM,Congo,2667
+waterbodies,OSM,Cook Islands,92
+waterbodies,OSM,Costa Rica,2727
+waterbodies,OSM,Cote d'Ivoire,4538
+waterbodies,OSM,Croatia,13896
+waterbodies,OSM,Cuba,17736
+waterbodies,OSM,Cyprus,2277
+waterbodies,OSM,Czech Republic,174674
+waterbodies,OSM,Democratic People's Republic of Korea,26436
+waterbodies,OSM,Democratic Republic of the Congo,23408
+waterbodies,OSM,Denmark,220757
+waterbodies,OSM,Djibouti,296
+waterbodies,OSM,Ecuador,36302
+waterbodies,OSM,Egypt,9715
+waterbodies,OSM,El Salvador,2138
+waterbodies,OSM,Equatorial Guinea,439
+waterbodies,OSM,Eritrea,2788
+waterbodies,OSM,Estonia,74964
+waterbodies,OSM,Ethiopia,24385
+waterbodies,OSM,Faroe Islands,2187
+waterbodies,OSM,Fiji,990
+waterbodies,OSM,Finland,327368
+waterbodies,OSM,France,1124297
+waterbodies,OSM,French Polynesia,1476
+waterbodies,OSM,Gabon,2872
+waterbodies,OSM,Georgia,9960
+waterbodies,OSM,Germany,893606
+waterbodies,OSM,Ghana,5859
+waterbodies,OSM,Greece,19099
+waterbodies,OSM,Greenland,38269
+waterbodies,OSM,Guatemala,8490
+waterbodies,OSM,Guernsey Jersey,487
+waterbodies,OSM,Guinea,2314
+waterbodies,OSM,Guinea-Bissau,843
+waterbodies,OSM,Guyana,3054
+waterbodies,OSM,Honduras,10286
+waterbodies,OSM,Hungary,43777
+waterbodies,OSM,Iceland,57087
+waterbodies,OSM,India,605209
+waterbodies,OSM,Indonesia,74361
+waterbodies,OSM,Iran,24119
+waterbodies,OSM,Iraq,12603
+waterbodies,OSM,Ireland,49737
+waterbodies,OSM,Isle of Man,847
+waterbodies,OSM,Italy,180342
+waterbodies,OSM,Jamaica,1055
+waterbodies,OSM,Japan,365511
+waterbodies,OSM,Jordan,2613
+waterbodies,OSM,Kazakhstan,49707
+waterbodies,OSM,Kenya,31093
+waterbodies,OSM,Kiribati,1151
+waterbodies,OSM,Kosovo,1373
+waterbodies,OSM,Kyrgyzstan,10346
+waterbodies,OSM,Laos,16860
+waterbodies,OSM,Latvia,84936
+waterbodies,OSM,Lebanon,3248
+waterbodies,OSM,Lesotho,12606
+waterbodies,OSM,Liberia,1303
+waterbodies,OSM,Libya,2447
+waterbodies,OSM,Liechtenstein,241
+waterbodies,OSM,Lithuania,27727
+waterbodies,OSM,Luxembourg,7625
+waterbodies,OSM,Madagascar,24909
+waterbodies,OSM,Malawi,3421
+waterbodies,OSM,Maldives,234
+waterbodies,OSM,Mali,20473
+waterbodies,OSM,Malta,2267
+waterbodies,OSM,Marshall Islands,77
+waterbodies,OSM,Mauritania,4419
+waterbodies,OSM,Mauritius,1422
+waterbodies,OSM,Mexico,115917
+waterbodies,OSM,Micronesia,88
+waterbodies,OSM,Moldova,19648
+waterbodies,OSM,Monaco,48
+waterbodies,OSM,Mongolia,13133
+waterbodies,OSM,Montenegro,1941
+waterbodies,OSM,Morocco,18697
+waterbodies,OSM,Mozambique,10367
+waterbodies,OSM,Myanmar,36550
+waterbodies,OSM,Namibia,19705
+waterbodies,OSM,Nauru,33
+waterbodies,OSM,Nepal,84117
+waterbodies,OSM,Netherlands,669999
+waterbodies,OSM,New Caledonia,4695
+waterbodies,OSM,New Zealand,80592
+waterbodies,OSM,Nicaragua,6094
+waterbodies,OSM,Niger,12949
+waterbodies,OSM,Nigeria,17778
+waterbodies,OSM,Niue,10
+waterbodies,OSM,North Macedonia,1287
+waterbodies,OSM,Norway,1902339
+waterbodies,OSM,Pakistan,19976
+waterbodies,OSM,Palau,208
+waterbodies,OSM,Panama,6713
+waterbodies,OSM,Papua New Guinea,6549
+waterbodies,OSM,Paraguay,71658
+waterbodies,OSM,Peru,62413
+waterbodies,OSM,Philippines,108828
+waterbodies,OSM,Pitcairn,0
+waterbodies,OSM,Poland,607744
+waterbodies,OSM,Portugal,100864
+waterbodies,OSM,Republic of Korea,55396
+waterbodies,OSM,Romania,30650
+waterbodies,OSM,Russian Federation,2620004
+waterbodies,OSM,Rwanda,1213
+waterbodies,OSM,Saint Helena - Ascension and Tristan da Cunha,80
+waterbodies,OSM,Samoa,0
+waterbodies,OSM,Sao Tome and Principe,123
+waterbodies,OSM,Serbia,10193
+waterbodies,OSM,Seychelles,101
+waterbodies,OSM,Sierra Leone,2980
+waterbodies,OSM,Slovakia,20840
+waterbodies,OSM,Slovenia,8563
+waterbodies,OSM,Solomon Islands,0
+waterbodies,OSM,Somalia,120760
+waterbodies,OSM,South Africa,147478
+waterbodies,OSM,South Sudan,18198
+waterbodies,OSM,Spain,211297
+waterbodies,OSM,Sri Lanka,28600
+waterbodies,OSM,Sudan,15131
+waterbodies,OSM,Suriname,5725
+waterbodies,OSM,Sweden,306505
+waterbodies,OSM,Switzerland,48045
+waterbodies,OSM,Syrian Arab Republic,4033
+waterbodies,OSM,Taiwan,116674
+waterbodies,OSM,Tajikistan,10373
+waterbodies,OSM,Tanzania,19033
+waterbodies,OSM,Thailand,166622
+waterbodies,OSM,Togo,1642
+waterbodies,OSM,Tokelau,0
+waterbodies,OSM,Tonga,0
+waterbodies,OSM,Tunisia,2717
+waterbodies,OSM,Turkey,42259
+waterbodies,OSM,Turkmenistan,4775
+waterbodies,OSM,Tuvalu,0
+waterbodies,OSM,Uganda,16470
+waterbodies,OSM,Ukraine,286155
+waterbodies,OSM,United Kingdom,477153
+waterbodies,OSM,United States of America,3191063
+waterbodies,OSM,Uruguay,7496
+waterbodies,OSM,Uzbekistan,15806
+waterbodies,OSM,Vanuatu,0
+waterbodies,OSM,Venezuela,26610
+waterbodies,OSM,Viet Nam,67596
+waterbodies,OSM,Wallis and Futuna,34
+waterbodies,OSM,Yemen,3700
+waterbodies,OSM,Zambia,19621
+waterbodies,OSM,Zimbabwe,15876
+pois,OSM,Afghanistan,13934
+pois,OSM,Albania,35861
+pois,OSM,Algeria,101791
+pois,OSM,Andorra,2188
+pois,OSM,Angola,15910
+pois,OSM,Argentina,233721
+pois,OSM,Armenia,26465
+pois,OSM,Australia,866821
+pois,OSM,Austria,662090
+pois,OSM,Azerbaijan,33303
+pois,OSM,Bahamas,5983
+pois,OSM,Bangladesh,81246
+pois,OSM,Belarus,183094
+pois,OSM,Belgium,669979
+pois,OSM,Belize,6456
+pois,OSM,Benin,14247
+pois,OSM,Bhutan,4866
+pois,OSM,Bolivia,52058
+pois,OSM,Bosnia and Herzegovina,42121
+pois,OSM,Botswana,6333
+pois,OSM,Brazil,710038
+pois,OSM,Bulgaria,113745
+pois,OSM,Burkina Faso,26342
+pois,OSM,Burundi,4009
+pois,OSM,Cabo Verde,12019
+pois,OSM,Cambodia,24587
+pois,OSM,Cameroon,32627
+pois,OSM,Canada,1237076
+pois,OSM,Central African Republic,2927
+pois,OSM,Chad,7806
+pois,OSM,Chile,130748
+pois,OSM,China,699413
+pois,OSM,Colombia,166777
+pois,OSM,Congo,4009
+pois,OSM,Cook Islands,476
+pois,OSM,Costa Rica,53886
+pois,OSM,Cote d'Ivoire,36770
+pois,OSM,Croatia,136395
+pois,OSM,Cuba,47477
+pois,OSM,Cyprus,36210
+pois,OSM,Czech Republic,629490
+pois,OSM,Democratic People's Republic of Korea,9678
+pois,OSM,Democratic Republic of the Congo,32431
+pois,OSM,Denmark,305687
+pois,OSM,Djibouti,1200
+pois,OSM,Ecuador,90121
+pois,OSM,Egypt,33790
+pois,OSM,El Salvador,18945
+pois,OSM,Equatorial Guinea,1045
+pois,OSM,Eritrea,2068
+pois,OSM,Estonia,144642
+pois,OSM,Ethiopia,41540
+pois,OSM,Faroe Islands,4656
+pois,OSM,Fiji,2952
+pois,OSM,Finland,306476
+pois,OSM,France,3941299
+pois,OSM,French Polynesia,6443
+pois,OSM,Gabon,3936
+pois,OSM,Georgia,53055
+pois,OSM,Germany,5763526
+pois,OSM,Ghana,35347
+pois,OSM,Greece,214143
+pois,OSM,Greenland,2176
+pois,OSM,Guatemala,28707
+pois,OSM,Guernsey Jersey,5422
+pois,OSM,Guinea,13766
+pois,OSM,Guinea-Bissau,679
+pois,OSM,Guyana,3532
+pois,OSM,Honduras,16394
+pois,OSM,Hungary,298275
+pois,OSM,Iceland,27598
+pois,OSM,India,607646
+pois,OSM,Indonesia,459656
+pois,OSM,Iran,184694
+pois,OSM,Iraq,83575
+pois,OSM,Ireland,791485
+pois,OSM,Isle of Man,5029
+pois,OSM,Italy,2029279
+pois,OSM,Jamaica,7667
+pois,OSM,Japan,2086876
+pois,OSM,Jordan,15851
+pois,OSM,Kazakhstan,98280
+pois,OSM,Kenya,77897
+pois,OSM,Kiribati,541
+pois,OSM,Kosovo,16002
+pois,OSM,Kyrgyzstan,22619
+pois,OSM,Laos,15017
+pois,OSM,Latvia,94881
+pois,OSM,Lebanon,17443
+pois,OSM,Lesotho,13498
+pois,OSM,Liberia,31226
+pois,OSM,Libya,28239
+pois,OSM,Liechtenstein,3925
+pois,OSM,Lithuania,68269
+pois,OSM,Luxembourg,52669
+pois,OSM,Madagascar,24827
+pois,OSM,Malawi,11317
+pois,OSM,Maldives,3857
+pois,OSM,Mali,24291
+pois,OSM,Malta,11299
+pois,OSM,Marshall Islands,509
+pois,OSM,Mauritania,8424
+pois,OSM,Mauritius,8218
+pois,OSM,Mexico,335534
+pois,OSM,Micronesia,536
+pois,OSM,Moldova,39913
+pois,OSM,Monaco,1449
+pois,OSM,Mongolia,23974
+pois,OSM,Montenegro,16128
+pois,OSM,Morocco,62125
+pois,OSM,Mozambique,11304
+pois,OSM,Myanmar,98365
+pois,OSM,Namibia,12471
+pois,OSM,Nauru,95
+pois,OSM,Nepal,91931
+pois,OSM,Netherlands,1366507
+pois,OSM,New Caledonia,9067
+pois,OSM,New Zealand,266139
+pois,OSM,Nicaragua,17065
+pois,OSM,Niger,13020
+pois,OSM,Nigeria,39246
+pois,OSM,Niue,168
+pois,OSM,North Macedonia,17812
+pois,OSM,Norway,231637
+pois,OSM,Pakistan,60936
+pois,OSM,Palau,313
+pois,OSM,Panama,22273
+pois,OSM,Papua New Guinea,17743
+pois,OSM,Paraguay,35923
+pois,OSM,Peru,182733
+pois,OSM,Philippines,349724
+pois,OSM,Pitcairn,0
+pois,OSM,Poland,2125239
+pois,OSM,Portugal,448004
+pois,OSM,Republic of Korea,374301
+pois,OSM,Romania,189622
+pois,OSM,Russian Federation,1516365
+pois,OSM,Rwanda,6116
+pois,OSM,Saint Helena - Ascension and Tristan da Cunha,239
+pois,OSM,Samoa,0
+pois,OSM,Sao Tome and Principe,634
+pois,OSM,Serbia,90947
+pois,OSM,Seychelles,1231
+pois,OSM,Sierra Leone,9373
+pois,OSM,Slovakia,282241
+pois,OSM,Slovenia,112526
+pois,OSM,Solomon Islands,0
+pois,OSM,Somalia,5062
+pois,OSM,South Africa,112528
+pois,OSM,South Sudan,5737
+pois,OSM,Spain,1245434
+pois,OSM,Sri Lanka,48984
+pois,OSM,Sudan,20394
+pois,OSM,Suriname,3076
+pois,OSM,Sweden,777496
+pois,OSM,Switzerland,661815
+pois,OSM,Syrian Arab Republic,28132
+pois,OSM,Taiwan,227451
+pois,OSM,Tajikistan,10907
+pois,OSM,Tanzania,76311
+pois,OSM,Thailand,198097
+pois,OSM,Togo,15625
+pois,OSM,Tokelau,0
+pois,OSM,Tonga,0
+pois,OSM,Tunisia,29297
+pois,OSM,Turkey,337747
+pois,OSM,Turkmenistan,54844
+pois,OSM,Tuvalu,0
+pois,OSM,Uganda,87755
+pois,OSM,Ukraine,417806
+pois,OSM,United Kingdom,2163939
+pois,OSM,United States of America,4242219
+pois,OSM,Uruguay,16555
+pois,OSM,Uzbekistan,74856
+pois,OSM,Vanuatu,0
+pois,OSM,Venezuela,43531
+pois,OSM,Viet Nam,104375
+pois,OSM,Wallis and Futuna,205
+pois,OSM,Yemen,15977
+pois,OSM,Zambia,29980
+pois,OSM,Zimbabwe,13358

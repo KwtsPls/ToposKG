@@ -1,0 +1,7 @@
+country,geometry_type,invalid_geometry_count,parsed_geometry_count,parse_error_count
+GMBA,MultiPolygon,5,2699,0
+GMBA,Polygon,0,2930,0
+GMBA,ALL_TYPES,5,5629,0
+MarineRegions,MultiPolygon,0,4,0
+MarineRegions,Polygon,0,97,0
+MarineRegions,ALL_TYPES,0,101,0

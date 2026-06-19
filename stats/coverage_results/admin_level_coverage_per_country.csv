@@ -1,0 +1,487 @@
+source,country,level,covered,entity_count
+GAUL,Afghanistan,0,True,1
+GAUL,Afghanistan,1,True,34
+GAUL,Afghanistan,2,True,401
+GAUL,Albania,0,True,1
+GAUL,Albania,1,True,12
+GAUL,Albania,2,True,61
+GAUL,Algeria,0,True,1
+GAUL,Algeria,1,True,48
+GAUL,Algeria,2,True,1541
+GAUL,Andorra,0,True,1
+GAUL,Angola,0,True,1
+GAUL,Angola,1,True,18
+GAUL,Argentina,0,True,1
+GAUL,Argentina,1,True,24
+GAUL,Argentina,2,True,526
+GAUL,Armenia,0,True,1
+GAUL,Armenia,1,True,11
+GAUL,Armenia,2,True,40
+GAUL,Australia,0,True,1
+GAUL,Australia,1,True,10
+GAUL,Australia,2,True,2452
+GAUL,Austria,0,True,1
+GAUL,Austria,1,True,9
+GAUL,Azerbaijan,0,True,1
+GAUL,Azerbaijan,1,True,14
+GAUL,Azerbaijan,2,True,74
+GAUL,Bahamas,0,True,1
+GAUL,Bahamas,1,True,32
+GAUL,Bangladesh,0,True,1
+GAUL,Bangladesh,1,True,8
+GAUL,Bangladesh,2,True,64
+GAUL,Belarus,0,True,1
+GAUL,Belarus,1,True,7
+GAUL,Belarus,2,True,119
+GAUL,Belgium,0,True,1
+GAUL,Belgium,1,True,3
+GAUL,Belgium,2,True,11
+GAUL,Belize,0,False,0
+GAUL,Belize,1,True,6
+GAUL,Belize,2,True,30
+GAUL,Benin,0,True,1
+GAUL,Benin,1,True,12
+GAUL,Benin,2,True,77
+GAUL,Bhutan,0,True,1
+GAUL,Bhutan,1,True,20
+GAUL,Bhutan,2,True,205
+GAUL,Bolivia,0,True,1
+GAUL,Bolivia,1,True,9
+GAUL,Bolivia,2,True,112
+GAUL,Bosnia and Herzegovina,0,True,1
+GAUL,Bosnia and Herzegovina,1,True,3
+GAUL,Bosnia and Herzegovina,2,True,12
+GAUL,Botswana,0,True,1
+GAUL,Botswana,1,True,17
+GAUL,Brazil,0,True,1
+GAUL,Brazil,1,True,27
+GAUL,Brazil,2,True,5570
+GAUL,Bulgaria,0,True,1
+GAUL,Bulgaria,1,True,28
+GAUL,Bulgaria,2,True,265
+GAUL,Burkina Faso,0,False,0
+GAUL,Burkina Faso,1,True,13
+GAUL,Burkina Faso,2,True,45
+GAUL,Burundi,0,True,1
+GAUL,Burundi,1,True,18
+GAUL,Cabo Verde,0,True,1
+GAUL,Cabo Verde,1,True,9
+GAUL,Cabo Verde,2,True,22
+GAUL,Cambodia,0,True,1
+GAUL,Cambodia,1,True,26
+GAUL,Cambodia,2,True,198
+GAUL,Cameroon,0,True,1
+GAUL,Cameroon,1,True,10
+GAUL,Cameroon,2,True,58
+GAUL,Canada,0,True,1
+GAUL,Canada,1,True,13
+GAUL,Canada,2,True,295
+GAUL,Central African Republic,0,True,1
+GAUL,Central African Republic,1,True,7
+GAUL,Central African Republic,2,True,17
+GAUL,Chad,0,True,1
+GAUL,Chad,1,True,24
+GAUL,Chile,0,True,1
+GAUL,Chile,1,True,16
+GAUL,Chile,2,True,56
+GAUL,China,0,False,0
+GAUL,China,1,True,31
+GAUL,China,2,True,358
+GAUL,Colombia,0,True,1
+GAUL,Colombia,1,True,33
+GAUL,Colombia,2,True,1122
+GAUL,Congo,0,True,1
+GAUL,Congo,1,True,12
+GAUL,Congo,2,True,89
+GAUL,Cook Islands,0,True,1
+GAUL,Costa Rica,0,True,1
+GAUL,Costa Rica,1,True,7
+GAUL,Costa Rica,2,True,82
+GAUL,Cote d'Ivoire,0,True,1
+GAUL,Cote d'Ivoire,1,True,14
+GAUL,Cote d'Ivoire,2,True,33
+GAUL,Croatia,0,True,1
+GAUL,Croatia,1,True,21
+GAUL,Cuba,0,True,1
+GAUL,Cuba,1,True,16
+GAUL,Cuba,2,True,169
+GAUL,Cyprus,0,True,1
+GAUL,Cyprus,1,True,6
+GAUL,Czech Republic,0,True,1
+GAUL,Czech Republic,1,True,14
+GAUL,Czech Republic,2,True,77
+GAUL,Democratic People's Republic of Korea,0,True,1
+GAUL,Democratic People's Republic of Korea,1,True,11
+GAUL,Democratic People's Republic of Korea,2,True,179
+GAUL,Democratic Republic of the Congo,0,True,1
+GAUL,Democratic Republic of the Congo,1,True,26
+GAUL,Democratic Republic of the Congo,2,True,219
+GAUL,Denmark,0,True,1
+GAUL,Denmark,1,True,5
+GAUL,Denmark,2,True,99
+GAUL,Djibouti,0,True,1
+GAUL,Djibouti,1,True,6
+GAUL,Ecuador,0,True,1
+GAUL,Ecuador,1,True,24
+GAUL,Ecuador,2,True,221
+GAUL,Egypt,0,True,1
+GAUL,Egypt,1,True,28
+GAUL,Egypt,2,True,364
+GAUL,El Salvador,0,True,1
+GAUL,El Salvador,1,True,14
+GAUL,El Salvador,2,True,44
+GAUL,Equatorial Guinea,0,True,1
+GAUL,Equatorial Guinea,1,True,7
+GAUL,Equatorial Guinea,2,True,32
+GAUL,Eritrea,0,True,1
+GAUL,Eritrea,1,True,6
+GAUL,Eritrea,2,True,58
+GAUL,Estonia,0,True,1
+GAUL,Estonia,1,True,15
+GAUL,Estonia,2,True,79
+GAUL,Ethiopia,0,True,1
+GAUL,Ethiopia,1,True,13
+GAUL,Ethiopia,2,True,92
+GAUL,Faroe Islands,0,True,1
+GAUL,Fiji,0,True,1
+GAUL,Fiji,1,True,4
+GAUL,Fiji,2,True,15
+GAUL,Finland,0,True,1
+GAUL,Finland,1,True,7
+GAUL,Finland,2,True,19
+GAUL,France,0,True,1
+GAUL,France,1,True,13
+GAUL,France,2,True,96
+GAUL,French Polynesia,0,True,1
+GAUL,French Polynesia,1,True,2
+GAUL,Gabon,0,True,1
+GAUL,Gabon,1,True,9
+GAUL,Gabon,2,True,48
+GAUL,Georgia,0,True,1
+GAUL,Georgia,1,True,12
+GAUL,Georgia,2,True,74
+GAUL,Germany,0,True,1
+GAUL,Germany,1,True,16
+GAUL,Germany,2,True,400
+GAUL,Ghana,0,True,1
+GAUL,Ghana,1,True,10
+GAUL,Ghana,2,True,216
+GAUL,Greece,0,True,1
+GAUL,Greece,1,True,7
+GAUL,Greece,2,True,13
+GAUL,Guatemala,0,True,1
+GAUL,Guatemala,1,True,22
+GAUL,Guatemala,2,True,342
+GAUL,Guernsey Jersey,0,True,2
+GAUL,Guernsey Jersey,1,True,25
+GAUL,Guinea,0,True,1
+GAUL,Guinea,1,True,8
+GAUL,Guinea,2,True,34
+GAUL,Guinea-Bissau,0,True,1
+GAUL,Guinea-Bissau,1,True,9
+GAUL,Guinea-Bissau,2,True,39
+GAUL,Guyana,0,True,1
+GAUL,Guyana,1,True,10
+GAUL,Guyana,2,True,27
+GAUL,Honduras,0,True,1
+GAUL,Honduras,1,True,18
+GAUL,Honduras,2,True,298
+GAUL,Hungary,0,True,1
+GAUL,Hungary,1,True,20
+GAUL,Hungary,2,True,197
+GAUL,Iceland,0,True,1
+GAUL,Iceland,1,True,8
+GAUL,Iceland,2,True,64
+GAUL,India,0,True,1
+GAUL,India,1,True,39
+GAUL,India,2,True,722
+GAUL,Indonesia,0,True,1
+GAUL,Indonesia,1,True,34
+GAUL,Indonesia,2,True,522
+GAUL,Iran,0,True,1
+GAUL,Iran,1,True,31
+GAUL,Iran,2,True,429
+GAUL,Iraq,0,True,1
+GAUL,Iraq,1,True,18
+GAUL,Iraq,2,True,101
+GAUL,Isle of Man,0,True,1
+GAUL,Italy,0,True,1
+GAUL,Italy,1,True,20
+GAUL,Italy,2,True,107
+GAUL,Jamaica,0,True,1
+GAUL,Jamaica,1,True,14
+GAUL,Japan,0,True,1
+GAUL,Japan,1,True,47
+GAUL,Japan,2,True,1892
+GAUL,Jordan,0,True,1
+GAUL,Jordan,1,True,12
+GAUL,Jordan,2,True,58
+GAUL,Kazakhstan,0,True,1
+GAUL,Kazakhstan,1,True,20
+GAUL,Kazakhstan,2,True,218
+GAUL,Kenya,0,True,1
+GAUL,Kenya,1,True,47
+GAUL,Kenya,2,True,290
+GAUL,Kiribati,0,True,1
+GAUL,Kiribati,1,True,5
+GAUL,Kiribati,2,True,24
+GAUL,Kosovo,0,True,1
+GAUL,Kyrgyzstan,0,True,1
+GAUL,Kyrgyzstan,1,True,7
+GAUL,Kyrgyzstan,2,True,53
+GAUL,Laos,0,True,1
+GAUL,Laos,1,True,18
+GAUL,Laos,2,True,148
+GAUL,Latvia,0,True,1
+GAUL,Latvia,1,True,5
+GAUL,Latvia,2,True,43
+GAUL,Lebanon,0,True,1
+GAUL,Lebanon,1,True,8
+GAUL,Lebanon,2,True,26
+GAUL,Lesotho,0,True,1
+GAUL,Lesotho,1,True,10
+GAUL,Lesotho,2,True,78
+GAUL,Liberia,0,True,1
+GAUL,Liberia,1,True,15
+GAUL,Liberia,2,True,136
+GAUL,Libya,0,True,1
+GAUL,Libya,1,True,3
+GAUL,Libya,2,True,22
+GAUL,Liechtenstein,0,True,1
+GAUL,Liechtenstein,1,True,11
+GAUL,Lithuania,0,True,1
+GAUL,Lithuania,1,True,10
+GAUL,Lithuania,2,True,60
+GAUL,Luxembourg,0,True,1
+GAUL,Luxembourg,1,True,3
+GAUL,Madagascar,0,True,1
+GAUL,Madagascar,1,True,6
+GAUL,Madagascar,2,True,23
+GAUL,Malawi,0,True,1
+GAUL,Malawi,1,True,3
+GAUL,Malawi,2,True,28
+GAUL,Maldives,0,True,1
+GAUL,Maldives,1,True,20
+GAUL,Mali,0,True,1
+GAUL,Mali,1,True,9
+GAUL,Mali,2,True,55
+GAUL,Malta,0,True,1
+GAUL,Malta,1,True,6
+GAUL,Malta,2,True,68
+GAUL,Marshall Islands,0,True,1
+GAUL,Mauritania,0,True,1
+GAUL,Mauritania,1,True,15
+GAUL,Mauritania,2,True,63
+GAUL,Mauritius,0,True,1
+GAUL,Mauritius,1,True,12
+GAUL,Mexico,0,True,1
+GAUL,Mexico,1,True,32
+GAUL,Mexico,2,True,2463
+GAUL,Micronesia,0,True,1
+GAUL,Micronesia,1,True,4
+GAUL,Micronesia,2,True,75
+GAUL,Moldova,0,True,1
+GAUL,Moldova,1,True,37
+GAUL,Moldova,2,False,0
+GAUL,Monaco,0,True,1
+GAUL,Mongolia,0,True,1
+GAUL,Mongolia,1,True,22
+GAUL,Mongolia,2,True,337
+GAUL,Montenegro,0,True,1
+GAUL,Montenegro,1,True,21
+GAUL,Morocco,0,True,1
+GAUL,Morocco,1,True,10
+GAUL,Morocco,2,True,69
+GAUL,Mozambique,0,True,1
+GAUL,Mozambique,1,True,11
+GAUL,Mozambique,2,True,155
+GAUL,Myanmar,0,True,1
+GAUL,Myanmar,1,True,3
+GAUL,Myanmar,2,True,18
+GAUL,Namibia,0,True,1
+GAUL,Namibia,1,True,14
+GAUL,Namibia,2,True,107
+GAUL,Nauru,0,True,1
+GAUL,Nepal,0,True,1
+GAUL,Nepal,1,True,7
+GAUL,Nepal,2,True,77
+GAUL,Netherlands,0,True,1
+GAUL,Netherlands,1,True,12
+GAUL,Netherlands,2,True,342
+GAUL,New Caledonia,0,False,0
+GAUL,New Zealand,0,True,1
+GAUL,New Zealand,1,True,17
+GAUL,New Zealand,2,True,67
+GAUL,Nicaragua,0,True,1
+GAUL,Nicaragua,1,True,17
+GAUL,Nicaragua,2,True,153
+GAUL,Niger,0,True,1
+GAUL,Niger,1,True,8
+GAUL,Niger,2,True,64
+GAUL,Nigeria,0,True,1
+GAUL,Nigeria,1,True,37
+GAUL,Nigeria,2,True,774
+GAUL,Niue,0,True,1
+GAUL,North Macedonia,0,True,1
+GAUL,North Macedonia,1,True,8
+GAUL,North Macedonia,2,True,84
+GAUL,Norway,0,True,1
+GAUL,Norway,1,True,15
+GAUL,Norway,2,True,357
+GAUL,Pakistan,0,True,1
+GAUL,Pakistan,1,True,5
+GAUL,Pakistan,2,True,136
+GAUL,Palau,0,True,1
+GAUL,Panama,0,True,1
+GAUL,Panama,1,True,13
+GAUL,Panama,2,True,76
+GAUL,Papua New Guinea,0,True,1
+GAUL,Papua New Guinea,1,True,22
+GAUL,Papua New Guinea,2,True,87
+GAUL,Paraguay,0,True,1
+GAUL,Paraguay,1,True,18
+GAUL,Paraguay,2,True,250
+GAUL,Peru,0,True,1
+GAUL,Peru,1,True,25
+GAUL,Peru,2,True,196
+GAUL,Philippines,0,True,1
+GAUL,Philippines,1,True,17
+GAUL,Philippines,2,True,85
+GAUL,Pitcairn,0,True,1
+GAUL,Poland,0,True,1
+GAUL,Poland,1,True,16
+GAUL,Poland,2,True,380
+GAUL,Portugal,0,True,1
+GAUL,Portugal,1,True,25
+GAUL,Portugal,2,True,298
+GAUL,Republic of Korea,0,True,1
+GAUL,Republic of Korea,1,True,15
+GAUL,Romania,0,True,1
+GAUL,Romania,1,True,42
+GAUL,Romania,2,True,3187
+GAUL,Russian Federation,0,True,1
+GAUL,Russian Federation,1,True,8
+GAUL,Russian Federation,2,True,83
+GAUL,Rwanda,0,True,1
+GAUL,Rwanda,1,True,5
+GAUL,Rwanda,2,True,30
+GAUL,Saint Helena - Ascension and Tristan da Cunha,0,True,1
+GAUL,Saint Helena - Ascension and Tristan da Cunha,1,True,3
+GAUL,Saint Helena - Ascension and Tristan da Cunha,2,True,10
+GAUL,Samoa,0,True,1
+GAUL,Samoa,1,True,11
+GAUL,Samoa,2,True,43
+GAUL,Sao Tome and Principe,0,True,1
+GAUL,Sao Tome and Principe,1,True,2
+GAUL,Sao Tome and Principe,2,True,7
+GAUL,Serbia,0,True,1
+GAUL,Serbia,1,True,25
+GAUL,Serbia,2,True,161
+GAUL,Seychelles,0,True,1
+GAUL,Seychelles,1,True,4
+GAUL,Sierra Leone,0,True,1
+GAUL,Sierra Leone,1,True,5
+GAUL,Sierra Leone,2,True,15
+GAUL,Slovakia,0,True,1
+GAUL,Slovakia,1,True,8
+GAUL,Slovakia,2,True,79
+GAUL,Slovenia,0,True,1
+GAUL,Slovenia,1,True,12
+GAUL,Slovenia,2,True,212
+GAUL,Solomon Islands,0,True,1
+GAUL,Solomon Islands,1,True,10
+GAUL,Somalia,0,True,1
+GAUL,Somalia,1,True,18
+GAUL,Somalia,2,True,74
+GAUL,South Africa,0,True,1
+GAUL,South Africa,1,True,10
+GAUL,South Africa,2,True,52
+GAUL,South Sudan,0,False,0
+GAUL,South Sudan,1,True,10
+GAUL,South Sudan,2,True,78
+GAUL,Spain,0,True,1
+GAUL,Spain,1,True,19
+GAUL,Spain,2,True,52
+GAUL,Sri Lanka,0,True,1
+GAUL,Sri Lanka,1,True,9
+GAUL,Sri Lanka,2,True,25
+GAUL,Sudan,0,True,1
+GAUL,Sudan,1,True,18
+GAUL,Sudan,2,True,188
+GAUL,Suriname,0,True,1
+GAUL,Suriname,1,True,10
+GAUL,Suriname,2,True,62
+GAUL,Sweden,0,True,1
+GAUL,Sweden,1,True,21
+GAUL,Sweden,2,True,290
+GAUL,Switzerland,0,True,1
+GAUL,Switzerland,1,True,26
+GAUL,Switzerland,2,True,143
+GAUL,Syrian Arab Republic,0,True,1
+GAUL,Syrian Arab Republic,1,True,14
+GAUL,Syrian Arab Republic,2,True,62
+GAUL,Tajikistan,0,True,1
+GAUL,Tajikistan,1,True,5
+GAUL,Tajikistan,2,True,65
+GAUL,Tanzania,0,True,1
+GAUL,Tanzania,1,True,31
+GAUL,Tanzania,2,True,150
+GAUL,Thailand,0,True,1
+GAUL,Thailand,1,True,77
+GAUL,Thailand,2,True,928
+GAUL,Timor-Leste,0,True,1
+GAUL,Timor-Leste,1,True,13
+GAUL,Timor-Leste,2,True,65
+GAUL,Togo,0,True,1
+GAUL,Togo,1,True,5
+GAUL,Togo,2,True,39
+GAUL,Tokelau,0,True,1
+GAUL,Tonga,0,False,0
+GAUL,Tonga,1,True,5
+GAUL,Tonga,2,True,23
+GAUL,Tunisia,0,True,1
+GAUL,Tunisia,1,True,24
+GAUL,Tunisia,2,True,279
+GAUL,Turkey,0,True,1
+GAUL,Turkey,1,True,81
+GAUL,Turkey,2,True,973
+GAUL,Turkmenistan,0,True,1
+GAUL,Turkmenistan,1,True,5
+GAUL,Tuvalu,0,True,1
+GAUL,Tuvalu,1,True,9
+GAUL,Uganda,0,True,1
+GAUL,Uganda,1,True,4
+GAUL,Uganda,2,True,134
+GAUL,Ukraine,0,True,1
+GAUL,Ukraine,1,True,26
+GAUL,Ukraine,2,True,139
+GAUL,United Kingdom,0,True,1
+GAUL,United Kingdom,1,True,4
+GAUL,United Kingdom,2,True,218
+GAUL,United States of America,0,True,1
+GAUL,United States of America,1,True,51
+GAUL,United States of America,2,True,3144
+GAUL,Uruguay,0,True,1
+GAUL,Uruguay,1,True,19
+GAUL,Uzbekistan,0,True,1
+GAUL,Uzbekistan,1,True,14
+GAUL,Uzbekistan,2,True,198
+GAUL,Vanuatu,0,True,1
+GAUL,Vanuatu,1,True,8
+GAUL,Vanuatu,2,True,66
+GAUL,Venezuela,0,True,1
+GAUL,Venezuela,1,True,25
+GAUL,Venezuela,2,True,345
+GAUL,Viet Nam,0,True,1
+GAUL,Viet Nam,1,True,63
+GAUL,Viet Nam,2,True,708
+GAUL,Wallis and Futuna,0,False,0
+GAUL,Yemen,0,True,1
+GAUL,Yemen,1,True,22
+GAUL,Yemen,2,True,333
+GAUL,Zambia,0,True,1
+GAUL,Zambia,1,True,10
+GAUL,Zambia,2,True,116
+GAUL,Zimbabwe,0,True,1
+GAUL,Zimbabwe,1,True,10
+GAUL,Zimbabwe,2,True,62

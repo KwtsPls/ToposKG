@@ -1,0 +1,88 @@
+country,level,faulty_entities
+Andorra,1,0
+Andorra,2,0
+Angola,2,0
+Austria,2,0
+Bahamas,2,0
+Botswana,2,0
+Burundi,2,0
+Cabo Verde,1,18
+Central African Republic,1,14
+Chad,2,0
+Cook Islands,1,0
+Cook Islands,2,0
+Croatia,2,0
+Cyprus,0,2
+Cyprus,1,12
+Cyprus,2,0
+Djibouti,2,0
+Faroe Islands,1,0
+Faroe Islands,2,0
+Finland,0,2
+Finland,1,14
+Finland,2,38
+French Polynesia,0,2
+French Polynesia,1,4
+French Polynesia,2,0
+Greenland,0,0
+Greenland,1,0
+Greenland,2,0
+Guernsey Jersey,2,0
+Ireland,0,0
+Ireland,1,0
+Ireland,2,0
+Isle of Man,0,2
+Isle of Man,1,0
+Isle of Man,2,0
+Jamaica,2,0
+Kiribati,1,10
+Kosovo,1,0
+Kosovo,2,0
+Lesotho,0,2
+Lesotho,1,20
+Lesotho,2,156
+Libya,1,6
+Liechtenstein,2,0
+Luxembourg,2,0
+Maldives,2,0
+Malta,1,12
+Marshall Islands,1,0
+Marshall Islands,2,0
+Mauritius,2,0
+Moldova,0,2
+Moldova,1,74
+Moldova,2,0
+Monaco,1,0
+Monaco,2,0
+Montenegro,2,0
+Nauru,1,0
+Nauru,2,0
+New Caledonia,1,0
+New Caledonia,2,0
+Niue,1,0
+Niue,2,0
+North Macedonia,1,16
+Palau,1,0
+Palau,2,0
+Pitcairn,1,0
+Pitcairn,2,0
+Republic of Korea,2,0
+Saint Helena - Ascension and Tristan da Cunha,0,2
+Saint Helena - Ascension and Tristan da Cunha,1,6
+Saint Helena - Ascension and Tristan da Cunha,2,20
+Seychelles,2,0
+Slovenia,2,424
+Solomon Islands,2,0
+Taiwan,0,0
+Taiwan,1,0
+Taiwan,2,0
+Tokelau,1,0
+Tokelau,2,0
+Turkmenistan,2,0
+Tuvalu,2,0
+United Kingdom,0,2
+United Kingdom,1,8
+United Kingdom,2,436
+Uruguay,2,0
+Wallis and Futuna,1,0
+Wallis and Futuna,2,0

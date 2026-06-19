@@ -1,0 +1,251 @@
+country,has_level_0_file,has_level_1_file,has_level_2_file,level_0_entities,level_1_entities,level_2_entities,complete_gaul_level_0_2_coverage
+Afghanistan,True,True,True,1,34,401,True
+Aland Islands,False,False,False,0,0,0,False
+Albania,True,True,True,1,12,61,True
+Algeria,True,True,True,1,48,1541,True
+American Samoa,False,False,False,0,0,0,False
+Andorra,True,False,False,1,0,0,False
+Angola,True,True,False,1,18,0,False
+Anguilla,False,False,False,0,0,0,False
+Antarctica,False,False,False,0,0,0,False
+Antigua and Barbuda,False,False,False,0,0,0,False
+Argentina,True,True,True,1,24,526,True
+Armenia,True,True,True,1,11,40,True
+Aruba,False,False,False,0,0,0,False
+Australia,True,True,True,1,10,2452,True
+Austria,True,True,False,1,9,0,False
+Azerbaijan,True,True,True,1,14,74,True
+Bahamas,True,True,False,1,32,0,False
+Bahrain,False,False,False,0,0,0,False
+Bangladesh,True,True,True,1,8,64,True
+Barbados,False,False,False,0,0,0,False
+Belarus,True,True,True,1,7,119,True
+Belgium,True,True,True,1,3,11,True
+Belize,True,True,True,0,6,30,False
+Benin,True,True,True,1,12,77,True
+Bermuda,False,False,False,0,0,0,False
+Bhutan,True,True,True,1,20,205,True
+Bolivia,True,True,True,1,9,112,True
+Bonaire - Sint Eustatius and Saba,False,False,False,0,0,0,False
+Bosnia and Herzegovina,True,True,True,1,3,12,True
+Botswana,True,True,False,1,17,0,False
+Bouvet Island,False,False,False,0,0,0,False
+Brazil,True,True,True,1,27,5570,True
+British Indian Ocean Territory,False,False,False,0,0,0,False
+Brunei Darussalam,False,False,False,0,0,0,False
+Bulgaria,True,True,True,1,28,265,True
+Burkina Faso,True,True,True,0,13,45,False
+Burundi,True,True,False,1,18,0,False
+Cabo Verde,True,True,True,1,9,22,True
+Cambodia,True,True,True,1,26,198,True
+Cameroon,True,True,True,1,10,58,True
+Canada,True,True,True,1,13,295,True
+Cayman Islands,False,False,False,0,0,0,False
+Central African Republic,True,True,True,1,7,17,True
+Chad,True,True,False,1,24,0,False
+Chile,True,True,True,1,16,56,True
+China,True,True,True,0,31,358,False
+Christmas Island,False,False,False,0,0,0,False
+Cocos (Keeling) Islands,False,False,False,0,0,0,False
+Colombia,True,True,True,1,33,1122,True
+Comoros,False,False,False,0,0,0,False
+Congo,True,True,True,1,12,89,True
+Cook Islands,True,False,False,1,0,0,False
+Costa Rica,True,True,True,1,7,82,True
+Cote d'Ivoire,True,True,True,1,14,33,True
+Croatia,True,True,False,1,21,0,False
+Cuba,True,True,True,1,16,169,True
+Curacao,False,False,False,0,0,0,False
+Cyprus,True,True,False,1,6,0,False
+Czech Republic,True,True,True,1,14,77,True
+Democratic People's Republic of Korea,True,True,True,1,11,179,True
+Democratic Republic of the Congo,True,True,True,1,26,219,True
+Denmark,True,True,True,1,5,99,True
+Djibouti,True,True,False,1,6,0,False
+Dominica,False,False,False,0,0,0,False
+Dominican Republic,False,False,False,0,0,0,False
+Ecuador,True,True,True,1,24,221,True
+Egypt,True,True,True,1,28,364,True
+El Salvador,True,True,True,1,14,44,True
+Equatorial Guinea,True,True,True,1,7,32,True
+Eritrea,True,True,True,1,6,58,True
+Estonia,True,True,True,1,15,79,True
+Eswatini,False,False,False,0,0,0,False
+Ethiopia,True,True,True,1,13,92,True
+Falkland Islands (Malvinas),False,False,False,0,0,0,False
+Faroe Islands,True,False,False,1,0,0,False
+Fiji,True,True,True,1,4,15,True
+Finland,True,True,True,1,7,19,True
+France,True,True,True,1,13,96,True
+French Guiana,False,False,False,0,0,0,False
+French Polynesia,True,True,False,1,2,0,False
+French Southern Territories,False,False,False,0,0,0,False
+Gabon,True,True,True,1,9,48,True
+Gambia,False,False,False,0,0,0,False
+Georgia,True,True,True,1,12,74,True
+Germany,True,True,True,1,16,400,True
+Ghana,True,True,True,1,10,216,True
+Gibraltar,False,False,False,0,0,0,False
+Greece,True,True,True,1,7,13,True
+Greenland,False,False,False,0,0,0,False
+Grenada,False,False,False,0,0,0,False
+Guadeloupe,False,False,False,0,0,0,False
+Guam,False,False,False,0,0,0,False
+Guatemala,True,True,True,1,22,342,True
+Guernsey Jersey,True,True,False,2,25,0,False
+Guinea,True,True,True,1,8,34,True
+Guinea-Bissau,True,True,True,1,9,39,True
+Guyana,True,True,True,1,10,27,True
+Haiti,False,False,False,0,0,0,False
+Heard Island and McDonald Islands,False,False,False,0,0,0,False
+Holy See,False,False,False,0,0,0,False
+Honduras,True,True,True,1,18,298,True
+Hong Kong,False,False,False,0,0,0,False
+Hungary,True,True,True,1,20,197,True
+Iceland,True,True,True,1,8,64,True
+India,True,True,True,1,39,722,True
+Indonesia,True,True,True,1,34,522,True
+Iran,True,True,True,1,31,429,True
+Iraq,True,True,True,1,18,101,True
+Ireland,False,False,False,0,0,0,False
+Isle of Man,True,False,False,1,0,0,False
+Israel,False,False,False,0,0,0,False
+Italy,True,True,True,1,20,107,True
+Jamaica,True,True,False,1,14,0,False
+Japan,True,True,True,1,47,1892,True
+Jordan,True,True,True,1,12,58,True
+Kazakhstan,True,True,True,1,20,218,True
+Kenya,True,True,True,1,47,290,True
+Kiribati,True,True,True,1,5,24,True
+Kosovo,True,False,False,1,0,0,False
+Kuwait,False,False,False,0,0,0,False
+Kyrgyzstan,True,True,True,1,7,53,True
+Lao People's Democratic Republic,False,False,False,0,0,0,False
+Laos,True,True,True,1,18,148,True
+Latvia,True,True,True,1,5,43,True
+Lebanon,True,True,True,1,8,26,True
+Lesotho,True,True,True,1,10,78,True
+Liberia,True,True,True,1,15,136,True
+Libya,True,True,True,1,3,22,True
+Liechtenstein,True,True,False,1,11,0,False
+Lithuania,True,True,True,1,10,60,True
+Luxembourg,True,True,False,1,3,0,False
+Macao,False,False,False,0,0,0,False
+Madagascar,True,True,True,1,6,23,True
+Malawi,True,True,True,1,3,28,True
+Malaysia,False,False,False,0,0,0,False
+Maldives,True,True,False,1,20,0,False
+Mali,True,True,True,1,9,55,True
+Malta,True,True,True,1,6,68,True
+Marshall Islands,True,False,False,1,0,0,False
+Martinique,False,False,False,0,0,0,False
+Mauritania,True,True,True,1,15,63,True
+Mauritius,True,True,False,1,12,0,False
+Mayotte,False,False,False,0,0,0,False
+Mexico,True,True,True,1,32,2463,True
+Micronesia,True,True,True,1,4,75,True
+Moldova,True,True,True,1,37,0,False
+Monaco,True,False,False,1,0,0,False
+Mongolia,True,True,True,1,22,337,True
+Montenegro,True,True,False,1,21,0,False
+Montserrat,False,False,False,0,0,0,False
+Morocco,True,True,True,1,10,69,True
+Mozambique,True,True,True,1,11,155,True
+Myanmar,True,True,True,1,3,18,True
+Namibia,True,True,True,1,14,107,True
+Nauru,True,False,False,1,0,0,False
+Nepal,True,True,True,1,7,77,True
+Netherlands,True,True,True,1,12,342,True
+New Caledonia,True,False,False,0,0,0,False
+New Zealand,True,True,True,1,17,67,True
+Nicaragua,True,True,True,1,17,153,True
+Niger,True,True,True,1,8,64,True
+Nigeria,True,True,True,1,37,774,True
+Niue,True,False,False,1,0,0,False
+Norfolk Island,False,False,False,0,0,0,False
+North Macedonia,True,True,True,1,8,84,True
+Northern Mariana Islands,False,False,False,0,0,0,False
+Norway,True,True,True,1,15,357,True
+Oman,False,False,False,0,0,0,False
+Pakistan,True,True,True,1,5,136,True
+Palau,True,False,False,1,0,0,False
+Palestine,False,False,False,0,0,0,False
+Panama,True,True,True,1,13,76,True
+Papua New Guinea,True,True,True,1,22,87,True
+Paraguay,True,True,True,1,18,250,True
+Peru,True,True,True,1,25,196,True
+Philippines,True,True,True,1,17,85,True
+Pitcairn,True,False,False,1,0,0,False
+Poland,True,True,True,1,16,380,True
+Portugal,True,True,True,1,25,298,True
+Puerto Rico,False,False,False,0,0,0,False
+Qatar,False,False,False,0,0,0,False
+Republic of Korea,True,True,False,1,15,0,False
+Romania,True,True,True,1,42,3187,True
+Russian Federation,True,True,True,1,8,83,True
+Rwanda,True,True,True,1,5,30,True
+Réunion,False,False,False,0,0,0,False
+Saint Barthelemy,False,False,False,0,0,0,False
+Saint Helena - Ascension and Tristan da Cunha,True,True,True,1,3,10,True
+Saint Kitts and Nevis,False,False,False,0,0,0,False
+Saint Lucia,False,False,False,0,0,0,False
+Saint Martin (French part),False,False,False,0,0,0,False
+Saint Pierre and Miquelon,False,False,False,0,0,0,False
+Saint Vincent and the Grenadines,False,False,False,0,0,0,False
+Samoa,True,True,True,1,11,43,True
+San Marino,False,False,False,0,0,0,False
+Sao Tome and Principe,True,True,True,1,2,7,True
+Saudi Arabia,False,False,False,0,0,0,False
+Senegal,False,False,False,0,0,0,False
+Serbia,True,True,True,1,25,161,True
+Seychelles,True,True,False,1,4,0,False
+Sierra Leone,True,True,True,1,5,15,True
+Singapore,False,False,False,0,0,0,False
+Sint Maarten (Dutch part),False,False,False,0,0,0,False
+Slovakia,True,True,True,1,8,79,True
+Slovenia,True,True,True,1,12,212,True
+Solomon Islands,True,True,False,1,10,0,False
+Somalia,True,True,True,1,18,74,True
+South Africa,True,True,True,1,10,52,True
+South Georgia and the South Sandwich Islands,False,False,False,0,0,0,False
+South Sudan,True,True,True,0,10,78,False
+Spain,True,True,True,1,19,52,True
+Sri Lanka,True,True,True,1,9,25,True
+Sudan,True,True,True,1,18,188,True
+Suriname,True,True,True,1,10,62,True
+Svalbard and Jan Mayen,False,False,False,0,0,0,False
+Sweden,True,True,True,1,21,290,True
+Switzerland,True,True,True,1,26,143,True
+Syrian Arab Republic,True,True,True,1,14,62,True
+Taiwan,False,False,False,0,0,0,False
+Tajikistan,True,True,True,1,5,65,True
+Tanzania,True,True,True,1,31,150,True
+Thailand,True,True,True,1,77,928,True
+Timor-Leste,True,True,True,1,13,65,True
+Togo,True,True,True,1,5,39,True
+Tokelau,True,False,False,1,0,0,False
+Tonga,True,True,True,0,5,23,False
+Trinidad and Tobago,False,False,False,0,0,0,False
+Tunisia,True,True,True,1,24,279,True
+Turkey,True,True,True,1,81,973,True
+Turkmenistan,True,True,False,1,5,0,False
+Turks and Caicos Islands,False,False,False,0,0,0,False
+Tuvalu,True,True,False,1,9,0,False
+Uganda,True,True,True,1,4,134,True
+Ukraine,True,True,True,1,26,139,True
+United Arab Emirates,False,False,False,0,0,0,False
+United Kingdom,True,True,True,1,4,218,True
+United States Minor Outlying Islands,False,False,False,0,0,0,False
+United States of America,True,True,True,1,51,3144,True
+Uruguay,True,True,False,1,19,0,False
+Uzbekistan,True,True,True,1,14,198,True
+Vanuatu,True,True,True,1,8,66,True
+Venezuela,True,True,True,1,25,345,True
+Viet Nam,True,True,True,1,63,708,True
+Virgin Islands (British),False,False,False,0,0,0,False
+Virgin Islands (U.S.),False,False,False,0,0,0,False
+Wallis and Futuna,True,False,False,0,0,0,False
+Western Sahara,False,False,False,0,0,0,False
+Yemen,True,True,True,1,22,333,True
+Zambia,True,True,True,1,10,116,True
+Zimbabwe,True,True,True,1,10,62,True

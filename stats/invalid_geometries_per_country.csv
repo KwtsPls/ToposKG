@@ -1,0 +1,871 @@
+country,geometry_type,invalid_geometry_count,parsed_geometry_count,parse_error_count
+Afghanistan,ALL_TYPES,0,22232,0
+Afghanistan,LineString,0,7463,0
+Afghanistan,MultiPolygon,0,8664,0
+Afghanistan,Point,0,5669,0
+Afghanistan,Polygon,0,436,0
+Albania,ALL_TYPES,0,53366,0
+Albania,LineString,0,15281,0
+Albania,MultiPolygon,0,16071,0
+Albania,Point,0,21952,0
+Albania,Polygon,0,62,0
+Algeria,ALL_TYPES,1,151045,0
+Algeria,LineString,0,54771,0
+Algeria,MultiPolygon,0,57382,0
+Algeria,Point,0,37368,0
+Algeria,Polygon,1,1524,0
+Andorra,ALL_TYPES,0,3994,0
+Andorra,LineString,0,1503,0
+Andorra,MultiPolygon,0,1550,0
+Andorra,Point,0,940,0
+Andorra,Polygon,0,1,0
+Angola,ALL_TYPES,0,42590,0
+Angola,LineString,0,18611,0
+Angola,MultiPolygon,0,19751,0
+Angola,Point,0,4210,0
+Angola,Polygon,0,18,0
+Argentina,ALL_TYPES,0,808023,0
+Argentina,LineString,0,330597,0
+Argentina,MultiPolygon,0,350076,0
+Argentina,Point,0,126818,0
+Argentina,Polygon,0,532,0
+Armenia,ALL_TYPES,0,63949,0
+Armenia,LineString,0,22048,0
+Armenia,MultiPolygon,0,24738,0
+Armenia,Point,0,17113,0
+Armenia,Polygon,0,50,0
+Australia,ALL_TYPES,0,1755661,0
+Australia,LineString,0,732167,0
+Australia,MultiPolygon,0,778872,0
+Australia,Point,0,242379,0
+Australia,Polygon,0,2243,0
+Austria,ALL_TYPES,0,870666,0
+Austria,LineString,0,276828,0
+Austria,MultiPolygon,0,286313,0
+Austria,Point,0,307517,0
+Austria,Polygon,0,8,0
+Azerbaijan,ALL_TYPES,0,56002,0
+Azerbaijan,LineString,0,19096,0
+Azerbaijan,MultiPolygon,0,19575,0
+Azerbaijan,Point,0,17266,0
+Azerbaijan,Polygon,0,65,0
+Bahamas,ALL_TYPES,0,16418,0
+Bahamas,LineString,0,7367,0
+Bahamas,MultiPolygon,0,7653,0
+Bahamas,Point,0,1397,0
+Bahamas,Polygon,0,1,0
+Bangladesh,ALL_TYPES,0,903873,0
+Bangladesh,LineString,0,426363,0
+Bangladesh,MultiPolygon,0,428322,0
+Bangladesh,Point,0,49131,0
+Bangladesh,Polygon,0,57,0
+Belarus,ALL_TYPES,0,645913,0
+Belarus,LineString,0,270039,0
+Belarus,MultiPolygon,0,305249,0
+Belarus,Point,0,70499,0
+Belarus,Polygon,0,126,0
+Belgium,ALL_TYPES,0,872915,0
+Belgium,LineString,0,330303,0
+Belgium,MultiPolygon,0,335880,0
+Belgium,Point,0,206723,0
+Belgium,Polygon,0,9,0
+Belize,ALL_TYPES,0,42487,0
+Belize,LineString,0,19603,0
+Belize,MultiPolygon,0,21295,0
+Belize,Point,0,1588,0
+Belize,Polygon,0,1,0
+Benin,ALL_TYPES,0,22498,0
+Benin,LineString,0,6597,0
+Benin,MultiPolygon,0,7118,0
+Benin,Point,0,8693,0
+Benin,Polygon,0,90,0
+Bhutan,ALL_TYPES,0,16928,0
+Bhutan,LineString,0,6747,0
+Bhutan,MultiPolygon,0,7419,0
+Bhutan,Point,0,2535,0
+Bhutan,Polygon,0,227,0
+Bolivia,ALL_TYPES,0,233799,0
+Bolivia,LineString,0,97916,0
+Bolivia,MultiPolygon,0,103058,0
+Bolivia,Point,0,32717,0
+Bolivia,Polygon,0,108,0
+Bosnia and Herzegovina,ALL_TYPES,0,117702,0
+Bosnia and Herzegovina,LineString,0,48226,0
+Bosnia and Herzegovina,MultiPolygon,0,54634,0
+Bosnia and Herzegovina,Point,0,14830,0
+Bosnia and Herzegovina,Polygon,0,12,0
+Botswana,ALL_TYPES,0,21732,0
+Botswana,LineString,0,9714,0
+Botswana,MultiPolygon,0,10126,0
+Botswana,Point,0,1875,0
+Botswana,Polygon,0,17,0
+Brazil,ALL_TYPES,243,2478953,0
+Brazil,LineString,0,1075688,0
+Brazil,MultiPolygon,84,1158258,0
+Brazil,Point,0,239876,0
+Brazil,Polygon,159,5131,0
+Bulgaria,ALL_TYPES,0,217825,0
+Bulgaria,LineString,0,79497,0
+Bulgaria,MultiPolygon,0,84359,0
+Bulgaria,Point,0,53676,0
+Bulgaria,Polygon,0,293,0
+Burkina Faso,ALL_TYPES,0,69980,0
+Burkina Faso,LineString,0,24635,0
+Burkina Faso,MultiPolygon,0,25221,0
+Burkina Faso,Point,0,20069,0
+Burkina Faso,Polygon,0,55,0
+Burundi,ALL_TYPES,0,11605,0
+Burundi,LineString,0,4906,0
+Burundi,MultiPolygon,0,5092,0
+Burundi,Point,0,1588,0
+Burundi,Polygon,0,19,0
+Cabo Verde,ALL_TYPES,0,48398,0
+Cabo Verde,LineString,0,23185,0
+Cabo Verde,MultiPolygon,0,23299,0
+Cabo Verde,Point,0,1897,0
+Cabo Verde,Polygon,0,17,0
+Cambodia,ALL_TYPES,1,58881,0
+Cambodia,LineString,0,22109,0
+Cambodia,MultiPolygon,0,22678,0
+Cambodia,Point,0,13887,0
+Cambodia,Polygon,1,207,0
+Cameroon,ALL_TYPES,0,54791,0
+Cameroon,LineString,0,18006,0
+Cameroon,MultiPolygon,0,20029,0
+Cameroon,Point,0,16691,0
+Cameroon,Polygon,0,65,0
+Canada,ALL_TYPES,0,25281392,0
+Canada,LineString,0,12253378,0
+Canada,MultiPolygon,0,12657289,0
+Canada,Point,0,370507,0
+Canada,Polygon,0,218,0
+Central African Republic,ALL_TYPES,0,47055,0
+Central African Republic,LineString,0,16694,0
+Central African Republic,MultiPolygon,0,28541,0
+Central African Republic,Point,0,1795,0
+Central African Republic,Polygon,0,25,0
+Chad,ALL_TYPES,0,24282,0
+Chad,LineString,0,9897,0
+Chad,MultiPolygon,0,10579,0
+Chad,Point,0,3781,0
+Chad,Polygon,0,25,0
+Chile,ALL_TYPES,1,285541,0
+Chile,LineString,0,108075,0
+Chile,MultiPolygon,1,112832,0
+Chile,Point,0,64598,0
+Chile,Polygon,0,36,0
+China,ALL_TYPES,0,2029095,0
+China,LineString,0,872187,0
+China,MultiPolygon,0,944286,0
+China,Point,0,212287,0
+China,Polygon,0,335,0
+Colombia,ALL_TYPES,0,328330,0
+Colombia,LineString,0,117051,0
+Colombia,MultiPolygon,0,126057,0
+Colombia,Point,0,84073,0
+Colombia,Polygon,0,1149,0
+Congo,ALL_TYPES,0,13552,0
+Congo,LineString,0,5192,0
+Congo,MultiPolygon,0,5804,0
+Congo,Point,0,2454,0
+Congo,Polygon,0,102,0
+Cook Islands,ALL_TYPES,0,675,0
+Cook Islands,LineString,0,214,0
+Cook Islands,MultiPolygon,0,250,0
+Cook Islands,Point,0,211,0
+Costa Rica,ALL_TYPES,0,68606,0
+Costa Rica,LineString,0,26780,0
+Costa Rica,MultiPolygon,0,28570,0
+Costa Rica,Point,0,13171,0
+Costa Rica,Polygon,0,85,0
+Cote d'Ivoire,ALL_TYPES,0,46759,0
+Cote d'Ivoire,LineString,0,9378,0
+Cote d'Ivoire,MultiPolygon,0,9807,0
+Cote d'Ivoire,Point,0,27527,0
+Cote d'Ivoire,Polygon,0,47,0
+Croatia,ALL_TYPES,0,186291,0
+Croatia,LineString,0,59428,0
+Croatia,MultiPolygon,0,68711,0
+Croatia,Point,0,58138,0
+Croatia,Polygon,0,14,0
+Cuba,ALL_TYPES,0,71706,0
+Cuba,LineString,0,23932,0
+Cuba,MultiPolygon,0,25233,0
+Cuba,Point,0,22392,0
+Cuba,Polygon,0,149,0
+Cyprus,ALL_TYPES,0,48725,0
+Cyprus,LineString,0,15025,0
+Cyprus,MultiPolygon,0,16317,0
+Cyprus,Point,0,17379,0
+Cyprus,Polygon,0,4,0
+Czech Republic,ALL_TYPES,0,910646,0
+Czech Republic,LineString,0,295250,0
+Czech Republic,MultiPolygon,0,321549,0
+Czech Republic,Point,0,293755,0
+Czech Republic,Polygon,0,92,0
+Democratic People's Republic of Korea,ALL_TYPES,0,62232,0
+Democratic People's Republic of Korea,LineString,0,29399,0
+Democratic People's Republic of Korea,MultiPolygon,0,31043,0
+Democratic People's Republic of Korea,Point,0,1624,0
+Democratic People's Republic of Korea,Polygon,0,166,0
+Democratic Republic of the Congo,ALL_TYPES,1,164936,0
+Democratic Republic of the Congo,LineString,0,63033,0
+Democratic Republic of the Congo,MultiPolygon,0,82005,0
+Democratic Republic of the Congo,Point,0,19657,0
+Democratic Republic of the Congo,Polygon,1,241,0
+Denmark,ALL_TYPES,1,548739,0
+Denmark,LineString,0,227781,0
+Denmark,MultiPolygon,1,231736,0
+Denmark,Point,0,89190,0
+Denmark,Polygon,0,32,0
+Djibouti,ALL_TYPES,0,1760,0
+Djibouti,LineString,0,668,0
+Djibouti,MultiPolygon,0,711,0
+Djibouti,Point,0,376,0
+Djibouti,Polygon,0,5,0
+Ecuador,ALL_TYPES,0,141247,0
+Ecuador,LineString,0,46083,0
+Ecuador,MultiPolygon,0,47978,0
+Ecuador,Point,0,46954,0
+Ecuador,Polygon,0,232,0
+Egypt,ALL_TYPES,0,44066,0
+Egypt,LineString,0,13691,0
+Egypt,MultiPolygon,0,13903,0
+Egypt,Point,0,16472,0
+El Salvador,ALL_TYPES,0,23965,0
+El Salvador,LineString,0,8763,0
+El Salvador,MultiPolygon,0,9856,0
+El Salvador,Point,0,5295,0
+El Salvador,Polygon,0,51,0
+Equatorial Guinea,ALL_TYPES,0,2747,0
+Equatorial Guinea,LineString,0,1116,0
+Equatorial Guinea,MultiPolygon,0,1236,0
+Equatorial Guinea,Point,0,365,0
+Equatorial Guinea,Polygon,0,30,0
+Eritrea,ALL_TYPES,0,49293,0
+Eritrea,LineString,0,24372,0
+Eritrea,MultiPolygon,0,24434,0
+Eritrea,Point,0,487,0
+Estonia,ALL_TYPES,0,254648,0
+Estonia,LineString,0,106497,0
+Estonia,MultiPolygon,0,112902,0
+Estonia,Point,0,35191,0
+Estonia,Polygon,0,58,0
+Ethiopia,ALL_TYPES,0,75542,0
+Ethiopia,LineString,0,31439,0
+Ethiopia,MultiPolygon,0,32762,0
+Ethiopia,Point,0,11242,0
+Ethiopia,Polygon,0,99,0
+Faroe Islands,ALL_TYPES,0,7110,0
+Faroe Islands,LineString,0,3004,0
+Faroe Islands,MultiPolygon,0,3161,0
+Faroe Islands,Point,0,945,0
+Fiji,ALL_TYPES,2,5933,0
+Fiji,LineString,0,2117,0
+Fiji,MultiPolygon,2,2266,0
+Fiji,Point,0,1549,0
+Fiji,Polygon,0,1,0
+Finland,ALL_TYPES,0,1000098,0
+Finland,LineString,0,437375,0
+Finland,MultiPolygon,0,472487,0
+Finland,Point,0,90225,0
+Finland,Polygon,0,11,0
+France,ALL_TYPES,0,5772166,0
+France,LineString,0,2134731,0
+France,MultiPolygon,0,2207722,0
+France,Point,0,1429638,0
+France,Polygon,0,75,0
+French Polynesia,ALL_TYPES,0,11745,0
+French Polynesia,LineString,0,5025,0
+French Polynesia,MultiPolygon,0,5267,0
+French Polynesia,Point,0,1452,0
+French Polynesia,Polygon,0,1,0
+Gabon,ALL_TYPES,0,24837,0
+Gabon,LineString,0,10748,0
+Gabon,MultiPolygon,0,11836,0
+Gabon,Point,0,2253,0
+Georgia,ALL_TYPES,0,112624,0
+Georgia,LineString,0,35469,0
+Georgia,MultiPolygon,0,39180,0
+Georgia,Point,0,37889,0
+Georgia,Polygon,0,86,0
+Germany,ALL_TYPES,0,7248608,0
+Germany,LineString,0,2373333,0
+Germany,MultiPolygon,0,2419465,0
+Germany,Point,0,2455432,0
+Germany,Polygon,0,378,0
+Ghana,ALL_TYPES,0,46110,0
+Ghana,LineString,0,12359,0
+Ghana,MultiPolygon,0,13012,0
+Ghana,Point,0,20517,0
+Ghana,Polygon,0,222,0
+Greece,ALL_TYPES,0,312262,0
+Greece,LineString,0,96422,0
+Greece,MultiPolygon,0,102008,0
+Greece,Point,0,113831,0
+Greece,Polygon,0,1,0
+Greenland,ALL_TYPES,0,40460,0
+Greenland,LineString,0,18941,0
+Greenland,MultiPolygon,0,20979,0
+Greenland,Point,0,540,0
+Guatemala,ALL_TYPES,0,44915,0
+Guatemala,LineString,0,16541,0
+Guatemala,MultiPolygon,0,17513,0
+Guatemala,Point,0,10497,0
+Guatemala,Polygon,0,364,0
+Guernsey Jersey,ALL_TYPES,0,6679,0
+Guernsey Jersey,LineString,0,2111,0
+Guernsey Jersey,MultiPolygon,0,2236,0
+Guernsey Jersey,Point,0,2321,0
+Guernsey Jersey,Polygon,0,11,0
+Guinea,ALL_TYPES,0,24494,0
+Guinea,LineString,0,7645,0
+Guinea,MultiPolygon,0,8438,0
+Guinea,Point,0,8377,0
+Guinea,Polygon,0,34,0
+Guinea-Bissau,ALL_TYPES,0,2291,0
+Guinea-Bissau,LineString,0,755,0
+Guinea-Bissau,MultiPolygon,0,1223,0
+Guinea-Bissau,Point,0,282,0
+Guinea-Bissau,Polygon,0,31,0
+Guyana,ALL_TYPES,0,12475,0
+Guyana,LineString,0,5175,0
+Guyana,MultiPolygon,0,5660,0
+Guyana,Point,0,1640,0
+Honduras,ALL_TYPES,0,29500,0
+Honduras,LineString,0,12063,0
+Honduras,MultiPolygon,0,13100,0
+Honduras,Point,0,4043,0
+Honduras,Polygon,0,294,0
+Hungary,ALL_TYPES,2,364426,0
+Hungary,LineString,0,97108,0
+Hungary,MultiPolygon,0,108273,0
+Hungary,Point,0,158831,0
+Hungary,Polygon,2,214,0
+Iceland,ALL_TYPES,1,97915,0
+Iceland,LineString,0,42484,0
+Iceland,MultiPolygon,0,46579,0
+Iceland,Point,0,8832,0
+Iceland,Polygon,1,20,0
+India,ALL_TYPES,0,1422993,0
+India,LineString,0,493256,0
+India,MultiPolygon,0,586458,0
+India,Point,0,342641,0
+India,Polygon,0,638,0
+Indonesia,ALL_TYPES,4,642034,0
+Indonesia,LineString,0,240597,0
+Indonesia,MultiPolygon,1,286269,0
+Indonesia,Point,0,114893,0
+Indonesia,Polygon,3,275,0
+Iran,ALL_TYPES,0,227816,0
+Iran,LineString,0,63060,0
+Iran,MultiPolygon,0,74208,0
+Iran,Point,0,90108,0
+Iran,Polygon,0,440,0
+Iraq,ALL_TYPES,0,102286,0
+Iraq,LineString,0,22867,0
+Iraq,MultiPolygon,0,25454,0
+Iraq,Point,0,53845,0
+Iraq,Polygon,0,120,0
+Ireland,ALL_TYPES,0,945530,0
+Ireland,LineString,0,436812,0
+Ireland,MultiPolygon,0,442579,0
+Ireland,Point,0,66139,0
+Isle of Man,ALL_TYPES,0,8228,0
+Isle of Man,LineString,0,3241,0
+Isle of Man,MultiPolygon,0,3321,0
+Isle of Man,Point,0,1666,0
+Italy,ALL_TYPES,1,2572583,0
+Italy,LineString,0,926261,0
+Italy,MultiPolygon,1,958650,0
+Italy,Point,0,687601,0
+Italy,Polygon,0,71,0
+Jamaica,ALL_TYPES,0,11903,0
+Jamaica,LineString,0,4802,0
+Jamaica,MultiPolygon,0,5368,0
+Jamaica,Point,0,1720,0
+Jamaica,Polygon,0,13,0
+Japan,ALL_TYPES,34,2972474,0
+Japan,LineString,0,1128784,0
+Japan,MultiPolygon,16,1184462,0
+Japan,Point,0,657581,0
+Japan,Polygon,18,1647,0
+Jordan,ALL_TYPES,0,19388,0
+Jordan,LineString,0,5874,0
+Jordan,MultiPolygon,0,6025,0
+Jordan,Point,0,7420,0
+Jordan,Polygon,0,69,0
+Kazakhstan,ALL_TYPES,0,308918,0
+Kazakhstan,LineString,0,133018,0
+Kazakhstan,MultiPolygon,0,136949,0
+Kazakhstan,Point,0,38744,0
+Kazakhstan,Polygon,0,207,0
+Kenya,ALL_TYPES,0,149754,0
+Kenya,LineString,0,46898,0
+Kenya,MultiPolygon,0,47627,0
+Kenya,Point,0,55229,0
+Kiribati,ALL_TYPES,0,2261,0
+Kiribati,LineString,0,979,0
+Kiribati,MultiPolygon,0,1134,0
+Kiribati,Point,0,143,0
+Kiribati,Polygon,0,5,0
+Kosovo,ALL_TYPES,0,18718,0
+Kosovo,LineString,0,5647,0
+Kosovo,MultiPolygon,0,5934,0
+Kosovo,Point,0,7136,0
+Kosovo,Polygon,0,1,0
+Kyrgyzstan,ALL_TYPES,0,48153,0
+Kyrgyzstan,LineString,0,18598,0
+Kyrgyzstan,MultiPolygon,0,19286,0
+Kyrgyzstan,Point,0,10220,0
+Kyrgyzstan,Polygon,0,49,0
+Laos,ALL_TYPES,0,36257,0
+Laos,LineString,0,12165,0
+Laos,MultiPolygon,0,12912,0
+Laos,Point,0,11013,0
+Laos,Polygon,0,167,0
+Latvia,ALL_TYPES,0,232133,0
+Latvia,LineString,0,93087,0
+Latvia,MultiPolygon,0,98594,0
+Latvia,Point,0,40404,0
+Latvia,Polygon,0,48,0
+Lebanon,ALL_TYPES,0,27843,0
+Lebanon,LineString,0,9749,0
+Lebanon,MultiPolygon,0,11171,0
+Lebanon,Point,0,6891,0
+Lebanon,Polygon,0,32,0
+Lesotho,ALL_TYPES,0,88269,0
+Lesotho,LineString,0,42187,0
+Lesotho,MultiPolygon,0,42321,0
+Lesotho,Point,0,3672,0
+Lesotho,Polygon,0,89,0
+Liberia,ALL_TYPES,0,33969,0
+Liberia,LineString,0,3687,0
+Liberia,MultiPolygon,0,4127,0
+Liberia,Point,0,26004,0
+Liberia,Polygon,0,151,0
+Libya,ALL_TYPES,0,43149,0
+Libya,LineString,0,13739,0
+Libya,MultiPolygon,0,13863,0
+Libya,Point,0,15524,0
+Libya,Polygon,0,23,0
+Liechtenstein,ALL_TYPES,0,4691,0
+Liechtenstein,LineString,0,1488,0
+Liechtenstein,MultiPolygon,0,1501,0
+Liechtenstein,Point,0,1697,0
+Liechtenstein,Polygon,0,5,0
+Lithuania,ALL_TYPES,0,109788,0
+Lithuania,LineString,0,34838,0
+Lithuania,MultiPolygon,0,45776,0
+Lithuania,Point,0,29106,0
+Lithuania,Polygon,0,68,0
+Luxembourg,ALL_TYPES,0,70410,0
+Luxembourg,LineString,0,24194,0
+Luxembourg,MultiPolygon,0,24659,0
+Luxembourg,Point,0,21553,0
+Luxembourg,Polygon,0,4,0
+Madagascar,ALL_TYPES,0,69674,0
+Madagascar,LineString,0,26028,0
+Madagascar,MultiPolygon,0,28914,0
+Madagascar,Point,0,14718,0
+Madagascar,Polygon,0,14,0
+Malawi,ALL_TYPES,0,24674,0
+Malawi,LineString,0,8378,0
+Malawi,MultiPolygon,0,8535,0
+Malawi,Point,0,7732,0
+Malawi,Polygon,0,29,0
+Maldives,ALL_TYPES,0,6045,0
+Maldives,LineString,0,2058,0
+Maldives,MultiPolygon,0,2159,0
+Maldives,Point,0,1828,0
+Mali,ALL_TYPES,0,58618,0
+Mali,LineString,0,19307,0
+Mali,MultiPolygon,0,21121,0
+Mali,Point,0,18125,0
+Mali,Polygon,0,65,0
+Malta,ALL_TYPES,0,13990,0
+Malta,LineString,0,4053,0
+Malta,MultiPolygon,0,4145,0
+Malta,Point,0,5720,0
+Malta,Polygon,0,72,0
+Marshall Islands,ALL_TYPES,0,1302,0
+Marshall Islands,LineString,0,543,0
+Marshall Islands,MultiPolygon,0,615,0
+Marshall Islands,Point,0,144,0
+Mauritania,ALL_TYPES,0,15622,0
+Mauritania,LineString,0,5081,0
+Mauritania,MultiPolygon,0,5316,0
+Mauritania,Point,0,5225,0
+Mauritius,ALL_TYPES,0,19620,0
+Mauritius,LineString,0,8160,0
+Mauritius,MultiPolygon,0,8623,0
+Mauritius,Point,0,2832,0
+Mauritius,Polygon,0,5,0
+Mexico,ALL_TYPES,0,489583,0
+Mexico,LineString,0,167348,0
+Mexico,MultiPolygon,0,177604,0
+Mexico,Point,0,142234,0
+Mexico,Polygon,0,2397,0
+Micronesia,ALL_TYPES,0,1327,0
+Micronesia,LineString,0,447,0
+Micronesia,MultiPolygon,0,636,0
+Micronesia,Point,0,194,0
+Micronesia,Polygon,0,50,0
+Moldova,ALL_TYPES,0,74256,0
+Moldova,LineString,0,27394,0
+Moldova,MultiPolygon,0,31674,0
+Moldova,Point,0,15157,0
+Moldova,Polygon,0,31,0
+Monaco,ALL_TYPES,0,1532,0
+Monaco,LineString,0,192,0
+Monaco,MultiPolygon,0,200,0
+Monaco,Point,0,1139,0
+Monaco,Polygon,0,1,0
+Mongolia,ALL_TYPES,0,64629,0
+Mongolia,LineString,0,23765,0
+Mongolia,MultiPolygon,0,25084,0
+Mongolia,Point,0,15421,0
+Mongolia,Polygon,0,359,0
+Montenegro,ALL_TYPES,0,22880,0
+Montenegro,LineString,0,6170,0
+Montenegro,MultiPolygon,0,6915,0
+Montenegro,Point,0,9777,0
+Montenegro,Polygon,0,18,0
+Morocco,ALL_TYPES,0,104739,0
+Morocco,LineString,0,33679,0
+Morocco,MultiPolygon,0,36759,0
+Morocco,Point,0,34224,0
+Morocco,Polygon,0,77,0
+Mozambique,ALL_TYPES,0,26667,0
+Mozambique,LineString,0,9443,0
+Mozambique,MultiPolygon,0,10593,0
+Mozambique,Point,0,6493,0
+Mozambique,Polygon,0,138,0
+Myanmar,ALL_TYPES,0,146701,0
+Myanmar,LineString,0,46793,0
+Myanmar,MultiPolygon,0,50462,0
+Myanmar,Point,0,49433,0
+Myanmar,Polygon,0,13,0
+Namibia,ALL_TYPES,1,33821,0
+Namibia,LineString,0,14818,0
+Namibia,MultiPolygon,0,15326,0
+Namibia,Point,0,3557,0
+Namibia,Polygon,1,120,0
+Nauru,ALL_TYPES,0,329,0
+Nauru,LineString,0,136,0
+Nauru,MultiPolygon,0,165,0
+Nauru,Point,0,27,0
+Nauru,Polygon,0,1,0
+Nepal,ALL_TYPES,0,308381,0
+Nepal,LineString,0,117041,0
+Nepal,MultiPolygon,0,127850,0
+Nepal,Point,0,63405,0
+Nepal,Polygon,0,85,0
+Netherlands,ALL_TYPES,1,2079072,0
+Netherlands,LineString,0,862199,0
+Netherlands,MultiPolygon,1,872689,0
+Netherlands,Point,0,343853,0
+Netherlands,Polygon,0,331,0
+New Caledonia,ALL_TYPES,0,15973,0
+New Caledonia,LineString,0,6823,0
+New Caledonia,MultiPolygon,0,6977,0
+New Caledonia,Point,0,2173,0
+New Zealand,ALL_TYPES,0,593763,0
+New Zealand,LineString,0,263487,0
+New Zealand,MultiPolygon,0,268551,0
+New Zealand,Point,0,61679,0
+New Zealand,Polygon,0,46,0
+Nicaragua,ALL_TYPES,0,32272,0
+Nicaragua,LineString,0,11441,0
+Nicaragua,MultiPolygon,0,13323,0
+Nicaragua,Point,0,7372,0
+Nicaragua,Polygon,0,136,0
+Niger,ALL_TYPES,0,32155,0
+Niger,LineString,0,11172,0
+Niger,MultiPolygon,0,11610,0
+Niger,Point,0,9301,0
+Niger,Polygon,0,72,0
+Nigeria,ALL_TYPES,0,72195,0
+Nigeria,LineString,0,20863,0
+Nigeria,MultiPolygon,0,26925,0
+Nigeria,Point,0,23606,0
+Nigeria,Polygon,0,801,0
+Niue,ALL_TYPES,0,284,0
+Niue,LineString,0,97,0
+Niue,MultiPolygon,0,120,0
+Niue,Point,0,66,0
+Niue,Polygon,0,1,0
+North Macedonia,ALL_TYPES,0,37290,4
+North Macedonia,LineString,0,14597,0
+North Macedonia,MultiPolygon,0,16695,0
+North Macedonia,Point,0,5905,0
+North Macedonia,Polygon,0,93,0
+North Macedonia,UNKNOWN,0,0,4
+Norway,ALL_TYPES,2,2548726,0
+Norway,LineString,0,1060203,0
+Norway,MultiPolygon,1,1388501,0
+Norway,Point,0,99826,0
+Norway,Polygon,1,196,0
+Pakistan,ALL_TYPES,0,93636,0
+Pakistan,LineString,0,26702,0
+Pakistan,MultiPolygon,0,30273,0
+Pakistan,Point,0,36531,0
+Pakistan,Polygon,0,130,0
+Palau,ALL_TYPES,0,856,0
+Palau,LineString,0,292,0
+Palau,MultiPolygon,0,361,0
+Palau,Point,0,203,0
+Panama,ALL_TYPES,2,36176,0
+Panama,LineString,0,13934,0
+Panama,MultiPolygon,2,15953,0
+Panama,Point,0,6244,0
+Panama,Polygon,0,45,0
+Papua New Guinea,ALL_TYPES,0,33407,0
+Papua New Guinea,LineString,0,15650,0
+Papua New Guinea,MultiPolygon,0,16445,0
+Papua New Guinea,Point,0,1312,0
+Paraguay,ALL_TYPES,0,450562,0
+Paraguay,LineString,0,213832,0
+Paraguay,MultiPolygon,0,219694,0
+Paraguay,Point,0,16767,0
+Paraguay,Polygon,0,269,0
+Peru,ALL_TYPES,0,263611,0
+Peru,LineString,0,69058,0
+Peru,MultiPolygon,0,73614,0
+Peru,Point,0,120723,0
+Peru,Polygon,0,216,0
+Philippines,ALL_TYPES,1,506110,0
+Philippines,LineString,0,188328,0
+Philippines,MultiPolygon,1,210719,0
+Philippines,Point,0,107025,0
+Philippines,Polygon,0,38,0
+Pitcairn,ALL_TYPES,0,6,0
+Pitcairn,MultiPolygon,0,6,0
+Poland,ALL_TYPES,0,3486257,0
+Poland,LineString,0,1403578,0
+Poland,MultiPolygon,0,1456446,0
+Poland,Point,0,625856,0
+Poland,Polygon,0,377,0
+Portugal,ALL_TYPES,0,697037,0
+Portugal,LineString,0,268489,0
+Portugal,MultiPolygon,0,283535,0
+Portugal,Point,0,144723,0
+Portugal,Polygon,0,290,0
+Republic of Korea,ALL_TYPES,0,516954,0
+Republic of Korea,LineString,0,163187,0
+Republic of Korea,MultiPolygon,0,172347,0
+Republic of Korea,Point,0,181414,0
+Republic of Korea,Polygon,0,6,0
+Romania,ALL_TYPES,1,254222,0
+Romania,LineString,0,88813,0
+Romania,MultiPolygon,0,94210,0
+Romania,Point,0,68009,0
+Romania,Polygon,1,3190,0
+Russian Federation,ALL_TYPES,0,10119014,0
+Russian Federation,LineString,0,4500087,0
+Russian Federation,MultiPolygon,0,4964035,0
+Russian Federation,Point,0,654825,0
+Russian Federation,Polygon,0,67,0
+Rwanda,ALL_TYPES,0,20599,0
+Rwanda,LineString,0,7127,0
+Rwanda,MultiPolygon,0,9069,0
+Rwanda,Point,0,4367,0
+Rwanda,Polygon,0,36,0
+Saint Helena - Ascension and Tristan da Cunha,ALL_TYPES,0,502,0
+Saint Helena - Ascension and Tristan da Cunha,LineString,0,200,0
+Saint Helena - Ascension and Tristan da Cunha,MultiPolygon,0,220,0
+Saint Helena - Ascension and Tristan da Cunha,Point,0,78,0
+Saint Helena - Ascension and Tristan da Cunha,Polygon,0,4,0
+Samoa,ALL_TYPES,0,34,0
+Samoa,MultiPolygon,0,34,0
+Sao Tome and Principe,ALL_TYPES,0,1034,0
+Sao Tome and Principe,LineString,0,373,0
+Sao Tome and Principe,MultiPolygon,0,439,0
+Sao Tome and Principe,Point,0,220,0
+Sao Tome and Principe,Polygon,0,2,0
+Serbia,ALL_TYPES,0,237169,0
+Serbia,LineString,0,98287,0
+Serbia,MultiPolygon,0,105155,0
+Serbia,Point,0,33545,0
+Serbia,Polygon,0,182,0
+Seychelles,ALL_TYPES,0,1669,0
+Seychelles,LineString,0,458,0
+Seychelles,MultiPolygon,0,520,0
+Seychelles,Point,0,690,0
+Seychelles,Polygon,0,1,0
+Sierra Leone,ALL_TYPES,0,15399,0
+Sierra Leone,LineString,0,5771,0
+Sierra Leone,MultiPolygon,0,6158,0
+Sierra Leone,Point,0,3462,0
+Sierra Leone,Polygon,0,8,0
+Slovakia,ALL_TYPES,0,353934,0
+Slovakia,LineString,0,111364,0
+Slovakia,MultiPolygon,0,122128,0
+Slovakia,Point,0,120354,0
+Slovakia,Polygon,0,88,0
+Slovenia,ALL_TYPES,0,122450,0
+Slovenia,LineString,0,45816,0
+Slovenia,MultiPolygon,0,47607,0
+Slovenia,Point,0,29016,0
+Slovenia,Polygon,0,11,0
+Solomon Islands,ALL_TYPES,0,44,0
+Solomon Islands,MultiPolygon,0,43,0
+Solomon Islands,Polygon,0,1,0
+Somalia,ALL_TYPES,0,168369,0
+Somalia,LineString,0,78350,0
+Somalia,MultiPolygon,0,87533,0
+Somalia,Point,0,2399,0
+Somalia,Polygon,0,87,0
+South Africa,ALL_TYPES,0,282798,0
+South Africa,LineString,0,123421,0
+South Africa,MultiPolygon,0,126543,0
+South Africa,Point,0,32776,0
+South Africa,Polygon,0,58,0
+South Sudan,ALL_TYPES,0,37122,0
+South Sudan,LineString,0,15440,0
+South Sudan,MultiPolygon,0,18084,0
+South Sudan,Point,0,3597,0
+South Sudan,Polygon,0,1,0
+Spain,ALL_TYPES,1,1600737,0
+Spain,LineString,0,487761,0
+Spain,MultiPolygon,1,515509,0
+Spain,Point,0,597436,0
+Spain,Polygon,0,31,0
+Sri Lanka,ALL_TYPES,0,83945,0
+Sri Lanka,LineString,0,31660,0
+Sri Lanka,MultiPolygon,0,32689,0
+Sri Lanka,Point,0,19577,0
+Sri Lanka,Polygon,0,19,0
+Sudan,ALL_TYPES,0,45832,0
+Sudan,LineString,0,17595,0
+Sudan,MultiPolygon,0,19640,0
+Sudan,Point,0,8597,0
+Suriname,ALL_TYPES,0,27478,0
+Suriname,LineString,0,12885,0
+Suriname,MultiPolygon,0,13400,0
+Suriname,Point,0,1192,0
+Suriname,Polygon,0,1,0
+Sweden,ALL_TYPES,0,1193152,0
+Sweden,LineString,0,506027,0
+Sweden,MultiPolygon,0,538965,0
+Sweden,Point,0,147933,0
+Sweden,Polygon,0,227,0
+Switzerland,ALL_TYPES,0,763330,0
+Switzerland,LineString,0,227960,0
+Switzerland,MultiPolygon,0,233566,0
+Switzerland,Point,0,301673,0
+Switzerland,Polygon,0,131,0
+Syrian Arab Republic,ALL_TYPES,0,35405,0
+Syrian Arab Republic,LineString,0,11114,0
+Syrian Arab Republic,MultiPolygon,0,11867,0
+Syrian Arab Republic,Point,0,12351,0
+Syrian Arab Republic,Polygon,0,73,0
+Taiwan,ALL_TYPES,0,371853,0
+Taiwan,LineString,0,126935,0
+Taiwan,MultiPolygon,0,137529,0
+Taiwan,Point,0,107389,0
+Tajikistan,ALL_TYPES,0,46830,0
+Tajikistan,LineString,0,20180,0
+Tajikistan,MultiPolygon,0,20721,0
+Tajikistan,Point,0,5864,0
+Tajikistan,Polygon,0,65,0
+Tanzania,ALL_TYPES,2,109893,0
+Tanzania,LineString,0,28007,0
+Tanzania,MultiPolygon,1,28981,0
+Tanzania,Point,0,52772,0
+Tanzania,Polygon,1,133,0
+Thailand,ALL_TYPES,0,401379,0
+Thailand,LineString,0,146844,0
+Thailand,MultiPolygon,0,151320,0
+Thailand,Point,0,103215,0
+Timor-Leste,ALL_TYPES,0,79,0
+Timor-Leste,MultiPolygon,0,7,0
+Timor-Leste,Polygon,0,72,0
+Togo,ALL_TYPES,0,19510,0
+Togo,LineString,0,3149,0
+Togo,MultiPolygon,0,3243,0
+Togo,Point,0,13073,0
+Togo,Polygon,0,45,0
+Tokelau,ALL_TYPES,0,5,0
+Tokelau,MultiPolygon,0,5,0
+Tonga,ALL_TYPES,0,13,0
+Tonga,MultiPolygon,0,13,0
+Tunisia,ALL_TYPES,0,36033,0
+Tunisia,LineString,0,10380,0
+Tunisia,MultiPolygon,0,12966,0
+Tunisia,Point,0,12396,0
+Tunisia,Polygon,0,291,0
+Turkey,ALL_TYPES,0,455971,0
+Turkey,LineString,0,153829,0
+Turkey,MultiPolygon,0,173056,0
+Turkey,Point,0,128068,0
+Turkey,Polygon,0,1018,0
+Turkmenistan,ALL_TYPES,0,64512,0
+Turkmenistan,LineString,0,30046,0
+Turkmenistan,MultiPolygon,0,30463,0
+Turkmenistan,Point,0,3998,0
+Turkmenistan,Polygon,0,5,0
+Tuvalu,ALL_TYPES,0,25,0
+Tuvalu,MultiPolygon,0,21,0
+Tuvalu,Polygon,0,4,0
+Uganda,ALL_TYPES,0,162558,0
+Uganda,LineString,0,43351,0
+Uganda,MultiPolygon,0,46536,0
+Uganda,Point,0,72549,0
+Uganda,Polygon,0,122,0
+Ukraine,ALL_TYPES,0,1673744,0
+Ukraine,LineString,0,728794,0
+Ukraine,MultiPolygon,0,776249,0
+Ukraine,Point,0,168568,0
+Ukraine,Polygon,0,133,0
+United Kingdom,ALL_TYPES,0,4006225,0
+United Kingdom,LineString,0,1623742,0
+United Kingdom,MultiPolygon,0,1685979,0
+United Kingdom,Point,0,696373,0
+United Kingdom,Polygon,0,131,0
+United States of America,ALL_TYPES,6,8183020,0
+United States of America,LineString,0,3178114,0
+United States of America,MultiPolygon,0,3285710,0
+United States of America,Point,0,1716240,0
+United States of America,Polygon,6,2956,0
+Uruguay,ALL_TYPES,0,34353,0
+Uruguay,LineString,0,11124,0
+Uruguay,MultiPolygon,0,13510,0
+Uruguay,Point,0,9705,0
+Uruguay,Polygon,0,14,0
+Uzbekistan,ALL_TYPES,0,108073,0
+Uzbekistan,LineString,0,39750,0
+Uzbekistan,MultiPolygon,0,41221,0
+Uzbekistan,Point,0,26902,0
+Uzbekistan,Polygon,0,200,0
+Vanuatu,ALL_TYPES,0,7,0
+Vanuatu,MultiPolygon,0,7,0
+Venezuela,ALL_TYPES,0,85837,0
+Venezuela,LineString,0,30011,0
+Venezuela,MultiPolygon,0,36524,0
+Venezuela,Point,0,18957,0
+Venezuela,Polygon,0,345,0
+Viet Nam,ALL_TYPES,0,193912,0
+Viet Nam,LineString,0,68487,0
+Viet Nam,MultiPolygon,0,75106,0
+Viet Nam,Point,0,49618,0
+Viet Nam,Polygon,0,701,0
+Wallis and Futuna,ALL_TYPES,0,489,0
+Wallis and Futuna,LineString,0,207,0
+Wallis and Futuna,MultiPolygon,0,235,0
+Wallis and Futuna,Point,0,47,0
+Yemen,ALL_TYPES,0,21504,0
+Yemen,LineString,0,4520,0
+Yemen,MultiPolygon,0,5138,0
+Yemen,Point,0,11530,0
+Yemen,Polygon,0,316,0
+Zambia,ALL_TYPES,0,60920,0
+Zambia,LineString,0,16838,0
+Zambia,MultiPolygon,0,21665,0
+Zambia,Point,0,22290,0
+Zambia,Polygon,0,127,0
+Zimbabwe,ALL_TYPES,0,30413,0
+Zimbabwe,LineString,0,12985,0
+Zimbabwe,MultiPolygon,0,13590,0
+Zimbabwe,Point,0,3770,0
+Zimbabwe,Polygon,0,68,0
