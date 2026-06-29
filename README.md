@@ -12,12 +12,12 @@ and its tool chain for integrating both thematic and geospatial data into knowle
 
   - Topos-parser: The java project used to parse the various input sources and produce .ntriple files
   - kgui: ToposKG graphical user interface
-  - toposkg_lib: The source code for the Topos [python library](https://pypi.org/project/toposkg/0.1.2/)
+  - toposkg_lib: The source code for the Topos [python library](https://pypi.org/project/toposkg/)
   - docs: Ontology file site [Ontology website](https://toposkg.di.uoa.gr/ontology)
   - docker: A docker file to setup a GraphDB endpoint by downloading the KG dump from our [Zenodo repository](https://doi.org/10.5281/zenodo.15704481).
   - readthedocs: Read the Docs files for better library documentation. Can be viewed [here](https://toposkg.readthedocs.io/).
   - stats: Statistics for ToposKG geospatial knowledge graph
-  - topos_update_tool: Tool for automatically updating ToposKG with latest source data.
+  - topos-update-tool: Tool for automatically updating ToposKG with latest source data.
 
 Further instructions on how to build and use its separate project is present in each subdirectory.
 
