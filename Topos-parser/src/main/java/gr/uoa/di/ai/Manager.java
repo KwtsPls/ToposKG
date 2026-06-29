@@ -84,6 +84,21 @@ public class Manager {
                     throw new RuntimeException(e);
                 }
             }
+            case "count_invalid_geom" -> {
+                Path inputDir = Path.of(args[1]);
+                int mode = Integer.parseInt(args[2]);
+
+                try {
+                    InvalidGeometryCounter.countInvalidGeometries(
+                            inputDir,
+                            mode,
+                            Path.of("invalid_geometries_per_country.csv"),
+                            Path.of("invalid_geometries_total.csv")
+                    );
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
             /*** 1st step in the OSM integration pipeline
              * args[1] = wikidata uri for country
              * args[2] = osm input file
