@@ -1,34 +1,29 @@
 # Developing AI-Ready Geospatial Knowledge Graphs with ToposKG and the Topos framework
 
-In recent years, growing academic and indus-002
-trial interest in geospatial artificial intelligence003
-(GeoAI) has driven the construction of geospa-004
-tial knowledge graphs (GeoKGs) using data005
-from a variety of sources. However, integrating006
-geospatial information into knowledge graphs007
-remains a complex challenge. Meanwhile, ex-008
-isting GeoKGs are either limited in scope or009
-provide insufficient support for interoperabil-010
-ity, integration with thematic knowledge, and011
-topological consistency, limiting their reliabil-012
-ity for downstream AI applications. In this013
-paper, we present ToposKG, a comprehensive014
-GeoKG that integrates topologically consistent015
-administrative division data, general-purpose016
-geospatial information, and natural resource017
-data, including lakes, rivers, forests, and moun-018
-tains. ToposKG has been developed using the019
-Topos framework and its toolchain for inte-020
-grating both thematic and geospatial data into021
-knowledge graphs through interlinking. The022
-tools are made available via a Python library, a023
-desktop application, an MCP server and a digi-024
-tal assistant utilizing the MCP server. We also025
-evaluate the topological consistency of exist-026
-ing geospatial question-answering benchmarks027
-using ToposKG, investigating how incorrect028
-or unverifiable spatial relationships can affect029
-their reliability as resources for training and030
+In recent years, growing academic and industrial interest in geospatial artificial intelligence003
+(GeoAI) has driven the construction of geospatial knowledge graphs (GeoKGs) using data
+from a variety of sources. However, integrating
+geospatial information into knowledge graphs
+remains a complex challenge. Meanwhile, existing GeoKGs are either limited in scope or009
+provide insufficient support for interoperability, integration with thematic knowledge, and011
+topological consistency, limiting their reliability for downstream AI applications. In this013
+paper, we present ToposKG, a comprehensive
+GeoKG that integrates topologically consistent
+administrative division data, general-purpose
+geospatial information, and natural resource
+data, including lakes, rivers, forests, and moun-
+tains. ToposKG has been developed using the
+Topos framework and its toolchain for inte-
+grating both thematic and geospatial data into
+knowledge graphs through interlinking. The
+tools are made available via a Python library, a
+desktop application, an MCP server and a digi-
+tal assistant utilizing the MCP server. We also
+evaluate the topological consistency of exist-
+ing geospatial question-answering benchmarks
+using ToposKG, investigating how incorrect
+or unverifiable spatial relationships can affect
+their reliability as resources for training and
 evaluating AI systems.
 
 ## Contents
