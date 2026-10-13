@@ -4,6 +4,7 @@ import gr.uoa.di.ai.connectors.DirectoryParsing;
 import gr.uoa.di.ai.connectors.Osm2GAULConnector;
 import gr.uoa.di.ai.connectors.SimpleOsmEntityLinker;
 import gr.uoa.di.ai.transformers.GeometryAggregator;
+import gr.uoa.di.ai.transformers.TopologyRepair;
 import gr.uoa.di.ai.transformers.IntersectionConnector;
 import gr.uoa.di.ai.transformers.Nt2Csv;
 import gr.uoa.di.ai.validators.*;
@@ -52,6 +53,42 @@ public class Manager {
                     aggregator.aggregateOnLevelOne();
                 } catch (IOException | ParseException e) {
                     e.printStackTrace();
+                }
+            }
+            /**
+             * Repair descendant administrative geometries using mapped ground-truth roots.
+             * args[1] = ground-truth .nt
+             * args[2] = target .nt
+             * args[3] = root mappings CSV (source,target)
+             * args[4] = output .nt
+             * args[5] = ground-truth entry class URI
+             * args[6] = target entry class URI
+             * args[7] = target isPartOf predicate URI
+             * args[8] = threads (optional)
+             * args[9] = area tolerance (optional)
+             * args[10] = direct target WKT predicate (optional; default GeoSPARQL)
+             * args[11] = target entity ID predicate (optional; default direct URI parent links)
+             */
+            case "repair_topology" -> {
+                if (args.length < 8 || args.length > 12) {
+                    throw new IllegalArgumentException(
+                            "Usage: repair_topology <truth.nt> <target.nt> <mapping.csv> " +
+                                    "<out.nt> <truthClass> <targetClass> <isPartOfPredicate> " +
+                                    "[threads] [epsilon] [targetWktPredicate] [parentIdPredicate]");
+                }
+                int threads = args.length > 8
+                        ? Integer.parseInt(args[8])
+                        : Runtime.getRuntime().availableProcessors();
+                double epsilon = args.length > 9 ? Double.parseDouble(args[9]) : 1e-9;
+                TopologyRepair repair = new TopologyRepair(
+                        args[1], args[2], args[3], args[4],
+                        args[5], args[6], args[7], threads, epsilon,
+                        args.length > 10 ? args[10] : null,
+                        args.length > 11 ? args[11] : null);
+                try {
+                    repair.repair();
+                } catch (Exception e) {
+                    throw new RuntimeException("Topological repair failed", e);
                 }
             }
             case "validate_level" -> {
@@ -105,7 +142,7 @@ public class Manager {
              * args[3] = wikidata hierarchy file
              * args[4] = .csv file with gaul->osm level mappings
              * args[5] = output file
-            ***/
+             ***/
             case "osm_hierarchy" ->{
                 OSMCollectBoundaries osmCollectBoundaries = new OSMCollectBoundaries(args[1],args[2],args[3],args[4],args[5]);
                 osmCollectBoundaries.collect();
