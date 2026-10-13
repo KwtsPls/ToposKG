@@ -1,12 +1,12 @@
 # Developing AI-Ready Geospatial Knowledge Graphs with ToposKG and the Topos framework
 
-In recent years, growing academic and industrial interest in geospatial artificial intelligence003
+In recent years, growing academic and industrial interest in geospatial artificial intelligence
 (GeoAI) has driven the construction of geospatial knowledge graphs (GeoKGs) using data
 from a variety of sources. However, integrating
 geospatial information into knowledge graphs
-remains a complex challenge. Meanwhile, existing GeoKGs are either limited in scope or009
-provide insufficient support for interoperability, integration with thematic knowledge, and011
-topological consistency, limiting their reliability for downstream AI applications. In this013
+remains a complex challenge. Meanwhile, existing GeoKGs are either limited in scope or
+provide insufficient support for interoperability, integration with thematic knowledge, and
+topological consistency, limiting their reliability for downstream AI applications. In this
 paper, we present ToposKG, a comprehensive
 GeoKG that integrates topologically consistent
 administrative division data, general-purpose
