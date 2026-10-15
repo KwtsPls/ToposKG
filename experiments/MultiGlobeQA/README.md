@@ -79,13 +79,3 @@ Statuses:
 Supported direct two-entity Boolean templates: `13.1` and `14.1` (intersects), `19.1` (overlaps), `20.1` and `21.1` (touches), `22.1` (disjoint), `23.1` (contains), `31.1` (within). `28.1` administrative membership is not equivalent to spatial inclusion and is conservatively left unverifiable. `15-18`, `29-30` and `32.x` aggregate/argmax/selection templates require the original candidate population or complete source KG logic and are left unverifiable. Full national boundary datasets are not needed to recompute entity-entity boolean relationships, *but both entities' exact source geometries are required*.
 
 Spatial predicate implications are conservative and may require customization for your interlinker's actual vocabulary. Verify especially whether `touches` is intended as GeoSPARQL `sfTouches` rather than an arbitrary proximity-based 'adjacency'.
-
-## NAACL table
-
-| KG | Spatial family | Total Q | Consistent (n) | Inconsistent (n) | Unverifiable (n) | Inconsistency among verifiable (%) |
-|---|---|---:|---:|---:|---:|---:|
-| OSMH3KG | C | ... | ... | ... | ... | ... |
-| OSMH3KG | E | ... | ... | ... | ... | ... |
-| WorldKG | C | ... | ... | ... | ... | ... |
-
-Denominator for the last column must be `consistent + inconsistent`, and report coverage `(consistent + inconsistent) / all questions` separately. Do not count `unverifiable` as consistent or inconsistent.
