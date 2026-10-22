@@ -1,19 +1,72 @@
 # MultiGlobeQA / ToposKG topology audit
 
-This project prepares ToposKG spatial mappings and audits exactly these question families:
-
-- `osmh3kg` / `C`
-- `osmh3kg` / `E`
-- `worldkg` / `C`
-
-**Do not equate disagreement with the source KG geometry with independent geographic truth.** This measures discrepancies between benchmark gold answers and the recomputed geometry representation. The evaluator does not call absent mapping triples `false`.
+This part is broken in three parts. If you only care for reproducing the final part of the evaluation look at section C and use the files uploaded here and in [Harvard Dataverse](https://dataverse.harvard.edu/previewurl.xhtml?token=bd996232-2bd2-4e37-86e9-6fd4ee5851da).
 
 ## Requirements
 
-Python 3.10+, `pip install pyarrow shapely`. Your existing `materialize_topology.sh`, `jedai_spatial_pipeline.sh`, `jedai_map.sh`, and the interlinking JAR must be in the same directory, as in your setup. The provided country file must have CSV columns `country,uri,code`. Country datasets must be `<countries-root>/<Country>/<Country>.nt`. The benchmark entity CSV must have columns `source_kg,entity_id,name,country`.
-The MultiGlobeQA data can be downloaded from this [link](https://zenodo.org/records/21786184)
+- Python 3.10+, pyarrow, shapely. 
+- Java 8+
+- ToposKG data in modular format
+- MultiGlobeQA data (can be downloaded from this [link](https://zenodo.org/records/21786184))
 
-## A. Materialization
+## A. Pre-processing
+
+```bash
+python3 a_download.py
+```
+
+This command downloads data from huggingface and saves them under a directory named data/. This directory contains all relevant info from the hugging face [repo](https://huggingface.co/datasets/aiana94/MultiGlobeQA/tree/main) of MultiGlobeQA.
+
+```bash
+python3 b_extract_topology_questions.py \
+  --input-dir data/raw/questions/eng/large/ \
+  --out results/multiglobeqa_topology_questions.csv
+```
+
+This creates a first draft of the topological questions that might have potential consistency issues.
+
+```bash
+python3 c_build_topology_entity_files.py \
+  --input results/multiglobeqa_topology_questions.csv \
+  --out-dir results/multiglobeqa_selected 
+```
+This creates a first pass of the unique_entities.csv with all possible countries.
+
+For the next part, you need to download and extract the .parquet files for worldkg and osmh3kg from the MultiGlobeQA [repo](https://huggingface.co/datasets/aiana94/MultiGlobeQA/tree/main).
+
+```bash
+python3 d_kg_country_match_parquet.py \
+  --kg-source worldkg \
+  --kg-dir /path/to/worldkg/parquet/ \
+  --entities unique_entities.csv \
+  --question-entities question_entities.csv \
+  --out-dir results/worldkg_country \
+  --workers 8 \
+  --batch-size 250000 \
+  
+python3 d_kg_country_match_parquet.py \
+  --kg-source osmh3kg \
+  --kg-dir /path/to/osmh3kg/parquet/ \
+  --entities unique_entities.csv \
+  --question-entities question_entities.csv \
+  --out-dir results/osmh3kg_country \
+  --workers 8 \
+  --batch-size 250000 \
+```
+
+This provides an initial mapping between entities in questions and data from the knowledge graphs they belong to.
+
+```bash
+python3 e_assign_entity_countries_local.py \
+  --matches results/osmh3kg_country/osmh3kg_country_matches.csv results/worldkg_country/worldkg_country_matches.csv \
+  --countries countries.geojson \
+  --out-dir results/entity_countries
+```
+
+This finally creates a directory with a full mapping between countries and entities. This .csv file has the following columns: `source_kg,entity_id,name,country` and is named entity_countries.csv. This can be brought to the same directory with the scripts and renamed to multiglobeqa_entities.csv for compliance with the rest of the commands.
+
+
+## B. Materialization
 
 ```bash
 python3 01_materialize_countries.py \
@@ -42,7 +95,7 @@ python3 02_extract_entity_geometries.py \
   --batch-size 250000
 ```
 
-The extractor uses **full** WKT (not 200-character previews). It emits `entity_geometries.nt`, `entity_geometries.csv`, `entity_uri_mapping.csv`, and `missing_geometry_ids.txt` separately for each KG. It recognizes RDF-triple Parquet columns named `subject,predicate,object` (case-insensitive), but *not arbitrary flattened property tables*. It searches both entity subject triples and their linked geometry nodes. Original entity subject URIs are recorded. WKT is emitted as GeoSPARQL `geo:wktLiteral` in its original coordinates; supply only source data whose CRS is supported by your JEDAI workflow.
+This emits `entity_geometries.nt`, `entity_geometries.csv`, `entity_uri_mapping.csv`, and `missing_geometry_ids.txt` separately for each KG. It recognizes RDF-triple Parquet columns named `subject,predicate,object` (case-insensitive), but *not arbitrary flattened property tables*. It searches both entity subject triples and their linked geometry nodes. Original entity subject URIs are recorded. WKT is emitted as GeoSPARQL `geo:wktLiteral` in its original coordinates; supply only source data whose CRS is supported by your JEDAI workflow.
 
 ```bash
 python3 03_materialize_entity_countries.py \
@@ -56,9 +109,7 @@ python3 03_materialize_entity_countries.py \
 
 Outputs: `results/joint/entities_and_countries.nt`, `entity_country_mappings.nt`, `mappings.nt` (deduplicated union of the two materialization output files).
 
-**Caution:** Your supplied materializer interlinks every `_no` source in the combined file against all geometries, potentially producing *more than entity-to-country mappings* (including self matches, entity-to-entity, country-to-country). If that is undesirable, modify the materializer to use an explicit source/target N-Triples input rather than `grep _no`. For the benchmark audit the evaluator does not treat these extra relations as verified country containment.
-
-## B. Question evaluation
+## C. Question evaluation
 
 ```bash
 python3 04_evaluate_questions.py \
@@ -77,5 +128,3 @@ Statuses:
 - `unverifiable`: unsupported aggregate/selection template; missing, invalid, or multiple geometries; or insufficient mapping evidence.
 
 Supported direct two-entity Boolean templates: `13.1` and `14.1` (intersects), `19.1` (overlaps), `20.1` and `21.1` (touches), `22.1` (disjoint), `23.1` (contains), `31.1` (within). `28.1` administrative membership is not equivalent to spatial inclusion and is conservatively left unverifiable. `15-18`, `29-30` and `32.x` aggregate/argmax/selection templates require the original candidate population or complete source KG logic and are left unverifiable. Full national boundary datasets are not needed to recompute entity-entity boolean relationships, *but both entities' exact source geometries are required*.
-
-Spatial predicate implications are conservative and may require customization for your interlinker's actual vocabulary. Verify especially whether `touches` is intended as GeoSPARQL `sfTouches` rather than an arbitrary proximity-based 'adjacency'.

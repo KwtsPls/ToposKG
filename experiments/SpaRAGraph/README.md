@@ -14,7 +14,7 @@ python3 validate_sparagraph.py \
   --kg CSZt.nt \
   --mappings toposkg_spatial_relations.nt \
   --entities toposkg_entity_metadata.nt \
-  --out audit_v3
+  --out audit
 ```
 
 ## Gold-answer semantics
@@ -43,5 +43,3 @@ Status meanings:
 - `topology_compatible_radio`: selected non-directional radio option is supported, but option exclusivity is not verified
 - `unverifiable`: mapping missing/ambiguous, reference topology unknown, or topology cannot resolve directional / radio answer
 - `skipped`: unsupported question parse or malformed gold
-
-**Caveats:** ToposKG and TIGER 2015 may differ in boundary definitions; geographic reference disagreements require review before labeling as factual errors. `--closed-world` turns absent ToposKG relations into false: use ONLY if the reference relation materialization is complete. The report includes all 1,805 question rows but some can remain unverifiable.
